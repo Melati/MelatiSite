@@ -1,0 +1,20 @@
+<VirtualHost *>
+ ServerName site
+ DocumentRoot /dist/MelatiSite/target/docs/
+ DirectoryIndex index.html
+ <IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule  ^/db/(.+)$  /site/$1 [R,L]
+ </IfModule>
+
+ ProxyPass /wvm http://127.0.0.1:8081/site
+ ProxyPassReverse /wvm http://127.0.0.1:8081/site
+
+<Directory "/dist/MelatiSite/target/docs/">
+   Options Indexes Includes FollowSymLinks
+   AllowOverride FileInfo AuthConfig Limit Indexes
+   Allow from from all
+   Order allow,deny
+</Directory>
+
+</VirtualHost>

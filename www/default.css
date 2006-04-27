@@ -1,0 +1,302 @@
+/* Default HTML 2 CSS */
+BODY {
+  font-family: "Century Gothic", sans-serif, Helvetica;
+  line-height: 1.1;
+  background: white;
+  color: black;
+  font-size: 11px;
+  border: 0px;
+  margin: 0px;
+}
+
+.defaultTitle {
+	letter-spacing : 1pt;
+ font-family: "Century Gothic", sans-serif;
+ display: block;
+ width: 99%;
+ margin: 0px;
+ font-size: 13px;
+ font-weight: bold;
+ position: relative;
+}
+.defaultContent {
+  display: block;
+  width: 95%;
+  background-color: #ffffff;
+}
+.defaultContent PRE {
+  display: block;
+  margin: 0px;
+  border-width: 1px;
+}
+.defaultContent P {
+  display: block;
+  border-width: 1px;
+}
+.defaultContent A:hover {
+  background-color: #d6ebfe;
+}
+
+TH.sales, TD.sales, DIV#content, .salestitle {
+  font-family: "Century Gothic", Helvetica, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  background-color: white;
+  color: black;
+  letter-spacing: normal;
+  vertical-align: top;
+  word-spacing: normal;
+  white-space: normal;
+  line-height: 1.2;
+  visibility: visible;
+}
+
+TH.sales, .salestitle {
+ font-weight: bolder;
+}
+DIV#content {
+  width : 100%;
+  height : 100%;
+  position: relative;
+  top: 0px;
+  left: 6px;
+  right: 0px;
+  margin: 0px;
+  padding: 7px;
+}
+
+TABLE.sales {
+  position: relative;
+  border: solid 1px;
+  margin: 8px;
+}
+TH.sales {
+  font-weight: bold;
+  padding: 6px;
+  border: solid 1px;
+}
+TD.sales {
+  border: solid 1px black;
+}
+
+#nav {
+  font-weight : bold;
+  font-family: "Century Gothic", sans-serif, Helvetica;
+  font-size: 13px;
+  
+}
+
+.edit {
+  text-align: right;
+}
+.copyright {
+  font-family: "Century Gothic", sans-serif, Helvetica;
+  font-size: 10px;
+  text-align: right;
+}
+.colophon {
+  font-family: "Century Gothic", sans-serif, Helvetica;
+  font-size: 10px;
+  text-align: left;
+}
+.validity {
+  text-align: right;
+}
+DIV#nav {
+  position: relative;
+  top: 1px;
+  width: 550px;
+}
+A {
+ font-family: "Century Gothic", sans-serif, Helvetica;
+}
+A.link, A.link1 {
+ font-family: "Century Gothic", sans-serif, Helvetica;
+ font-size: 11px;
+}
+A.nav{
+	font-family : "Century Gothic", sans-serif, Helvetica;
+	font-weight : bold;
+	font-style : normal;
+	font-size : 10pt;
+}
+A.nav:link { color: #000033; text-decoration: none; }          /* unvisited link */
+A.nav:visited { color: #333333; text-decoration: none; }        /* visited links */
+A.nav:active { color: #993333; text-decoration: none; }        /* active links */
+A.nav:Hover { color: #006633; background-color: #FFFFFF;
+}
+
+
+DIV#frontPageImage {
+ display: block;
+ background-image: url(/images/index_r4_c4.jpg);
+ background-repeat:repeat;
+ width: 100%;
+}
+H1, H2, H3, H4, H5, H6, P, UL, OL, DIR, MENU, DIV,
+DT, DD, ADDRESS, BLOCKQUOTE, PRE, BR, HR, FORM, DL {
+  display: block; }
+
+P {padding-top: 1px; padding-bottom: 1px; margin-top: 2px; margin-bottom: 4px;}
+
+B, STRONG, I, EM, CITE, VAR, TT, CODE, KBD, SAMP,
+IMG, SPAN { display: inline }
+
+LI { display: list-item }
+
+H1, H2, H3, H4, H5, H6 { margin-top: 1px; }
+H1, H2, H3, H4, H5, H6 { font-weight: bold }
+H1 { margin-bottom: 3px ;}
+H2, H3, H4, H5, H6 { margin-bottom: 2px ;}
+H4, H5 { font-style: italic }
+
+H1 { font-size: 15px; }
+H2 { font-size: 14px; }
+
+
+B, STRONG { font-weight: bolder }  /* relative to the parent */
+I, CITE, EM, VAR, ADDRESS, BLOCKQUOTE { font-style: italic }
+PRE, TT, CODE, KBD, SAMP { font-family: monospace }
+
+PRE { white-space: pre }
+
+ADDRESS { }
+BLOCKQUOTE { margin-left: 1em; margin-right: 5em; border:1px solid;}
+
+UL, DIR { list-style: disc; }
+OL { list-style: decimal;}
+UL, OL, DIR { border: 1px solid; margin:1px; width:63%; }
+MENU { margin: 0 }                  /* tight formatting */
+LI { margin-left: 1em }
+
+DT { margin-bottom: 0 }
+DD { margin-top: 0; margin-left: 3em }
+
+HR { border-top: solid }            /* 'border-bottom' could also have been used */
+
+A:link { color: #993333; }          /* unvisited link */
+A:visited { color: #993333; }       /* visited links */
+A:active { color: #FF3333; }        /* active links */
+
+
+/* setting the anchor border around IMG elements
+   requires contextual selectors */
+
+A:link IMG {  }
+A:visited IMG { }
+A:active IMG { }
+
+/* Portal Styles */
+.hdr1 {
+	font-family: "Century Gothic", Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #666666;
+	line-height: normal;
+	word-spacing: 1pt;
+	letter-spacing: 1px;
+
+
+}
+.lbtitle {
+	font-family: "Century Gothic", Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: underline;
+	letter-spacing: 1pt;
+	word-spacing: 1pt;
+}
+.help {
+	font-family: "Century Gothic", Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666666;
+	letter-spacing: 1pt;
+	word-spacing: 1pt;
+}
+
+P, .body1 {
+        font-family: "Century Gothic", Helvetica, sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        color: #000000;
+		letter-spacing : normal;
+}
+.body1bld {
+        font-family: "Century Gothic", Helvetica, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        color: #000000;
+        font-weight: bold;
+	letter-spacing: 1px;
+}
+/*
+Email specific additions 
+*/
+
+#page {
+ margin-left: 3em;
+ margin-right: 3em;
+ border: solid 1px black;
+ padding-top: 1em;
+ padding-left: 2em;
+ padding-right: 2em;
+ padding-bottom: 1em;
+}
+#pagetitle {
+FONT-SIZE: 11px;
+COLOR: #000000;
+FONT-FAMILY: arial, sans-serif;
+FONT-WEIGHT: bold;
+width: auto;
+text-align: center;
+padding: 0.5em;
+margin-top: 1em;
+margin-bottom: 2em;
+border: solid 1px black;
+}
+
+#footer {
+FONT-SIZE: 11px;
+COLOR: #000000;
+width: auto;
+text-align: center;
+margin-top: 0em;
+}
+#order, #customer, #user {
+ border: 1px solid black;
+ width: 90%;
+ margin-left: 2em;
+ margin-right: 2em;
+}
+#order>caption, #customer>caption, #user>caption {
+  font-weight: bolder;
+}
+
+#customer>TH, #user>TH {
+  font-weight: bolder;
+  text-align: right;
+}
+#customer>TH, #user>TH {
+  font-weight: bolder;
+  text-align: right;
+  width: 20%;
+}
+#htmlMessage {
+ margin:1em;
+ padding: 1em;
+}
+
+TD.leftBorderImage {
+ vertical-align: top; 
+}
+IMG.leftBorderImage {
+ vertical-align: top; 
+}
+TD.castleImage{
+  height: 285px !important;
+  max-height: 285px !important;
+}

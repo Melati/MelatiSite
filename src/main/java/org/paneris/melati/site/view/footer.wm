@@ -1,0 +1,7 @@
+<!-- begin footer.wm -->
+<div id="footer">
+
+#include as template "org/paneris/melati/site/view/nav.wm"
+
+</div>
+<!-- end footer.wm -->

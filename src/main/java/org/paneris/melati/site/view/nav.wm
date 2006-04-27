@@ -1,0 +1,14 @@
+<div class="nav">
+#set $url = "/$homePage.RelativeDisplayUrlByContent"
+#if ($Form.style != null) #begin 
+#set $url = "$url?style=$Form.style"
+#end
+<a href="$url" class="nav">Home</a>
+#foreach $l in $homePage.Children #begin
+#set $url = "/$l.RelativeDisplayUrlByContent"
+#if ($Form.style != null) #begin 
+#set $url = "$url?style=$Form.style"
+#end
+&nbsp;&nbsp;<a href="$url" class="nav">$l.Displayname</a>
+#end
+</div>

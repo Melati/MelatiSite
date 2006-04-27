@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="wvm">
+
+  <properties>
+    <title>
+Wemyss Vintage Malts
+-
+Website Proposal
+    </title>
+    <author email="timp@paneris.org">Tim Pizey</author>
+    <keywords>
+     Whiskey, Oxford, java developer, open source
+    </keywords>
+  </properties>
+  <body>
+   <links>
+    <item name="Context Computing" href="http://www.context-computing.co.uk/" />
+     <item name="PanEris.net"          href="http://www.paneris.net" />
+     <item name="Melati"               href="http://melati.net" />
+   </links>
+   <menu name="Site">
+      <item name="Live Site"           href="http://www.w-v-m.com/"/>
+   </menu>
+   <menu name="Brief">
+      <item name="Copy"                href="wholeSite.html"/>
+      <item name="Home"                href="images/FrontPage.jpg"/>
+      <item name="Follow on"           href="images/FollowOnPage.jpg"/>
+   </menu>
+   <menu name="Development">
+      <item name="Admin system"        href="admin.html"/>
+      <item name="Usage"               href="usage.html"/>
+   </menu>
+  </body>
+</project>

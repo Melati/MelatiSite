@@ -1,0 +1,33 @@
+<body bgcolor="#ffffff">
+<table width="100%" border="0">
+<tr><td></td>
+<td>
+Wymess Vintage Malts</td><td>
+<a href="/site/$homePage.RelativeDisplayUrlById" class="nav">Graphic Site</a>
+</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+#include as template "org/paneris/melati/site/view/nav.wm"
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>&nbsp;</td><td>
+#include as template "org/paneris/melati/site/view/breadcrumbs.wm"
+</td><td>&nbsp;</td></tr>
+<tr><td valign="top">
+</td><td>
+#include as template "$contentTemplet"
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+#include as template "org/paneris/melati/site/view/footer.wm"
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+#include as template "org/paneris/melati/site/view/bottom.wm"
+</body>

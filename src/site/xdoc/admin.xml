@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<document>
+
+  <properties>
+    <title>
+Wemyss Vintage Malts
+    </title>
+    <author email="timp@paneris.org">Tim Pizey</author>
+    <keywords>
+Wemyss Vintage Malts, malt, whiskey, malt whiskey, Scotland, scotch
+    </keywords>
+  </properties>
+
+  <body>
+
+
+<section name="Melati Administration System">
+<p>
+The Melati database administration system enables the viewing and editing of 
+records in a database, offering the same functionality as Access over the web.
+In addition the system can be used to administrate users authorisations, 
+upload files or download CSV summaries of tables. 
+</p>
+<p>
+Additional functionality can be plugged into the standard interface.
+</p>
+<table align="center">
+<th>
+<a href="/wvm/Admin/wvm/Main">Admin DB</a>
+</th>
+</table>
+</section>
+</body>
+</document>
+
+
+
+
+

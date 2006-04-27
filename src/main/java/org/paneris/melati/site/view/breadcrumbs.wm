@@ -1,0 +1,12 @@
+<!-- begin breadcrumbs.wm -->
+#if ($object) #begin
+#foreach $a in $object.Ancestors #begin
+#set $url = "$melati.ZoneURL/$a.RelativeDisplayUrlById"
+#if ($Form.style != null) #begin 
+#set $url = "$url?style=$Form.style"
+#end
+<a href="$url">$a.Displayname</a> >
+#end
+<b>$object.Displayname</b>
+#end
+<!-- end breadcrumbs.wm -->

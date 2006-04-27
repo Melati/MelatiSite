@@ -1,0 +1,314 @@
+package org.paneris.melati.site.model;
+
+
+table Page 
+    (seqcached) 
+    (category = "Data") 
+    (description = "A Page")
+    (displayorder = 200)
+{
+  (primary) Integer id
+      (displaylevel = record) 
+      (searchability = no);
+
+  String name
+      (description = "A file system name, no spaces or special characters")
+      (displaylevel = record)
+      (size = unlimited)
+      ;
+  String displayname
+      (size = unlimited)
+      (width = 20)
+      (displayname = "Display Name")
+      (description = "The full name used in the TITLE.")
+      (unique) 
+      (displaylevel = primary) 
+      (searchability = primary)
+      ;
+  Integer displayorder
+    (displayname = "Display order")
+    (description = "A rank determining where the page appears in a list")
+    (displayorderpriority = 0)
+    (displaylevel = record)
+      ;
+  Boolean display
+      (indexed)
+      (description = "Whether to display this page")
+      (displaylevel = record)
+      (searchability = yes)
+      ;
+  Boolean deleted
+      (deleted)
+      (indexed)
+      (description = "Soft delete")
+      (displaylevel = detail)
+      (searchability = no)
+      ;
+  (nullable) Timestamp lastencached
+      (displayname = "Last encached")
+      (description = "When the page was encached; cleared when the page is updated")
+      (displaylevel = record)
+      (displayorder = 1000)
+      ;
+  (nullable) Page parent
+      (description = "The parent page (empty for Home). ")
+      (displaylevel = summary)
+      (searchability = yes)
+      ;
+  (nullable) Template template
+      (description = "The name of the layout for this page")
+      (displaylevel = record)
+      ;
+  (nullable) Style style
+      (description = "The name of the CSS class for this page")
+      (displaylevel = record)
+      ;
+}
+
+
+
+table Div
+    (description = "An HTML fragment")
+    (category = "Data") 
+    (displayorder = 550)
+    (seqcached) 
+{
+  (primary) Integer id
+      (displaylevel = record)
+      ;
+  (nullable) Page page
+      (description = "The Page to which this fragment belongs")
+      (displaylevel = summary)
+      ;
+  Integer displayorder
+    (displayname = "Display order")
+    (description = "A rank determining where the div appears in a page")
+    (displayorderpriority = 0)
+    (displaylevel = record)
+      ;
+  (nullable) Style style
+      (description = "The name of the CSS class for this DIV")
+      (displaylevel = summary)
+      (searchability = primary)
+      (displayorderpriority = 1)
+      ;
+  (nullable) String title
+      (description = "The HTML title")
+      (size = unlimited)
+      (width = 60)
+      (displaylevel = primary)
+      ;
+  (nullable) String content
+      (description = "The HTML content")
+      (size = unlimited)
+      (width = 60)
+      (height = 20)
+      (displaylevel = record)
+      ;
+}
+
+abstract table UploadedFile
+    (category = "Data")
+    (cachelimit = unlimited)
+    (seqcached) {
+
+    UploadedFileType type
+        (description = "The type of this file")
+        (searchability = primary)
+        (integrityfix = prevent);
+
+    String description (size=unlimited) (width=60) (height=5)
+        (description = "A description of the file")
+        (displaylevel = record)
+        (searchability = yes);
+
+    (nullable)Integer size 
+        (description = "The size of this file")
+        (displaylevel = record)
+        (searchability = no);
+
+    Date when
+        (description = "The date on which this file was uploaded")
+        (displaylevel = summary)
+        (uncreateable)
+        (uneditable)
+        (searchability = no);
+
+    User uploadedby
+        (displayname = "Uploaded By")
+        (description = "The user who uploaded this file")
+        (displaylevel = summary)
+        (searchability = yes)
+        (uncreateable)
+        (uneditable);
+
+    Boolean deleted
+        (description = "Whether this file been deleted or not")
+        (displaylevel = summary)
+        (searchability = yes)
+        (uncreateable)
+        (uneditable);
+}
+
+table Template extends UploadedFile
+    (category = "Data") 
+    (displayname = "Template")
+    (description = "A page template, used to control HTML fragment layout")
+    (displayorder = 600)
+    (seqcached) 
+{
+  (primary) Integer id
+      (displaylevel = record);
+
+  String displayname 
+      (size = unlimited)
+      (displayname = "Display name")
+      (description = "The layout's name")
+      (displaylevel = primary)
+      (searchability = primary);
+  String url (size=unlimited) (width=40)
+      (description = "Path in the file system relative to template root")
+      (displaylevel = primary)
+      (displayorderpriority = 0)
+      (renderinfo = "Upload")
+      (displaylevel = primary)
+      (searchability = yes);
+}
+
+table UploadedImage extends UploadedFile
+    (displayname = "Uploaded Image")
+    (description = "An image uploaded by a user")
+    (displayorder = 310)
+    (category = "Data")
+    (cachelimit = unlimited)
+    (seqcached) {
+
+    (primary) Integer id
+        (displaylevel = record);
+
+    String url (size=unlimited) (width=40)
+        (description = "The name of the file, as uploaded")
+        (displaylevel = primary)
+        (displayorderpriority = 0)
+        (renderinfo = "ImageUpload")
+        (searchability = yes);
+
+    Integer height 
+        (nullable)
+        (description = "The height of this file if it is an image")
+        (displaylevel = record)
+        (searchability = no);
+    Integer width 
+        (nullable)
+        (description = "The width of this file if it is an image")
+        (displaylevel = record)
+        (searchability = no);
+
+}
+
+table UploadedDocument extends UploadedFile
+    (displayname = "Uploaded Document")
+    (description = "A document uploaded by a user")
+    (displayorder = 315)
+    (category = "Data")
+    (cachelimit = unlimited)
+    (seqcached) {
+
+    (primary) Integer id
+        (displaylevel = record);
+
+    String url (size=unlimited) (width=40)
+        (description = "The name of the file, as uploaded")
+        (displaylevel = primary)
+        (displayorderpriority = 0)
+        (renderinfo = "Upload")
+        (searchability = yes);
+}
+
+table UploadedFileType
+    (displayname = "Uploaded File Type")
+    (description = "A type of uploaded file")
+    (displayorder = 1810)
+    (category = "Codes") {
+
+    (primary) Integer id
+        (displayorderpriority = 0)
+        (displaylevel = summary);
+
+    String type (size=unlimited) (width=40)
+        (description = "Type of uploaded file")
+        (displaylevel = primary);
+}
+
+table Style
+    (description = "A CSS Class Id")
+    (category = "Data") 
+    (displayorder = 620)
+    (seqcached) 
+{
+  (primary) Integer id
+      (displaylevel = record);
+  String name (size = unlimited)
+      (displayname = "Name")
+      (description = "The Class id")
+      (displaylevel = primary)
+      (searchability = primary);
+}
+
+
+table Link
+    (category = "Data") 
+    (displayname = "Link") 
+    (displayorder = 700)
+    (description = "A link") 
+{
+
+  (primary) Integer id
+      (displaylevel = record)
+      ;
+  (indexed) Page page
+      (description = "The page to which the link is relevant")
+      (displayorderpriority = 1)
+      (searchability = primary)
+      (renderinfo = "SelectionWindow")
+      (integrityfix = delete)
+      ;
+  LinkType type 
+      (description = "The type of this link")
+      ;
+  String url (size = unlimited)
+      (displayname = "URL")
+      (description = "The full URL for the site's front page")
+      ;
+  String displayname (size = unlimited)
+      (displayname = "Display name")
+      (description = "The site's name")
+      (displaylevel = primary)
+      ;
+  Integer displayorder
+      (displayorderpriority = 0)
+      ;
+}
+
+table LinkType
+    (displayname = "Link Type") 
+    (description = "Type of link")
+    (category = "Codes") 
+    (displayorder = 1690)
+    (seqcached) 
+{
+// html, pdf, paper, book, ticket
+  (primary) Integer id
+      (displaylevel = record);
+
+  String name (size = unlimited)
+      (description = "The category's name")
+      (displaylevel = primary)
+      (searchability = primary);
+  String description (size = unlimited)
+      (description = "The a description of the link type")
+      (displaylevel = primary)
+      (searchability = primary);
+}
+
+

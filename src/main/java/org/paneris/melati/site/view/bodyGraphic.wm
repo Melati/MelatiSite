@@ -1,0 +1,11 @@
+<body bgcolor="#ffffff" >
+#include as template "org/paneris/melati/site/view/nav.wm"
+<!-- Start text -->
+
+
+#include as template "$contentTemplet"
+
+
+<!-- End Text -->
+#include as template "org/paneris/melati/site/view/footer.wm"
+#include as template "org/paneris/melati/site/view/bottom.wm"

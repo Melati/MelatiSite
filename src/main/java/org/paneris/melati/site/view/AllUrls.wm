@@ -1,0 +1,6 @@
+#set $melati.ResponseContentType = "text/plain"
+#set $ml = $melati.HTMLMarkupLanguage
+#set $database=$melati.Database
+#foreach $record in $database.PageTable.selection() #begin
+$melati.ZoneURL/$record.RelativeDisplayUrlById $melati.ZoneURL/$record.RelativeDisplayUrlByContent
+#end
