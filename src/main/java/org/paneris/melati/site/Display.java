@@ -18,9 +18,9 @@ import org.melati.PoemContext;
 import org.melati.servlet.PathInfoException;
 import org.melati.template.ServletTemplateContext;
 import org.melati.util.StringUtils;
-import org.paneris.wvm.model.Template;
-import org.paneris.wvm.model.Templated;
-import org.paneris.wvm.model.HasGetTemplateUrl;
+import org.paneris.melati.site.model.Template;
+import org.paneris.melati.site.model.Templated;
+import org.paneris.melati.site.model.HasGetTemplateUrl;
 
 /**
  * Display an object using its Template.
@@ -45,9 +45,9 @@ import org.paneris.wvm.model.HasGetTemplateUrl;
  * null  null   present        Display/AllUrls.html
  * valid null   present        Display/page/Summary.html
  * valid valid  null           Display/page/1.html
- * valid valid  null           Display/page/About.Wvm.html 
+ * valid valid  null           Display/page/About.melati.site.html 
  * valid valid  present        Display/page/1/Special.html
- * valid valid  present        Display/page/About.Wvm/intranet.html 
+ * valid valid  present        Display/page/About.Us/intranet.html 
  * 
  * 
  */
@@ -150,7 +150,7 @@ public class Display extends SiteServlet {
       throws PathInfoException {
 
     PoemContext it = new PoemContext();
-    it.setLogicalDatabase("wvm");
+    it.setLogicalDatabase("site");
 
     String[] parts = melati.getPathInfoParts();
     if (parts.length > 0) {

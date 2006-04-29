@@ -12,21 +12,20 @@ package org.paneris.melati.site;
 import org.melati.Melati;
 import org.melati.servlet.PoemServlet;
 import org.melati.util.MelatiWriter;
-import org.paneris.wvm.model.Page;
-import org.paneris.wvm.model.UserTable;
-import org.paneris.wvm.model.WvmDatabase;
+import org.paneris.melati.site.model.Page;
+import org.paneris.melati.site.model.SiteDatabase;
 
 /**
- *  Url http://localhost/page/org.paneris.wvm.Populate/wvm
+ *  Url http://localhost/page/org.paneris.melati.site.Populate/site
  */
 
 public class Populate extends PoemServlet {
 
-  private WvmDatabase db;
+  private SiteDatabase db;
 
   protected void doPoemRequest(Melati melati) throws Exception {
 
-    db = (WvmDatabase)melati.getDatabase();
+    db = (SiteDatabase)melati.getDatabase();
 
     melati.getResponse().setContentType("text/html");
     MelatiWriter output = melati.getWriter();
@@ -43,17 +42,6 @@ public class Populate extends PoemServlet {
         + melati.getPoemContext().getLogicalDatabase()
         + " database</h1>\n");
     // set up our types 
-
-      ((UserTable)db.getUserTable()).ensure(
-        "Tim Pizey",
-        "Proprietor",
-        "+44 1865 711036",
-        "enquiries@context-computing.co.uk");
-      ((UserTable)db.getUserTable()).ensure(
-        "William Rowsell",
-        "Proprietor",
-        "+44 1296 770948",
-        "enquiries@rowsell.co.uk");
 
 
       db.getUploadedFileTypeTable().ensure("Image");
@@ -77,7 +65,7 @@ public class Populate extends PoemServlet {
 
 
       db.getPageTable().ensure("About Us", home, 
-                               "About Wvm", 
+                               "About Us", 
                                "<h1>About Us</h1>\n" +
                                "<p>\n" +
                                "Wemyss Vintage Malts came into being because of the long standing passion\n" + 

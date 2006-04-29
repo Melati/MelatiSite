@@ -18,7 +18,7 @@ import javax.servlet.ServletException;
 import org.melati.Melati;
 import org.melati.servlet.TemplateServlet;
 import org.melati.template.ServletTemplateContext;
-import org.paneris.wvm.model.WvmDatabase;
+import org.paneris.melati.site.model.SiteDatabase;
 
 /**
  * @author timp
@@ -72,13 +72,13 @@ public abstract class SiteServlet extends TemplateServlet {
   private boolean fileAt(String filename){
     if (filename.equals("")) return false;
     if (filename.equals("/")) return false;
-    String fsName = "/dist/wvm/www" + filename;
+    String fsName = "/dist/MelatiSite/www" + filename;
     File it = new File(fsName);
     System.err.println("FS:" + fsName + " " + it.exists());
     return it.exists();    
   }
   
-  public String wvmTemplate(String name) {
+  public String siteTemplate(String name) {
     return addExtension(templatePrefix + name);
   }
 
@@ -102,12 +102,12 @@ public abstract class SiteServlet extends TemplateServlet {
   protected String doTemplateRequest(Melati melati, ServletTemplateContext context)
       throws Exception {
     context.put("homePage", 
-      ((WvmDatabase)melati.getDatabase()).getPageTable().ensure("Home"));
+      ((SiteDatabase)melati.getDatabase()).getPageTable().ensure("Home"));
     String newsAdminName = getSetting(melati,"NewsAdminName");
     String newsAdminEmail = getSetting(melati,"NewsAdminEmail");
     context.put("newsAdminName", newsAdminName);
     context.put("newsAdminEmail", newsAdminEmail);
-    return wvmTemplate(reallyDoTemplateRequest(melati, context));
+    return siteTemplate(reallyDoTemplateRequest(melati, context));
   }
 
   /**
