@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="wvm">
+<project name="MelatiSite">
 
-  <properties>
-    <title>
-Melati Site
--
-Content Management System
-    </title>
-    <author email="timp@paneris.org">Tim Pizey</author>
-    <keywords>
-     Oxford, java developer, open source
-    </keywords>
-  </properties>
+  <skin>
+    <groupId>org.melati</groupId>
+    <artifactId>melati-skin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </skin>
+  <bannerLeft>
+    <name>Melati</name>
+    <src>http://www.melati.org/images/logo.jpg</src> 
+    <href>http://www.melati.org/</href>
+  </bannerLeft>
+  <bannerRight>
+    <name>PanEris</name>
+    <src>http://www.paneris.org/images/logo.jpg</src> 
+    <href>http://www.paneris.org/</href>
+  </bannerRight>
+
   <body>
    <links>
     <item name="Context Computing" href="http://www.context-computing.co.uk/" />

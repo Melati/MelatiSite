@@ -4,33 +4,24 @@
 
   <properties>
     <title>
-Wemyss Vintage Malts
+Melati Site
 -
-Website Proposal
+Content Management System
     </title>
     <author email="timp@paneris.org">Tim Pizey</author>
     <keywords>
-     Whiskey, Malt Whiskey, Oxford
+     Java Content Management System, maven, Oxford
     </keywords>
   </properties>
 
   <body>
 
 
-<section name="Wemyss Vintage Malts">
-<subsection name="Live site">
+<section name="Melati Site">
 <p>
-   <a href="http://www.w-v-m.com/">WWW.W-V-M.com</a> 
-   a site to publicise and enable purchase of selected fine whiskey and 
-   contact with Wemyss Vintage Malts.
+A Content Management System based upon 
+<a href="http://www.melati.org/">Melati</a>.
 </p>
-</subsection>
-<subsection name="This site">
-<p>
-This site is a meta site to cover the development of the above 
-from proposal through to long term maintenance.
-</p>
-</subsection>
 </section>
 </body>
 </document>
