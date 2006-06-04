@@ -71,7 +71,7 @@
         <directory>src/main</directory>
         <includes>
           <include>**/*.wm</include>
-          <include>**/*.DSD</include>
+          <include>**/*.dsd</include>
         </includes>
       </resource>
       <resource>
