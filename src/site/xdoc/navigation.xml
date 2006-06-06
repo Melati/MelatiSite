@@ -21,6 +21,7 @@ Content Management System
    <menu name="Development">
       <item name="Admin system"        href="admin.html"/>
       <item name="Usage"               href="usage.html"/>
+      <item name="Maven2"              href="http://www.paneris.net/site/index.html"/>
    </menu>
   </body>
 </project>

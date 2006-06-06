@@ -26,6 +26,8 @@
    <menu name="Development">
       <item name="Admin system"        href="admin.html"/>
       <item name="Usage"               href="usage.html"/>
+      <item name="Maven1"              href="/maven1/index.html"/>
    </menu>
+    ${reports}
   </body>
 </project>
