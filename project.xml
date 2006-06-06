@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project>
   <pomVersion>3</pomVersion>
-  <groupId>org.melati</groupId>
+  <groupId>org.paneris</groupId>
   <id>MelatiSite</id>
   <name>Melati Site</name>
   <currentVersion>0.1</currentVersion>
