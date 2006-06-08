@@ -53,6 +53,8 @@ import org.paneris.melati.site.model.HasGetTemplateUrl;
  */
 public class Display extends SiteServlet {
 
+  private static final long serialVersionUID = 1L;
+
   protected String reallyDoTemplateRequest(Melati melati, 
                                            ServletTemplateContext context)
       throws Exception {

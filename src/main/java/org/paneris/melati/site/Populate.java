@@ -21,6 +21,8 @@ import org.paneris.melati.site.model.SiteDatabase;
 
 public class Populate extends PoemServlet {
 
+  private static final long serialVersionUID = 1L;
+
   private SiteDatabase db;
 
   protected void doPoemRequest(Melati melati) throws Exception {
