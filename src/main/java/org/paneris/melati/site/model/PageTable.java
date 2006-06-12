@@ -86,7 +86,8 @@ public class PageTable extends PageTableBase {
 
   public Page ensure(String displayName){
     Page p = ensurePage(displayName);
-    ((SiteDatabase)getDatabase()).getDivTable().ensure(p);
+    SiteDatabaseTables db = ((SiteDatabaseTables)getDatabase());
+    db.getDivTable().ensure(p);
     return p;
   }
 

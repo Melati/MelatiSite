@@ -94,7 +94,7 @@ public class DivTable extends DivTableBase {
    */
 
   public Div ensure(Page page) {
-    Style s = ((SiteDatabase)getDatabase()).getStyleTable().ensure("ipsum");
+    Style s = ((SiteDatabaseTables)getDatabase()).getStyleTable().ensure("ipsum");
     return ensure(page,s);
   }
   /**
