@@ -18,7 +18,7 @@ import javax.servlet.ServletException;
 import org.melati.Melati;
 import org.melati.servlet.TemplateServlet;
 import org.melati.template.ServletTemplateContext;
-import org.paneris.melati.site.model.SiteDatabase;
+import org.paneris.melati.site.model.SiteDatabaseTables;
 
 /**
  * @author timp
@@ -30,13 +30,7 @@ public abstract class SiteServlet extends TemplateServlet {
   public static final boolean DEBUG = true;
     
   public static final String templatePrefix = "org/paneris/melati/site/view/";
-
-  public String getSysAdminName () {
-    return "TimP";
-  }
-  public String getSysAdminEmail () {
-    return "timp@paneris.org";
-  }
+  protected static final String STATIC_ROOT = "/dist/MelatiSite/www";
 
   /* (non-Javadoc)
    * @see org.melati.servlet.ConfigServlet#doConfiguredRequest(org.melati.Melati)
@@ -69,10 +63,10 @@ public abstract class SiteServlet extends TemplateServlet {
     }
     super.doConfiguredRequest(melati);
   }
-  private boolean fileAt(String filename){
+  protected boolean fileAt(String filename){
     if (filename.equals("")) return false;
     if (filename.equals("/")) return false;
-    String fsName = "/dist/MelatiSite/www" + filename;
+    String fsName = STATIC_ROOT + filename;
     File it = new File(fsName);
     System.err.println("FS:" + fsName + " " + it.exists());
     return it.exists();    
@@ -80,16 +74,6 @@ public abstract class SiteServlet extends TemplateServlet {
   
   public String siteTemplate(String name) {
     return addExtension(templatePrefix + name);
-  }
-
-    // Override org.melati.TemplateServlet.addExtension()
-    // to cope with heterogenous naming convention :)
-  protected String addExtension(String templateName) {
-    int index = templateName.indexOf(".wm");
-    if (index == -1) 
-      templateName = templateName + ".wm";
-    System.err.println("Template:" + templateName);
-    return templateName;
   }
 
   /**
@@ -102,11 +86,7 @@ public abstract class SiteServlet extends TemplateServlet {
   protected String doTemplateRequest(Melati melati, ServletTemplateContext context)
       throws Exception {
     context.put("homePage", 
-      ((SiteDatabase)melati.getDatabase()).getPageTable().ensure("Home"));
-    String newsAdminName = getSetting(melati,"NewsAdminName");
-    String newsAdminEmail = getSetting(melati,"NewsAdminEmail");
-    context.put("newsAdminName", newsAdminName);
-    context.put("newsAdminEmail", newsAdminEmail);
+      ((SiteDatabaseTables)melati.getDatabase()).getPageTable().ensure("Home"));
     return siteTemplate(reallyDoTemplateRequest(melati, context));
   }
 
@@ -127,4 +107,115 @@ public abstract class SiteServlet extends TemplateServlet {
     return returnString;
   }
 
+  /**
+   * A little something to generate alternating colours. 
+   * @author timp
+   *
+   */
+ public static class Util {
+   
+   /**
+    * Return a contrasting colour given a colour.
+    *  
+    * @param rgb the colour to contrast with
+    * @return the colour string
+    */
+   public String contrastingColour(String rgb) {
+     if (rgb.length() != 6) throw new IllegalArgumentException();
+     String red = rgb.substring(0,2);
+     String green = rgb.substring(2,4);
+     String blue = rgb.substring(4);
+
+     int redI = Integer.parseInt(red,16);
+     int greenI = Integer.parseInt(green,16);
+     int blueI = Integer.parseInt(blue,16);
+     int luminence = redI + greenI + blueI;
+     int redNew;
+     int greenNew;
+     int blueNew;
+     if (luminence > ((3 * 255)/2)) {
+       // r>b>g
+       // r>g>b
+       // g>r>b
+       // b>r>g
+       // b>g>r
+       // g>b>r
+       if (redI > blueI){
+         if (blueI > greenI){  // r>b>g
+           redNew = (greenI/2); 
+           greenNew = (redI/2); 
+           blueNew = (blueI/2);
+         } else {
+           if (redI > greenI){ // r>g>b
+             redNew = (blueI/2); 
+             greenNew = (greenI/2); 
+             blueNew = (redI/2);
+           } else { // g>r>b
+             redNew = (redI/2); 
+             greenNew = (blueI/2); 
+             blueNew = (greenI/2);            
+           }
+         }
+       } else {
+         if (redI > greenI){ // b>r>g
+           redNew = (redI/2); 
+           greenNew = (blueI/2); 
+           blueNew = (greenI/2);
+         } else {
+           if (blueI > greenI){ // b>g>r
+             redNew = (blueI/2); 
+             greenNew = (greenI/2); 
+             blueNew =  (redI/2);
+           } else { // g>b>r
+             redNew = (greenI/2); 
+             greenNew = (redI/2); 
+             blueNew =  (blueI/2);            
+           }
+         }
+       }
+     } else {
+       if (redI > blueI){
+         if (blueI > greenI){  // r>b>g
+           redNew = 255 - (greenI/2); 
+           greenNew = 255 - (redI/2); 
+           blueNew = 255 - (blueI/2);
+         } else {
+           if (redI > greenI){ // r>g>b
+             redNew = 255 - (blueI/2); 
+             greenNew = 255 - (greenI/2); 
+             blueNew = 255 - (redI/2);
+           } else { // g>r>b
+             redNew = 255 - (redI/2); 
+             greenNew = 255 - (blueI/2); 
+             blueNew = 255 - (greenI/2);            
+           }
+         }
+       } else {
+         if (redI > greenI){ // b>r>g
+           redNew = 255 - (redI/2); 
+           greenNew = 255 - (blueI/2); 
+           blueNew = 255 - (greenI/2);
+         } else {
+           if (blueI > greenI){ // b>g>r
+             redNew = 255 - (blueI/2); 
+             greenNew = 255 - (greenI/2); 
+             blueNew = 255 - (redI/2);
+           } else { // g>b>r
+             redNew = 255 - (greenI/2); 
+             greenNew = 255 - (redI/2); 
+             blueNew = 255 - (blueI/2);            
+           }
+         }
+       }
+     }
+     String redNewS = (redNew < 16) ? "0" + Integer.toHexString(redNew) 
+                                    : Integer.toHexString(redNew);
+     String greenNewS = (greenNew < 16) ? "0" + Integer.toHexString(greenNew) 
+                                    : Integer.toHexString(greenNew);
+     String blueNewS = (blueNew < 16) ? "0" + Integer.toHexString(blueNew) 
+                                    : Integer.toHexString(blueNew);
+     
+     return redNewS + greenNewS + blueNewS;
+   }
+  }
 }
