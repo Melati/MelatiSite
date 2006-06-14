@@ -60,7 +60,7 @@ public class DivTable extends DivTableBase {
    */
 
   public Div ensure(Page page, String title, String content) {
-    Style s = ((SiteDatabase)getDatabase()).getStyleTable().ensure("default");
+    Style s = ((SiteDatabaseTables)getDatabase()).getStyleTable().ensure("default");
     return ensure(page, s, title, content);
   }
 

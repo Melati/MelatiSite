@@ -45,8 +45,8 @@ public class Page extends PageBase implements Treeable, Templated {
 
   // programmer's domain-specific code here
 
-  public SiteDatabase getSiteDatabase () {
-      return (SiteDatabase)getDatabase();
+  public SiteDatabaseTables getSiteDatabase () {
+      return (SiteDatabaseTables)getDatabase();
   }
 
   /**

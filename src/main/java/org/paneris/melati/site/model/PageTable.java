@@ -101,7 +101,7 @@ public class PageTable extends PageTableBase {
                      String divSubject, String divContent){
     Page p = ensurePage(displayName);
     p.setParent(parent);
-    ((SiteDatabase)getDatabase()).
+    ((SiteDatabaseTables)getDatabase()).
         getDivTable().ensure(p, divSubject, divContent);
     return p;
   }
