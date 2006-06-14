@@ -13,7 +13,7 @@ import org.melati.Melati;
 import org.melati.servlet.PoemServlet;
 import org.melati.util.MelatiWriter;
 import org.paneris.melati.site.model.Page;
-import org.paneris.melati.site.model.SiteDatabase;
+import org.paneris.melati.site.model.SiteDatabaseTables;
 
 /**
  *  Url http://localhost/page/org.paneris.melati.site.Populate/site
@@ -23,11 +23,11 @@ public class Populate extends PoemServlet {
 
   private static final long serialVersionUID = 1L;
 
-  private SiteDatabase db;
+  private SiteDatabaseTables db;
 
   protected void doPoemRequest(Melati melati) throws Exception {
 
-    db = (SiteDatabase)melati.getDatabase();
+    db = (SiteDatabaseTables)melati.getDatabase();
 
     melati.getResponse().setContentType("text/html");
     MelatiWriter output = melati.getWriter();
