@@ -152,7 +152,7 @@ public class Display extends SiteServlet {
       throws PathInfoException {
 
     PoemContext it = new PoemContext();
-    it.setLogicalDatabase("site");
+    it.setLogicalDatabase(DB_NAME);
 
     String[] parts = melati.getPathInfoParts();
     if (parts.length > 0) {
