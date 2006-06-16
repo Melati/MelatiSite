@@ -16,8 +16,14 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 
 import org.melati.Melati;
+import org.melati.PoemContext;
+import org.melati.poem.Column;
+import org.melati.poem.Persistent;
+import org.melati.poem.Table;
+import org.melati.servlet.PathInfoException;
 import org.melati.servlet.TemplateServlet;
 import org.melati.template.ServletTemplateContext;
+import org.melati.util.StringUtils;
 import org.paneris.melati.site.model.SiteDatabaseTables;
 
 /**
@@ -26,11 +32,12 @@ import org.paneris.melati.site.model.SiteDatabaseTables;
  */
 public abstract class SiteServlet extends TemplateServlet {
 
-    // turn on placement of debugging info into context
+  /** turn on placement of debugging info into context */
   public static final boolean DEBUG = true;
     
   public static final String templatePrefix = "org/paneris/melati/site/view/";
   protected static final String STATIC_ROOT = "/dist/MelatiSite/www";
+  protected static String DB_NAME = "site";
 
   /* (non-Javadoc)
    * @see org.melati.servlet.ConfigServlet#doConfiguredRequest(org.melati.Melati)
@@ -63,6 +70,7 @@ public abstract class SiteServlet extends TemplateServlet {
     }
     super.doConfiguredRequest(melati);
   }
+  
   protected boolean fileAt(String filename){
     if (filename.equals("")) return false;
     if (filename.equals("/")) return false;
@@ -72,6 +80,11 @@ public abstract class SiteServlet extends TemplateServlet {
     return it.exists();    
   }
   
+  /**
+   * Add template prefix and extension to template name.
+   * @param name the simple name of the template.
+   * @return the fully qualified name of template on CLASSPATH
+   */
   public String siteTemplate(String name) {
     return addExtension(templatePrefix + name);
   }
@@ -107,6 +120,93 @@ public abstract class SiteServlet extends TemplateServlet {
     return returnString;
   }
 
+  /**
+   * Hardcode the db, rather than using Poem's
+   * URL specified LDB.
+   * 
+   * @see org.melati.servlet.ConfigServlet#melatiContext(org.melati.Melati)
+   */
+  protected PoemContext poemContext(Melati melati)
+      throws PathInfoException {
+
+    PoemContext it = new PoemContext();
+    it.setLogicalDatabase(DB_NAME);
+
+    String initParameterPathInfo = getInitParameter("pathinfo");
+    String[] parts;
+    if (initParameterPathInfo != null) {
+      parts = StringUtils.split(initParameterPathInfo, '/');
+      System.err.println("Got init param:" + initParameterPathInfo);
+    }
+    else {
+      System.err.println("Did not find init param");
+      parts = melati.getPathInfoParts();
+    }
+    if (parts.length > 0) {
+      // Display/table.html - might be needed
+      // Display/ATemplate.html - template that is DB specific 
+      // or contains no template specific info at all 
+      if (parts.length == 1) it.setMethod(parts[0]);
+
+      // Display/page/1.html
+      // Display/page/TableSpecificSummaryTemplate.html
+      // Display/page/Primary.Search.Criterion.content.html
+      if (parts.length == 2) {
+        String r = parts[1];
+        if (r.lastIndexOf(".htm") != -1) {
+          r = r.substring(0,r.lastIndexOf(".htm")); 
+      //    it.method = "html";
+        }
+        it.setTable(parts[0]);
+        try {
+          it.setTroid(new Integer(r));
+        }
+        catch (NumberFormatException e) {
+          it.setMethod(parts[1]);
+        }
+      }
+      // Display/page/1/SpecialTemplate.html
+      // Display/page/Primary.Search.Criterion.content/SpecialTemplate.html
+      // Display/page/Primary_Search_Criterion_content/SpecialTemplate.html
+      if (parts.length == 3) {
+        it.setTable(parts[0]);
+        try {
+          it.setTroid(new Integer (parts[1]));
+        }
+        catch (NumberFormatException e) {
+          String r = parts[1];
+          if (r.lastIndexOf(".htm") != -1) {
+            r = r.substring(0,r.lastIndexOf(".htm")); 
+          }
+          String value = StringUtils.tr(r,'.', ' '); 
+          value = StringUtils.tr(r,'_', ' '); 
+          Table t = melati.getTable();
+          if (t != null) {
+            Column c = t.primaryCriterionColumn();
+            if (c == null) throw new NullPointerException("primaryCriterionColumn null");
+            Persistent o = c.firstWhereEq(value);
+            if (o != null) it.setTroid(o.troid());
+          }
+        }
+        it.setMethod(parts[2]);
+      }
+/*
+      if (parts.length > 3) 
+     {
+        String pathInfo = melati.getRequest().getPathInfo();
+        pathInfo = pathInfo.substring(1);
+        for (int i = 0; i< 2; i++) {
+          pathInfo = pathInfo.substring(pathInfo.indexOf("/") + 1);
+        }          
+        it.method = pathInfo;
+     }
+*/
+    }
+    return it;
+  }
+
+  
+  
   /**
    * A little something to generate alternating colours. 
    * @author timp
