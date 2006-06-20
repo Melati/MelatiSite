@@ -37,7 +37,7 @@ public abstract class SiteServlet extends TemplateServlet {
     
   public static final String templatePrefix = "org/paneris/melati/site/view/";
   protected static final String STATIC_ROOT = "/dist/MelatiSite/www";
-  protected static String DB_NAME = "site";
+  private String DB_NAME = "site";
 
   /* (non-Javadoc)
    * @see org.melati.servlet.ConfigServlet#doConfiguredRequest(org.melati.Melati)
@@ -130,7 +130,7 @@ public abstract class SiteServlet extends TemplateServlet {
       throws PathInfoException {
 
     PoemContext it = new PoemContext();
-    it.setLogicalDatabase(DB_NAME);
+    it.setLogicalDatabase(getDB_NAME());
 
     String initParameterPathInfo = getInitParameter("pathinfo");
     String[] parts;
@@ -318,4 +318,16 @@ public abstract class SiteServlet extends TemplateServlet {
      return redNewS + greenNewS + blueNewS;
    }
   }
+
+
+
+  /**
+   * @return Returns the dB_NAME.
+   */
+  public String getDB_NAME() {
+    return DB_NAME;
+  }
+
+
+
 }
