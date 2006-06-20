@@ -24,7 +24,7 @@ import org.melati.servlet.PathInfoException;
 import org.melati.servlet.TemplateServlet;
 import org.melati.template.ServletTemplateContext;
 import org.melati.util.StringUtils;
-import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.SiteDatabase;
 
 /**
  * @author timp
@@ -99,7 +99,7 @@ public abstract class SiteServlet extends TemplateServlet {
   protected String doTemplateRequest(Melati melati, ServletTemplateContext context)
       throws Exception {
     context.put("homePage", 
-      ((SiteDatabaseTables)melati.getDatabase()).getPageTable().ensure("Home"));
+      ((SiteDatabase)melati.getDatabase()).getHomePage());
     return siteTemplate(reallyDoTemplateRequest(melati, context));
   }
 
