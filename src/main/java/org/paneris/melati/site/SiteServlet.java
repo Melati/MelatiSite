@@ -98,8 +98,6 @@ public abstract class SiteServlet extends TemplateServlet {
    */
   protected String doTemplateRequest(Melati melati, ServletTemplateContext context)
       throws Exception {
-    context.put("homePage", 
-      ((SiteDatabase)melati.getDatabase()).getHomePage());
     return siteTemplate(reallyDoTemplateRequest(melati, context));
   }
 
