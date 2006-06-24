@@ -86,7 +86,10 @@ public abstract class SiteServlet extends TemplateServlet {
    * @return the fully qualified name of template on CLASSPATH
    */
   public String siteTemplate(String name) {
-    return addExtension(templatePrefix + name);
+    return addExtension(getTemplatePrefix() + name);
+  }
+  public String getTemplatePrefix() {
+    return templatePrefix;
   }
 
   /**
