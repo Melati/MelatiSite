@@ -74,7 +74,7 @@ public abstract class SiteServlet extends TemplateServlet {
   protected boolean fileAt(String filename){
     if (filename.equals("")) return false;
     if (filename.equals("/")) return false;
-    String fsName = STATIC_ROOT + filename;
+    String fsName = getSTATIC_ROOT() + filename;
     File it = new File(fsName);
     System.err.println("FS:" + fsName + " " + it.exists());
     return it.exists();    
@@ -327,6 +327,10 @@ public abstract class SiteServlet extends TemplateServlet {
    */
   public String getDB_NAME() {
     return DB_NAME;
+  }
+
+  public String getSTATIC_ROOT() {
+    return STATIC_ROOT;
   }
 
 
