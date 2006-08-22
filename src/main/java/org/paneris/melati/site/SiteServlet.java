@@ -62,11 +62,12 @@ public abstract class SiteServlet extends TemplateServlet {
       System.err.println("pathinfo:" + pathInfo);
       System.err.println("Ref:" + melati.getRequest().getHeader("Referer"));
       String referer = melati.getRequest().getHeader("Referer");
-      if (referer != null && 
-          referer.indexOf(pathInfo) == -1) {
+      if (referer == null)
         melati.getResponse().sendRedirect(pathInfo);
+      else if (referer.indexOf(pathInfo) == -1) 
+        melati.getResponse().sendRedirect(pathInfo);
+      else
         return;
-      }
     }
     super.doConfiguredRequest(melati);
   }
