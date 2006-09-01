@@ -73,8 +73,18 @@ public class Page extends PageBase implements Treeable, Templated {
   public String getRelativeDisplayUrlById() {
     return "Display/page/" +troid() + ".html";
   }
+  /**
+   * @return the name with underscores for spaces and a file extension added.
+   */
   public String getRelativeDisplayUrlByContent() {
     return StringUtils.tr(getName(), ' ', '_') + ".html";
+  }
+  /**
+   * XML does not allow forward slashes in Is, so we use periods.
+   * @return The table name, a period followed by the troid.
+   */
+  public String getXmlId() {
+    return StringUtils.tr(toString(), '/', '.');
   }
 
   private CachedSelection divs = null;
