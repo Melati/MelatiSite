@@ -77,7 +77,7 @@ public class Page extends PageBase implements Treeable, Templated {
    * @return the name with underscores for spaces and a file extension added.
    */
   public String getRelativeDisplayUrlByContent() {
-    return StringUtils.tr(getName(), ' ', '_') + ".html";
+    return StringUtils.tr(getDisplayname(), ' ', '_') + ".html";
   }
   /**
    * XML does not allow forward slashes in Is, so we use periods.
@@ -127,5 +127,6 @@ public class Page extends PageBase implements Treeable, Templated {
     System.out.println("length:" + kids.length + " j:" + j + " k:" + k);
     return children;
   }
+
   
 }
