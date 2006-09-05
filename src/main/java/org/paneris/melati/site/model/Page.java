@@ -127,13 +127,5 @@ public class Page extends PageBase implements Treeable, Templated {
     System.out.println("length:" + kids.length + " j:" + j + " k:" + k);
     return children;
   }
-  /* 
-   * @see org.melati.util.Treeable#getName()
-   */
-  public String getName() {
-    return getDisplayname();
-  }
-
-
   
 }
