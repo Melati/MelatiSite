@@ -105,7 +105,7 @@ table Div
       (height = 20)
       (displaylevel = record)
       ;
-    Uploadedimage image
+    UploadedImage image
       (displayname = "Image")
       (description = "Image associated with this div")
       (nullable)

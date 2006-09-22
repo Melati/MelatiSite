@@ -13,6 +13,7 @@ import org.paneris.melati.site.model.DivTable;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
 import org.paneris.melati.site.model.Style;
+import org.paneris.melati.site.model.UploadedImage;
 
 
 /**
@@ -75,6 +76,10 @@ public abstract class DivBase extends Persistent {
   * content - The HTML content 
   */
   protected String content;
+ /**
+  * Image - Image associated with this div 
+  */
+  protected Integer image;
 
 
  /**
@@ -670,6 +675,121 @@ public abstract class DivBase extends Persistent {
   */
   public Field getContentField() throws AccessPoemException {
     Column c = _getDivTable().getContentColumn();
+    return new Field(c.getRaw(this), c);
+  }
+
+
+ /**
+  * Retrieves the <code>Image</code> value, without locking, 
+  * for this <code>Div</code> <code>Persistent</code>.
+  *
+  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @return the Integer image
+  */
+  public Integer getImage_unsafe() {
+    return image;
+  }
+
+
+ /**
+  * Sets the <code>Image</code> value directly, without checking, 
+  * for this Div <code>Persistent</code>.
+  * 
+  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @param cooked  the pre-validated value to set
+  */
+  public void setImage_unsafe(Integer cooked) {
+    image = cooked;
+  }
+
+ /**
+  * Retrieves the Table Row Object ID. 
+  *
+  * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
+  * @throws AccessPoemException  
+  *         if the current <code>AccessToken</code> 
+  *         does not confer read access rights 
+  * @return the TROID as an <code>Integer</code> 
+  */
+
+  public Integer getImageTroid()
+      throws AccessPoemException {
+    readLock();
+    return getImage_unsafe();
+  }
+
+
+ /**
+  * Sets the Table Row Object ID. 
+  * 
+  * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
+  * @param raw  a Table Row Object Id 
+  * @throws AccessPoemException  
+  *         if the current <code>AccessToken</code> 
+  *         does not confer write access rights
+  */
+  public void setImageTroid(Integer raw)
+      throws AccessPoemException {
+    setImage(raw == null ? null : 
+        (UploadedImage)getSiteDatabaseTables().getUploadedImageTable().getUploadedImageObject(raw));
+  }
+
+
+ /**
+  * Retrieves the <code>Image</code> object reffered to.
+  *  
+  * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
+  * @throws AccessPoemException  
+  *         if the current <code>AccessToken</code> 
+  *         does not confer read access rights 
+  * @throws NoSuchRowPoemException  
+  *         if the <Persistent</code> has yet to be allocated a TROID 
+  * @return the <code>Image</code> as a <code>UploadedImage</code> 
+  */
+  public UploadedImage getImage()
+      throws AccessPoemException, NoSuchRowPoemException {
+    Integer troid = getImageTroid();
+    return troid == null ? null :
+        (UploadedImage)getSiteDatabaseTables().getUploadedImageTable().getUploadedImageObject(troid);
+  }
+
+
+ /**
+  * Set the Image.
+  * 
+  * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
+  * @param cooked  a validated <code>UploadedImage</code>
+  * @throws AccessPoemException  
+  *         if the current <code>AccessToken</code> 
+  *         does not confer write access rights 
+  */
+  public void setImage(UploadedImage cooked)
+      throws AccessPoemException {
+    _getDivTable().
+      getImageColumn().
+        getType().assertValidCooked(cooked);
+    writeLock();
+    if (cooked == null)
+      setImage_unsafe(null);
+    else {
+      cooked.existenceLock();
+      setImage_unsafe(cooked.troid());
+    }
+  }
+
+
+ /**
+  * Retrieves the <code>Image</code> value as a <code>Field</code>
+  * from this <code>Div</code> <code>Persistent</code>.
+  * 
+  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @throws AccessPoemException 
+  *         if the current <code>AccessToken</code> 
+  *         does not confer write access rights
+  * @return the Integer image
+  */
+  public Field getImageField() throws AccessPoemException {
+    Column c = _getDivTable().getImageColumn();
     return new Field(c.getRaw(this), c);
   }
 }

@@ -13,6 +13,7 @@ import org.melati.poem.Persistent;
 import org.melati.poem.PoemException;
 import org.melati.poem.ReferencePoemType;
 import org.melati.poem.Searchability;
+import org.melati.poem.StandardIntegrityFix;
 import org.melati.poem.StringPoemType;
 import org.melati.poem.Table;
 import org.melati.poem.TroidPoemType;
@@ -21,6 +22,7 @@ import org.paneris.melati.site.model.Div;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
 import org.paneris.melati.site.model.Style;
+import org.paneris.melati.site.model.UploadedImage;
 
 
 /**
@@ -38,6 +40,7 @@ public class DivTableBase extends Table {
   private Column col_style = null;
   private Column col_title = null;
   private Column col_content = null;
+  private Column col_image = null;
 
  /**
   * Constructor. 
@@ -421,6 +424,78 @@ public class DivTableBase extends Table {
             ((Div)g).setContent((String)raw);
           }
         });
+
+    defineColumn(col_image =
+        new Column(this, "image",
+                   new ReferencePoemType(getSiteDatabaseTables().
+                                             getUploadedImageTable(), true),
+                   DefinitionSource.dsd) { 
+          public Object getCooked(Persistent g)
+              throws AccessPoemException, PoemException {
+            return ((Div)g).getImage();
+          }
+
+          public void setCooked(Persistent g, Object cooked)
+              throws AccessPoemException, ValidationPoemException {
+            ((Div)g).setImage((UploadedImage)cooked);
+          }
+
+          public Field asField(Persistent g) {
+            return ((Div)g).getImageField();
+          }
+
+          protected DisplayLevel defaultDisplayLevel() {
+            return DisplayLevel.record;
+          }
+
+          protected Searchability defaultSearchability() {
+            return Searchability.no;
+          }
+
+          protected String defaultDisplayName() {
+            return "Image";
+          }
+
+          protected int defaultDisplayOrder() {
+            return 3;
+          }
+
+          protected String defaultDescription() {
+            return "Image associated with this div";
+          }
+
+          protected int defaultWidth() {
+            return 1;
+          }
+
+          protected int defaultHeight() {
+            return 1;
+          }
+
+          public Object getRaw_unsafe(Persistent g)
+              throws AccessPoemException {
+            return ((Div)g).getImage_unsafe();
+          }
+
+          public void setRaw_unsafe(Persistent g, Object raw)
+              throws AccessPoemException {
+            ((Div)g).setImage_unsafe((Integer)raw);
+          }
+
+          public Object getRaw(Persistent g)
+              throws AccessPoemException {
+            return ((Div)g).getImageTroid();
+          }
+
+          public void setRaw(Persistent g, Object raw)
+              throws AccessPoemException {
+            ((Div)g).setImageTroid((Integer)raw);
+          }
+
+          public StandardIntegrityFix defaultIntegrityFix() {
+            return StandardIntegrityFix.clear;
+          }
+        });
   }
 
 
@@ -493,6 +568,18 @@ public class DivTableBase extends Table {
   */
   public final Column getContentColumn() {
     return col_content;
+  }
+
+
+ /**
+  * Retrieves the <code>Image</code> <code>Column</code> for this 
+  * <code>Div</code> <code>Table</code>
+  * 
+  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @return the image <code>Column</code>
+  */
+  public final Column getImageColumn() {
+    return col_image;
   }
 
 
