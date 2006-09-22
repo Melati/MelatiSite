@@ -105,6 +105,17 @@ table Div
       (height = 20)
       (displaylevel = record)
       ;
+    Uploadedimage image
+      (displayname = "Image")
+      (description = "Image associated with this div")
+      (nullable)
+      (width = 1)
+      (height = 1)
+      (displayorder = 3)
+      (displaylevel = record)
+      (searchability = no)
+      (integrityfix = clear)
+      ;
 }
 
 abstract table UploadedFile
