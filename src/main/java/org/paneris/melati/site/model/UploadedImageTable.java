@@ -38,7 +38,13 @@ public class UploadedImageTable extends UploadedImageTableBase {
   * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
-  * @param definitionSource  which definition is being used
+  * @param definitionSource  which definition is being us  String displayname 
+      (size = unlimited)
+      (displayname = "Display name")
+      (description = "The layout's name")
+      (displaylevel = primary)
+      (searchability = primary);
+ed
   * @throws PoemException    if anything goes wrong
   */
   public UploadedImageTable(
@@ -48,5 +54,19 @@ public class UploadedImageTable extends UploadedImageTableBase {
   }
 
   // programmer's domain-specific code here
+  public UploadedImage ensure(String displayName, String description, String url){
+    UploadedImage p = (UploadedImage)getDisplaynameColumn().firstWhereEq(displayName);
+    if (p == null) {
+      p = (UploadedImage)newPersistent();
+      p.setDisplayname(displayName);
+      p.setDescription(description);
+      p.setUrl(url);
+      p.setType(((SiteDatabaseTables)getDatabase()).getUploadedFileTypeTable().ensure("gig"));
+      p.setDeleted(false);
+      p.makePersistent();
+    }
+    return (UploadedImage)p;
+  }
+
 }
 

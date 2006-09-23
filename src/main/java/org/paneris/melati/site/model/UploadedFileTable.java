@@ -64,7 +64,14 @@ public class UploadedFileTable extends UploadedFileTableBase {
       throws AccessPoemException, ValidationPoemException,
              InitialisationPoemException {
 
-    User user = (User)PoemThread.accessToken();
+    Integer userTroid;
+    try{
+      User user = (User)PoemThread.accessToken();
+      userTroid = user.troid();
+    } catch (ClassCastException e){ // When access token is root ie not a real user
+      userTroid = new Integer(1);  
+    }
+    
 /*
 Need canUpload capability?
 
@@ -90,7 +97,7 @@ Need canUpload capability?
       sizeString = size + " bytes";
     }
 */
-    persistent.setRaw("uploadedby", user.troid());
+    persistent.setRaw("uploadedby", userTroid);
     persistent.setRaw("when", new Date(new java.util.Date().getTime()));
     persistent.setRaw("deleted", Boolean.FALSE);
 
