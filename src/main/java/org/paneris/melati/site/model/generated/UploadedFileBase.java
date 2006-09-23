@@ -76,6 +76,10 @@ public abstract class UploadedFileBase extends Persistent {
   * deleted - Whether this file been deleted or not 
   */
   protected Boolean deleted;
+ /**
+  * Display name - The layout's name 
+  */
+  protected String displayname;
 
 
  /**
@@ -679,6 +683,89 @@ public abstract class UploadedFileBase extends Persistent {
   */
   public Field getDeletedField() throws AccessPoemException {
     Column c = _getUploadedFileTable().getDeletedColumn();
+    return new Field(c.getRaw(this), c);
+  }
+
+
+ /**
+  * Retrieves the <code>Displayname</code> value, without locking, 
+  * for this <code>UploadedFile</code> <code>Persistent</code>.
+  *
+  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @return the String displayname
+  */
+  public String getDisplayname_unsafe() {
+    return displayname;
+  }
+
+
+ /**
+  * Sets the <code>Displayname</code> value directly, without checking, 
+  * for this UploadedFile <code>Persistent</code>.
+  * 
+  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @param cooked  the pre-validated value to set
+  */
+  public void setDisplayname_unsafe(String cooked) {
+    displayname = cooked;
+  }
+
+ /**
+  * Retrieves the Displayname value, with locking, for this 
+  * <code>UploadedFile</code> <code>Persistent</code>.
+  * Field description: 
+  *   The layout's name 
+  * 
+  * @generator org.melati.poem.prepro.AtomFieldDef#generateBaseMethods 
+  * @throws AccessPoemException 
+  *         if the current <code>AccessToken</code> 
+  *         does not confer write access rights 
+  * @return the value of the field <code>Displayname</code> for this 
+  *         <code>UploadedFile</code> <code>Persistent</code>  
+  */
+
+  public String getDisplayname()
+      throws AccessPoemException {
+    readLock();
+    return getDisplayname_unsafe();
+  }
+
+
+ /**
+  * Sets the <code>Displayname</code> value, with checking, for this 
+  * <code>UploadedFile</code> <code>Persistent</code>.
+  * Field description: 
+  *   The layout's name 
+  * 
+  * @generator org.melati.poem.prepro.AtomFieldDef#generateBaseMethods  
+  * @param cooked  a validated <code>int</code> 
+  * @throws AccessPoemException 
+  *         if the current <code>AccessToken</code> 
+  *         does not confer write access rights
+  * @throws ValidationPoemException 
+  *         if the value is not valid
+  */
+  public void setDisplayname(String cooked)
+      throws AccessPoemException, ValidationPoemException {
+    _getUploadedFileTable().getDisplaynameColumn().
+      getType().assertValidCooked(cooked);
+    writeLock();
+    setDisplayname_unsafe(cooked);
+  }
+
+
+ /**
+  * Retrieves the <code>Displayname</code> value as a <code>Field</code>
+  * from this <code>UploadedFile</code> <code>Persistent</code>.
+  * 
+  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @throws AccessPoemException 
+  *         if the current <code>AccessToken</code> 
+  *         does not confer write access rights
+  * @return the String displayname
+  */
+  public Field getDisplaynameField() throws AccessPoemException {
+    Column c = _getUploadedFileTable().getDisplaynameColumn();
     return new Field(c.getRaw(this), c);
   }
 }

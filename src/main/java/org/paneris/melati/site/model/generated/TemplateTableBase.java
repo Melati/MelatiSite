@@ -29,7 +29,6 @@ import org.paneris.melati.site.model.UploadedFileTable;
 public class TemplateTableBase extends UploadedFileTable {
 
   private Column col_id = null;
-  private Column col_displayname = null;
   private Column col_url = null;
 
  /**
@@ -130,65 +129,6 @@ public class TemplateTableBase extends UploadedFileTable {
           }
         });
 
-    defineColumn(col_displayname =
-        new Column(this, "displayname",
-                   new StringPoemType(false, -1),
-                   DefinitionSource.dsd) { 
-          public Object getCooked(Persistent g)
-              throws AccessPoemException, PoemException {
-            return ((Template)g).getDisplayname();
-          }
-
-          public void setCooked(Persistent g, Object cooked)
-              throws AccessPoemException, ValidationPoemException {
-            ((Template)g).setDisplayname((String)cooked);
-          }
-
-          public Field asField(Persistent g) {
-            return ((Template)g).getDisplaynameField();
-          }
-
-          protected DisplayLevel defaultDisplayLevel() {
-            return DisplayLevel.primary;
-          }
-
-          protected Searchability defaultSearchability() {
-            return Searchability.primary;
-          }
-
-          protected String defaultDisplayName() {
-            return "Display name";
-          }
-
-          protected int defaultDisplayOrder() {
-            return 1;
-          }
-
-          protected String defaultDescription() {
-            return "The layout's name";
-          }
-
-          public Object getRaw_unsafe(Persistent g)
-              throws AccessPoemException {
-            return ((Template)g).getDisplayname_unsafe();
-          }
-
-          public void setRaw_unsafe(Persistent g, Object raw)
-              throws AccessPoemException {
-            ((Template)g).setDisplayname_unsafe((String)raw);
-          }
-
-          public Object getRaw(Persistent g)
-              throws AccessPoemException {
-            return ((Template)g).getDisplayname();
-          }
-
-          public void setRaw(Persistent g, Object raw)
-              throws AccessPoemException {
-            ((Template)g).setDisplayname((String)raw);
-          }
-        });
-
     defineColumn(col_url =
         new Column(this, "url",
                    new StringPoemType(false, -1),
@@ -220,7 +160,7 @@ public class TemplateTableBase extends UploadedFileTable {
           }
 
           protected int defaultDisplayOrder() {
-            return 2;
+            return 1;
           }
 
           protected String defaultDescription() {
@@ -267,18 +207,6 @@ public class TemplateTableBase extends UploadedFileTable {
   */
   public final Column getIdColumn() {
     return col_id;
-  }
-
-
- /**
-  * Retrieves the <code>Displayname</code> <code>Column</code> for this 
-  * <code>Template</code> <code>Table</code>
-  * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
-  * @return the displayname <code>Column</code>
-  */
-  public final Column getDisplaynameColumn() {
-    return col_displayname;
   }
 
 

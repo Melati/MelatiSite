@@ -41,6 +41,7 @@ public class UploadedFileTableBase extends Table {
   private Column col_when = null;
   private Column col_uploadedby = null;
   private Column col_deleted = null;
+  private Column col_displayname = null;
 
  /**
   * Constructor. 
@@ -452,6 +453,65 @@ public class UploadedFileTableBase extends Table {
             ((UploadedFile)g).setDeleted((Boolean)raw);
           }
         });
+
+    defineColumn(col_displayname =
+        new Column(this, "displayname",
+                   new StringPoemType(false, -1),
+                   DefinitionSource.dsd) { 
+          public Object getCooked(Persistent g)
+              throws AccessPoemException, PoemException {
+            return ((UploadedFile)g).getDisplayname();
+          }
+
+          public void setCooked(Persistent g, Object cooked)
+              throws AccessPoemException, ValidationPoemException {
+            ((UploadedFile)g).setDisplayname((String)cooked);
+          }
+
+          public Field asField(Persistent g) {
+            return ((UploadedFile)g).getDisplaynameField();
+          }
+
+          protected DisplayLevel defaultDisplayLevel() {
+            return DisplayLevel.primary;
+          }
+
+          protected Searchability defaultSearchability() {
+            return Searchability.primary;
+          }
+
+          protected String defaultDisplayName() {
+            return "Display name";
+          }
+
+          protected int defaultDisplayOrder() {
+            return 6;
+          }
+
+          protected String defaultDescription() {
+            return "The layout's name";
+          }
+
+          public Object getRaw_unsafe(Persistent g)
+              throws AccessPoemException {
+            return ((UploadedFile)g).getDisplayname_unsafe();
+          }
+
+          public void setRaw_unsafe(Persistent g, Object raw)
+              throws AccessPoemException {
+            ((UploadedFile)g).setDisplayname_unsafe((String)raw);
+          }
+
+          public Object getRaw(Persistent g)
+              throws AccessPoemException {
+            return ((UploadedFile)g).getDisplayname();
+          }
+
+          public void setRaw(Persistent g, Object raw)
+              throws AccessPoemException {
+            ((UploadedFile)g).setDisplayname((String)raw);
+          }
+        });
   }
 
 
@@ -524,6 +584,18 @@ public class UploadedFileTableBase extends Table {
   */
   public final Column getDeletedColumn() {
     return col_deleted;
+  }
+
+
+ /**
+  * Retrieves the <code>Displayname</code> <code>Column</code> for this 
+  * <code>UploadedFile</code> <code>Table</code>
+  * 
+  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @return the displayname <code>Column</code>
+  */
+  public final Column getDisplaynameColumn() {
+    return col_displayname;
   }
 
 

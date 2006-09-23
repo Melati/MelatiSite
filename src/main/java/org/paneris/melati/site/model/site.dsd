@@ -159,6 +159,12 @@ abstract table UploadedFile
         (searchability = yes)
         (uncreateable)
         (uneditable);
+  String displayname 
+      (size = unlimited)
+      (displayname = "Display name")
+      (description = "The layout's name")
+      (displaylevel = primary)
+      (searchability = primary);
 }
 
 table Template extends UploadedFile
@@ -171,12 +177,6 @@ table Template extends UploadedFile
   (primary) Integer id
       (displaylevel = record);
 
-  String displayname 
-      (size = unlimited)
-      (displayname = "Display name")
-      (description = "The layout's name")
-      (displaylevel = primary)
-      (searchability = primary);
   String url (size=unlimited) (width=40)
       (description = "Path in the file system relative to template root")
       (displaylevel = primary)
