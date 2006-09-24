@@ -54,14 +54,14 @@ ed
   }
 
   // programmer's domain-specific code here
-  public UploadedImage ensure(String displayName, String description, String url){
+  public UploadedImage ensure(String displayName, String description, String url, UploadedFileType type){
     UploadedImage p = (UploadedImage)getDisplaynameColumn().firstWhereEq(displayName);
     if (p == null) {
       p = (UploadedImage)newPersistent();
       p.setDisplayname(displayName);
       p.setDescription(description);
       p.setUrl(url);
-      p.setType(((SiteDatabaseTables)getDatabase()).getUploadedFileTypeTable().ensure("gig"));
+      p.setType(type);
       p.setDeleted(false);
       p.makePersistent();
     }
