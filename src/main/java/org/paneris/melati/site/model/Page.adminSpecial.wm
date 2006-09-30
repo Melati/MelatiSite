@@ -1,0 +1,4 @@
+<P>
+  <A
+  HREF="$melati.ZoneURL/Display/$melati.PoemContext.LogicalDatabase/page/$object.RelativeDisplayUrlByContent" TARGET=$object.Troid>Display this page</A>
+</P>
