@@ -24,7 +24,6 @@ import org.melati.servlet.PathInfoException;
 import org.melati.servlet.TemplateServlet;
 import org.melati.template.ServletTemplateContext;
 import org.melati.util.StringUtils;
-import org.paneris.melati.site.model.SiteDatabase;
 
 /**
  * @author timp
