@@ -69,6 +69,12 @@ public class DivTable extends DivTableBase {
   }
   
 
+  /**
+   * Make sure that a Div exists, creating it if necessary.
+   * 
+   * @param page page that owns this Div, may be null
+   * @return the existing or newly created Div
+   */
   public Div ensure(Page page, Style style, String title, String content) {
     Div q = (Div)newPersistent();
     q.setPage(page);
@@ -76,14 +82,18 @@ public class DivTable extends DivTableBase {
     Div p = (Div)firstSelection(whereClause(q));
     if (p == null) {
       p = (Div)newPersistent();
-      p.setPage(page);
-      Enumeration e = getPageColumn().selectionWhereEq(page.troid());
-      int c = 0;
-      while (e.hasMoreElements()) {
-        e.nextElement();
-        c++;
-      } 
-      p.setDisplayorder(c);
+      if (page != null) {
+        p.setPage(page);
+        Enumeration e = getPageColumn().selectionWhereEq(page.troid());
+        int c = 0;
+        while (e.hasMoreElements()) {
+          e.nextElement();
+          c++;
+        } 
+        p.setDisplayorder(c);
+      }
+      else
+        p.setDisplayorder(1);
       p.setStyle(style);
       p.setTitle(title);
       p.setContent(content);
