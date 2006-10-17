@@ -47,17 +47,18 @@ public class TemplateTable extends TemplateTableBase {
 
   // programmer's domain-specific code here
   /**
-   * Create or retrieve existing organisation by name.
+   * Create or retrieve existing Template by name.
    * 
    * @return the existing or newly created object
    */
-
   public Template ensure(String displayName, String url) {
     Template p = (Template)getDisplaynameColumn().firstWhereEq(displayName);
     if (p == null) {
       p = (Template)newPersistent();
       p.setDisplayname(displayName);
+      p.setDescription(displayName);
       p.setUrl(url);
+      p.setType(((SiteDatabaseTables)getDatabase()).getUploadedFileTypeTable().ensure("wm"));
       p.makePersistent();
     }
     return p;

@@ -91,6 +91,14 @@ public class PageTable extends PageTableBase {
     return p;
   }
 
+  public Page ensure(String displayName, Template template){
+    Page p = ensurePage(displayName);
+    SiteDatabaseTables db = ((SiteDatabaseTables)getDatabase());
+    db.getDivTable().ensure(p);
+    p.setTemplate(template);
+    return p;
+  }
+
   public Page ensure(String displayName, Page parent){
     Page p = ensure(displayName);
     p.setParent(parent);
