@@ -54,13 +54,26 @@ ed
   }
 
   // programmer's domain-specific code here
-  public UploadedImage ensure(String displayName, String description, String url, UploadedFileType type){
+  /**
+   * Find or create an object with these properties.
+   * Note that height and width are defaulted.
+   * @param displayName
+   * @param description
+   * @param url
+   * @param type
+   * @return existing or newly created one
+   */
+  public UploadedImage ensure(String displayName, String description, 
+                              String url, UploadedFileType type, 
+                              Integer width, Integer height){
     UploadedImage p = (UploadedImage)getDisplaynameColumn().firstWhereEq(displayName);
     if (p == null) {
       p = (UploadedImage)newPersistent();
       p.setDisplayname(displayName);
       p.setDescription(description);
       p.setUrl(url);
+      p.setWidth(width);
+      p.setHeight(height);
       p.setType(type);
       p.setDeleted(false);
       p.makePersistent();
