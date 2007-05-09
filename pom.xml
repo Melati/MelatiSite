@@ -3,7 +3,7 @@
   <groupId>org.paneris</groupId>
   <artifactId>MelatiSite</artifactId>
   <name>Melati Site</name>
-  <version>0.1</version>
+  <version>0.2</version>
   <description>A content management system.</description>
   <url>http://site.paneris.net/</url>
   <issueManagement>
@@ -88,36 +88,43 @@
       </resource>
     </resources>
     <plugins>
+     <plugin>
+      <groupId>org.melati</groupId>
+      <artifactId>maven-dsd-plugin</artifactId>
+      <executions>
+        <execution>
+          <phase>process-sources</phase>
+          <goals>
+            <goal>generate</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <dsdPackage>org.paneris.melati.site.model</dsdPackage>
+        <dsdFile>site.dsd</dsdFile>
+      </configuration>
+      <dependencies>
+       <dependency>
+        <groupId>org.melati</groupId>
+        <artifactId>poem</artifactId>
+        <version>0.7.6-RC2</version>
+        <scope>compile</scope>
+       </dependency>
+      </dependencies>
+     </plugin>
 
-    <plugin>
-     <groupId>org.melati</groupId>
-     <artifactId>maven-dsd-plugin</artifactId>
-     <executions>
-       <execution>
-         <phase>process-sources</phase>
-         <goals>
-           <goal>generate</goal>
-         </goals>
-       </execution>
-     </executions>
-     <configuration>
-       <dsdPackage>org.paneris.melati.site.model</dsdPackage>
-       <dsdFile>site.dsd</dsdFile>
-     </configuration>
-    </plugin>
-
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <target>1.4</target>
-          <source>1.4</source></configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <includes>
-            <include>**/*Test.java</include></includes></configuration>
-      </plugin>
+     <plugin>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <configuration>
+         <target>1.4</target>
+         <source>1.4</source></configuration>
+     </plugin>
+     <plugin>
+       <artifactId>maven-surefire-plugin</artifactId>
+       <configuration>
+         <includes>
+           <include>**/*Test.java</include></includes></configuration>
+     </plugin>
     </plugins>
   </build>
   <reporting>
@@ -225,7 +232,7 @@
     <dependency>
       <groupId>org.melati</groupId>
       <artifactId>melati</artifactId>
-      <version>0.7.5-RC4</version>
+      <version>0.7.6-RC2</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
