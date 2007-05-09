@@ -813,14 +813,14 @@ public abstract class PageBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Parent</code> object reffered to.
+  * Retrieves the <code>Parent</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Parent</code> as a <code>Page</code> 
   */
   public Page getParent()
@@ -928,14 +928,14 @@ public abstract class PageBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Template</code> object reffered to.
+  * Retrieves the <code>Template</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Template</code> as a <code>Template</code> 
   */
   public Template getTemplate()
@@ -1043,14 +1043,14 @@ public abstract class PageBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Style</code> object reffered to.
+  * Retrieves the <code>Style</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Style</code> as a <code>Style</code> 
   */
   public Style getStyle()

@@ -12,10 +12,10 @@ import org.melati.poem.Persistent;
 import org.melati.poem.PoemException;
 import org.melati.poem.Searchability;
 import org.melati.poem.StringPoemType;
-import org.melati.poem.Table;
 import org.melati.poem.TroidPoemType;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.SiteTable;
 import org.paneris.melati.site.model.Style;
 
 
@@ -26,7 +26,7 @@ import org.paneris.melati.site.model.Style;
  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class StyleTableBase extends Table {
+public class StyleTableBase extends SiteTable {
 
   private Column col_id = null;
   private Column col_name = null;
@@ -192,7 +192,7 @@ public class StyleTableBase extends Table {
 
  /**
   * Retrieves the <code>Id</code> <code>Column</code> for this 
-  * <code>Style</code> <code>Table</code>
+  * <code>Style</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
@@ -204,7 +204,7 @@ public class StyleTableBase extends Table {
 
  /**
   * Retrieves the <code>Name</code> <code>Column</code> for this 
-  * <code>Style</code> <code>Table</code>
+  * <code>Style</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the name <code>Column</code>

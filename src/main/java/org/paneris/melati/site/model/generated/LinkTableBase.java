@@ -15,13 +15,13 @@ import org.melati.poem.ReferencePoemType;
 import org.melati.poem.Searchability;
 import org.melati.poem.StandardIntegrityFix;
 import org.melati.poem.StringPoemType;
-import org.melati.poem.Table;
 import org.melati.poem.TroidPoemType;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.Link;
 import org.paneris.melati.site.model.LinkType;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.SiteTable;
 
 
 /**
@@ -31,7 +31,7 @@ import org.paneris.melati.site.model.SiteDatabaseTables;
  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class LinkTableBase extends Table {
+public class LinkTableBase extends SiteTable {
 
   private Column col_id = null;
   private Column col_page = null;
@@ -411,7 +411,7 @@ public class LinkTableBase extends Table {
 
  /**
   * Retrieves the <code>Id</code> <code>Column</code> for this 
-  * <code>Link</code> <code>Table</code>
+  * <code>Link</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
@@ -423,7 +423,7 @@ public class LinkTableBase extends Table {
 
  /**
   * Retrieves the <code>Page</code> <code>Column</code> for this 
-  * <code>Link</code> <code>Table</code>
+  * <code>Link</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the page <code>Column</code>
@@ -435,7 +435,7 @@ public class LinkTableBase extends Table {
 
  /**
   * Retrieves the <code>Type</code> <code>Column</code> for this 
-  * <code>Link</code> <code>Table</code>
+  * <code>Link</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the type <code>Column</code>
@@ -447,7 +447,7 @@ public class LinkTableBase extends Table {
 
  /**
   * Retrieves the <code>Url</code> <code>Column</code> for this 
-  * <code>Link</code> <code>Table</code>
+  * <code>Link</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
@@ -459,7 +459,7 @@ public class LinkTableBase extends Table {
 
  /**
   * Retrieves the <code>Displayname</code> <code>Column</code> for this 
-  * <code>Link</code> <code>Table</code>
+  * <code>Link</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayname <code>Column</code>
@@ -471,7 +471,7 @@ public class LinkTableBase extends Table {
 
  /**
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
-  * <code>Link</code> <code>Table</code>
+  * <code>Link</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>

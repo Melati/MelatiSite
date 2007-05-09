@@ -200,7 +200,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
 
  /**
   * Retrieves the <code>Id</code> <code>Column</code> for this 
-  * <code>UploadedDocument</code> <code>Table</code>
+  * <code>UploadedDocument</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
@@ -212,7 +212,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
 
  /**
   * Retrieves the <code>Url</code> <code>Column</code> for this 
-  * <code>UploadedDocument</code> <code>Table</code>
+  * <code>UploadedDocument</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>

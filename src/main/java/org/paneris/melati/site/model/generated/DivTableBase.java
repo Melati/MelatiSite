@@ -15,12 +15,12 @@ import org.melati.poem.ReferencePoemType;
 import org.melati.poem.Searchability;
 import org.melati.poem.StandardIntegrityFix;
 import org.melati.poem.StringPoemType;
-import org.melati.poem.Table;
 import org.melati.poem.TroidPoemType;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.Div;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.SiteTable;
 import org.paneris.melati.site.model.Style;
 import org.paneris.melati.site.model.UploadedImage;
 
@@ -32,7 +32,7 @@ import org.paneris.melati.site.model.UploadedImage;
  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class DivTableBase extends Table {
+public class DivTableBase extends SiteTable {
 
   private Column col_id = null;
   private Column col_page = null;
@@ -501,7 +501,7 @@ public class DivTableBase extends Table {
 
  /**
   * Retrieves the <code>Id</code> <code>Column</code> for this 
-  * <code>Div</code> <code>Table</code>
+  * <code>Div</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
@@ -513,7 +513,7 @@ public class DivTableBase extends Table {
 
  /**
   * Retrieves the <code>Page</code> <code>Column</code> for this 
-  * <code>Div</code> <code>Table</code>
+  * <code>Div</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the page <code>Column</code>
@@ -525,7 +525,7 @@ public class DivTableBase extends Table {
 
  /**
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
-  * <code>Div</code> <code>Table</code>
+  * <code>Div</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>
@@ -537,7 +537,7 @@ public class DivTableBase extends Table {
 
  /**
   * Retrieves the <code>Style</code> <code>Column</code> for this 
-  * <code>Div</code> <code>Table</code>
+  * <code>Div</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the style <code>Column</code>
@@ -549,7 +549,7 @@ public class DivTableBase extends Table {
 
  /**
   * Retrieves the <code>Title</code> <code>Column</code> for this 
-  * <code>Div</code> <code>Table</code>
+  * <code>Div</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the title <code>Column</code>
@@ -561,7 +561,7 @@ public class DivTableBase extends Table {
 
  /**
   * Retrieves the <code>Content</code> <code>Column</code> for this 
-  * <code>Div</code> <code>Table</code>
+  * <code>Div</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the content <code>Column</code>
@@ -573,7 +573,7 @@ public class DivTableBase extends Table {
 
  /**
   * Retrieves the <code>Image</code> <code>Column</code> for this 
-  * <code>Div</code> <code>Table</code>
+  * <code>Div</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the image <code>Column</code>

@@ -18,10 +18,10 @@ import org.melati.poem.ReferencePoemType;
 import org.melati.poem.Searchability;
 import org.melati.poem.StandardIntegrityFix;
 import org.melati.poem.StringPoemType;
-import org.melati.poem.Table;
 import org.melati.poem.User;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.SiteTable;
 import org.paneris.melati.site.model.UploadedFile;
 import org.paneris.melati.site.model.UploadedFileType;
 
@@ -33,7 +33,7 @@ import org.paneris.melati.site.model.UploadedFileType;
  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class UploadedFileTableBase extends Table {
+public class UploadedFileTableBase extends SiteTable {
 
   private Column col_type = null;
   private Column col_description = null;
@@ -517,7 +517,7 @@ public class UploadedFileTableBase extends Table {
 
  /**
   * Retrieves the <code>Type</code> <code>Column</code> for this 
-  * <code>UploadedFile</code> <code>Table</code>
+  * <code>UploadedFile</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the type <code>Column</code>
@@ -529,7 +529,7 @@ public class UploadedFileTableBase extends Table {
 
  /**
   * Retrieves the <code>Description</code> <code>Column</code> for this 
-  * <code>UploadedFile</code> <code>Table</code>
+  * <code>UploadedFile</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the description <code>Column</code>
@@ -541,7 +541,7 @@ public class UploadedFileTableBase extends Table {
 
  /**
   * Retrieves the <code>Size</code> <code>Column</code> for this 
-  * <code>UploadedFile</code> <code>Table</code>
+  * <code>UploadedFile</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the size <code>Column</code>
@@ -553,7 +553,7 @@ public class UploadedFileTableBase extends Table {
 
  /**
   * Retrieves the <code>When</code> <code>Column</code> for this 
-  * <code>UploadedFile</code> <code>Table</code>
+  * <code>UploadedFile</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the when <code>Column</code>
@@ -565,7 +565,7 @@ public class UploadedFileTableBase extends Table {
 
  /**
   * Retrieves the <code>Uploadedby</code> <code>Column</code> for this 
-  * <code>UploadedFile</code> <code>Table</code>
+  * <code>UploadedFile</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the uploadedby <code>Column</code>
@@ -577,7 +577,7 @@ public class UploadedFileTableBase extends Table {
 
  /**
   * Retrieves the <code>Deleted</code> <code>Column</code> for this 
-  * <code>UploadedFile</code> <code>Table</code>
+  * <code>UploadedFile</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the deleted <code>Column</code>
@@ -589,7 +589,7 @@ public class UploadedFileTableBase extends Table {
 
  /**
   * Retrieves the <code>Displayname</code> <code>Column</code> for this 
-  * <code>UploadedFile</code> <code>Table</code>
+  * <code>UploadedFile</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayname <code>Column</code>

@@ -17,12 +17,12 @@ import org.melati.poem.PoemException;
 import org.melati.poem.ReferencePoemType;
 import org.melati.poem.Searchability;
 import org.melati.poem.StringPoemType;
-import org.melati.poem.Table;
 import org.melati.poem.TimestampPoemType;
 import org.melati.poem.TroidPoemType;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.SiteTable;
 import org.paneris.melati.site.model.Style;
 import org.paneris.melati.site.model.Template;
 
@@ -34,7 +34,7 @@ import org.paneris.melati.site.model.Template;
  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class PageTableBase extends Table {
+public class PageTableBase extends SiteTable {
 
   private Column col_id = null;
   private Column col_name = null;
@@ -663,7 +663,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Id</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
@@ -675,7 +675,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Name</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the name <code>Column</code>
@@ -687,7 +687,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Displayname</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayname <code>Column</code>
@@ -699,7 +699,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>
@@ -711,7 +711,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Display</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the display <code>Column</code>
@@ -723,7 +723,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Deleted</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the deleted <code>Column</code>
@@ -735,7 +735,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Lastencached</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the lastencached <code>Column</code>
@@ -747,7 +747,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Parent</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the parent <code>Column</code>
@@ -759,7 +759,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Template</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the template <code>Column</code>
@@ -771,7 +771,7 @@ public class PageTableBase extends Table {
 
  /**
   * Retrieves the <code>Style</code> <code>Column</code> for this 
-  * <code>Page</code> <code>Table</code>
+  * <code>Page</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the style <code>Column</code>

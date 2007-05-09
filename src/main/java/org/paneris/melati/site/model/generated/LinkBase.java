@@ -231,14 +231,14 @@ public abstract class LinkBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Page</code> object reffered to.
+  * Retrieves the <code>Page</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Page</code> as a <code>Page</code> 
   */
   public Page getPage()
@@ -346,14 +346,14 @@ public abstract class LinkBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Type</code> object reffered to.
+  * Retrieves the <code>Type</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Type</code> as a <code>LinkType</code> 
   */
   public LinkType getType()

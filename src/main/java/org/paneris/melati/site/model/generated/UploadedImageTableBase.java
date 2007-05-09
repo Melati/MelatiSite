@@ -313,7 +313,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
 
  /**
   * Retrieves the <code>Id</code> <code>Column</code> for this 
-  * <code>UploadedImage</code> <code>Table</code>
+  * <code>UploadedImage</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
@@ -325,7 +325,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
 
  /**
   * Retrieves the <code>Url</code> <code>Column</code> for this 
-  * <code>UploadedImage</code> <code>Table</code>
+  * <code>UploadedImage</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
@@ -337,7 +337,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
 
  /**
   * Retrieves the <code>Height</code> <code>Column</code> for this 
-  * <code>UploadedImage</code> <code>Table</code>
+  * <code>UploadedImage</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the height <code>Column</code>
@@ -349,7 +349,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
 
  /**
   * Retrieves the <code>Width</code> <code>Column</code> for this 
-  * <code>UploadedImage</code> <code>Table</code>
+  * <code>UploadedImage</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the width <code>Column</code>

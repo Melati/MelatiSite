@@ -11,10 +11,10 @@ import org.melati.poem.Field;
 import org.melati.poem.Persistent;
 import org.melati.poem.PoemException;
 import org.melati.poem.StringPoemType;
-import org.melati.poem.Table;
 import org.melati.poem.TroidPoemType;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.SiteTable;
 import org.paneris.melati.site.model.UploadedFileType;
 
 
@@ -25,7 +25,7 @@ import org.paneris.melati.site.model.UploadedFileType;
  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class UploadedFileTypeTableBase extends Table {
+public class UploadedFileTypeTableBase extends SiteTable {
 
   private Column col_id = null;
   private Column col_type = null;
@@ -191,7 +191,7 @@ public class UploadedFileTypeTableBase extends Table {
 
  /**
   * Retrieves the <code>Id</code> <code>Column</code> for this 
-  * <code>UploadedFileType</code> <code>Table</code>
+  * <code>UploadedFileType</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
@@ -203,7 +203,7 @@ public class UploadedFileTypeTableBase extends Table {
 
  /**
   * Retrieves the <code>Type</code> <code>Column</code> for this 
-  * <code>UploadedFileType</code> <code>Table</code>
+  * <code>UploadedFileType</code> <code>Table</code>.
   * 
   * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the type <code>Column</code>

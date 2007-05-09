@@ -236,14 +236,14 @@ public abstract class DivBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Page</code> object reffered to.
+  * Retrieves the <code>Page</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Page</code> as a <code>Page</code> 
   */
   public Page getPage()
@@ -455,14 +455,14 @@ public abstract class DivBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Style</code> object reffered to.
+  * Retrieves the <code>Style</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Style</code> as a <code>Style</code> 
   */
   public Style getStyle()
@@ -736,14 +736,14 @@ public abstract class DivBase extends Persistent {
 
 
  /**
-  * Retrieves the <code>Image</code> object reffered to.
+  * Retrieves the <code>Image</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
   *         if the current <code>AccessToken</code> 
   *         does not confer read access rights 
   * @throws NoSuchRowPoemException  
-  *         if the <Persistent</code> has yet to be allocated a TROID 
+  *         if the <code>Persistent</code> has yet to be allocated a TROID 
   * @return the <code>Image</code> as a <code>UploadedImage</code> 
   */
   public UploadedImage getImage()
