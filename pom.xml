@@ -21,7 +21,7 @@
     <developer>
       <id>williamr</id>
       <name>William Rowsell</name>
-      <email>william@rowsell.co.uk</email>
+      <email>william At rowsell.co.uk</email>
       <organization>William Rowsell Design</organization>
       <roles>
         <role>Project lead</role>
@@ -32,7 +32,7 @@
     <developer>
       <id>timp</id>
       <name>Tim Pizey</name>
-      <email>timp@paneris.org</email>
+      <email>timp At paneris.org</email>
       <organization>Context Computing</organization>
       <roles>
         <role>System architect</role>
@@ -46,7 +46,7 @@
   <contributors>
     <contributor>
       <name>Myles Chippendale</name>
-      <email>mylesc@paneris.org</email>
+      <email>mylesc At paneris.org</email>
       <organization>PanEris</organization>
       <roles>
         <role>Reviewer</role>
