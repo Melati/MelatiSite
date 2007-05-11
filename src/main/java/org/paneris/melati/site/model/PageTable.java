@@ -84,6 +84,10 @@ public class PageTable extends PageTableBase {
     return p;
   }
 
+  /**
+   * @param displayName long name of page
+   * @return existing or newly minted Page
+   */
   public Page ensure(String displayName){
     Page p = ensurePage(displayName);
     SiteDatabaseTables db = ((SiteDatabaseTables)getDatabase());
@@ -91,6 +95,11 @@ public class PageTable extends PageTableBase {
     return p;
   }
 
+  /**
+   * @param displayName long name of page
+   * @param template special template
+   * @return existing or newly minted Page
+   */
   public Page ensure(String displayName, Template template){
     Page p = ensurePage(displayName);
     SiteDatabaseTables db = ((SiteDatabaseTables)getDatabase());
@@ -99,12 +108,24 @@ public class PageTable extends PageTableBase {
     return p;
   }
 
+  /**
+   * @param displayName long name of page
+   * @param parent the page's parent
+   * @return existing or newly minted Page
+   */
   public Page ensure(String displayName, Page parent){
     Page p = ensure(displayName);
     p.setParent(parent);
     return p;
   }
   
+  /**
+   * @param displayName long name of page
+   * @param parent the page's parent
+   * @param divSubject name of Div to create
+   * @param divContent Div content
+   * @return existing or newly minted Page
+   */
   public Page ensure(String displayName, Page parent, 
                      String divSubject, String divContent){
     Page p = ensurePage(displayName);
@@ -115,6 +136,11 @@ public class PageTable extends PageTableBase {
   }
 
 
+  /**
+   * Remove spaces from a string.
+   * @param s the string
+   * @return without spaces
+   */
   public static String deSpace(String s) {
     int l = s.length();
     for (int i = 0; i < l; ++i) {

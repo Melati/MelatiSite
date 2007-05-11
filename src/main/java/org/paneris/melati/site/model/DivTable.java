@@ -63,6 +63,9 @@ public class DivTable extends DivTableBase {
     Style s = ((SiteDatabaseTables)getDatabase()).getStyleTable().ensure("default");
     return ensure(page, s, title, content);
   }
+  /**
+   * @return existing or newly minted Div 
+   */
   public Div ensure(Page page, String styleName, String title, String content) {
     Style s = ((SiteDatabaseTables)getDatabase()).getStyleTable().ensure(styleName);
     return ensure(page, s, title, content);

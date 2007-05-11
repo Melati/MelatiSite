@@ -69,6 +69,9 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
 
   // programmer's domain-specific code here
 
+  /**
+   * @return the db
+   */
   public SiteDatabaseTables getSiteDatabase() {
     return (SiteDatabaseTables) getDatabase();
   }
@@ -79,6 +82,9 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
   /*
    * public String getDisplayName() { return super.getDisplayname().replace("
    * ","&nbsp;"); }
+   */
+  /**
+   * @return an Enumeration of ancestors
    */
   public Enumeration getAncestors() {
     Vector v = new Vector();
@@ -94,6 +100,9 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
     return reversed.elements();
   }
 
+  /**
+   * @return the numeric url
+   */
   public String getRelativeDisplayUrlById() {
     return "Display/page/" + troid() + ".html";
   }
@@ -116,6 +125,9 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
 
   private CachedSelection divs = null;
 
+  /**
+   * @return the divs
+   */
   public Enumeration getDivs() {
     if (getTroid() == null)
       return EmptyEnumeration.it;

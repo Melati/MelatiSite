@@ -34,6 +34,7 @@ public abstract class SiteServlet extends TemplateServlet {
   /** turn on placement of debugging info into context */
   public static final boolean DEBUG = true;
     
+  /** The path prefix for a template.*/
   public static final String templatePrefix = "org/paneris/melati/site/view/";
   protected static final String STATIC_ROOT = "/dist/MelatiSite/www";
   private String DB_NAME = "site";
@@ -89,6 +90,9 @@ public abstract class SiteServlet extends TemplateServlet {
   public String siteTemplate(String name) {
     return addExtension(getTemplatePrefix() + name);
   }
+  /**
+   * @return the template path prefix
+   */
   public String getTemplatePrefix() {
     return templatePrefix;
   }
@@ -330,6 +334,9 @@ public abstract class SiteServlet extends TemplateServlet {
     return DB_NAME;
   }
 
+  /**
+   * @return the root
+   */
   public String getSTATIC_ROOT() {
     return STATIC_ROOT;
   }

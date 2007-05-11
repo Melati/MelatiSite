@@ -46,6 +46,9 @@ public class LinkTypeTable extends LinkTypeTableBase {
 
   // programmer's domain-specific code here
 
+  /**
+   * @return existing or newly minted LinkType
+   */
   public LinkType ensure(String name, String description) {
     LinkType p = (LinkType)getNameColumn().firstWhereEq(name);
     if (p == null) {
