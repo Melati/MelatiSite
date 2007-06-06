@@ -44,6 +44,9 @@ public class UploadedFileTypeTable extends UploadedFileTypeTableBase {
 
   // programmer's domain-specific code here
 
+  /**
+   * @return existing or newly minted Persistent
+   */
   public UploadedFileType ensure(String type) {
     UploadedFileType p = (UploadedFileType)getTypeColumn().firstWhereEq(type);
     if (p == null) {
