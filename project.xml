@@ -152,7 +152,7 @@ http://sourceforge.net/mailarchive/forum.php?forum=melati-announce
     <dependency>
       <groupId>org.melati</groupId>
       <artifactId>melati</artifactId>
-      <version>0.7.5-RC4</version>
+      <version>0.7.7-RC1</version>
       <url>http://www.melati.org/</url>
       <properties>
          <war.bundle>true</war.bundle>
