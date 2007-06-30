@@ -24,7 +24,7 @@ public class SiteDatabase extends SiteDatabaseBase
       inSession(AccessToken.root, new PoemTask() {
         public void run() {
 
-          homePage = (Page)getPageTable().ensure("Home");
+          homePage = getPageTable().ensure("Home");
 
         }
       });
