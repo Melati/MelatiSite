@@ -78,7 +78,7 @@ ed
       p.setDeleted(false);
       p.makePersistent();
     }
-    return (UploadedImage)p;
+    return p;
   }
 
 }
