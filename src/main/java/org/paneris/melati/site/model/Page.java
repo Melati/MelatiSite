@@ -10,7 +10,7 @@ import org.melati.poem.util.ArrayUtils;
 import org.melati.poem.util.EmptyEnumeration;
 import org.melati.template.MarkupLanguage;
 import org.melati.util.StringUtils;
-import org.melati.util.Treeable;
+import org.melati.poem.Treeable;
 import org.paneris.melati.site.model.generated.PageBase;
 
 /**
@@ -70,7 +70,7 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
   // programmer's domain-specific code here
 
   /**
-   * @return the db
+   * @return the database
    */
   public SiteDatabaseTables getSiteDatabase() {
     return (SiteDatabaseTables) getDatabase();
