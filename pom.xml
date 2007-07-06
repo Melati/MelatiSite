@@ -4,7 +4,7 @@
   <groupId>org.paneris</groupId>
   <artifactId>MelatiSite</artifactId>
   <name>Melati Site</name>
-  <version>0.2</version>
+  <version>0.2.1</version>
   <description>A content management system.</description>
   <url>http://site.paneris.net/</url>
   <issueManagement>
@@ -233,7 +233,7 @@
     <dependency>
       <groupId>org.melati</groupId>
       <artifactId>melati</artifactId>
-      <version>0.7.7-RC1</version>
+      <version>0.7.7-RC2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
