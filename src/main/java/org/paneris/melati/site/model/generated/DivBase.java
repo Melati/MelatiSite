@@ -6,8 +6,8 @@ package org.paneris.melati.site.model.generated;
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Field;
+import org.melati.poem.JdbcPersistent;
 import org.melati.poem.NoSuchRowPoemException;
-import org.melati.poem.Persistent;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.DivTable;
 import org.paneris.melati.site.model.Page;
@@ -20,15 +20,15 @@ import org.paneris.melati.site.model.UploadedImage;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>Div</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+ * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
-public abstract class DivBase extends Persistent {
+public abstract class DivBase extends JdbcPersistent {
 
 
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -40,7 +40,7 @@ public abstract class DivBase extends Persistent {
   * Retrieves the  <code>DivTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the DivTable
   */
   public DivTable getDivTable() {

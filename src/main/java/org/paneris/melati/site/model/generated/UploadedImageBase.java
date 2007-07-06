@@ -16,7 +16,7 @@ import org.paneris.melati.site.model.UploadedImageTable;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>UploadedImage</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+ * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
 public abstract class UploadedImageBase extends UploadedFile {
 
@@ -24,7 +24,7 @@ public abstract class UploadedImageBase extends UploadedFile {
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -36,7 +36,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the  <code>UploadedImageTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedImageTable
   */
   public UploadedImageTable getUploadedImageTable() {

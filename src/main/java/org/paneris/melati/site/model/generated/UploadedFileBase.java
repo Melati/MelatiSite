@@ -7,8 +7,8 @@ import java.sql.Date;
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Field;
+import org.melati.poem.JdbcPersistent;
 import org.melati.poem.NoSuchRowPoemException;
-import org.melati.poem.Persistent;
 import org.melati.poem.User;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.SiteDatabaseTables;
@@ -20,15 +20,15 @@ import org.paneris.melati.site.model.UploadedFileType;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>UploadedFile</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+ * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
-public abstract class UploadedFileBase extends Persistent {
+public abstract class UploadedFileBase extends JdbcPersistent {
 
 
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -40,7 +40,7 @@ public abstract class UploadedFileBase extends Persistent {
   * Retrieves the  <code>UploadedFileTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedFileTable
   */
   public UploadedFileTable getUploadedFileTable() {

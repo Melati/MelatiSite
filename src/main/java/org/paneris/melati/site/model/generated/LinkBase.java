@@ -6,8 +6,8 @@ package org.paneris.melati.site.model.generated;
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Field;
+import org.melati.poem.JdbcPersistent;
 import org.melati.poem.NoSuchRowPoemException;
-import org.melati.poem.Persistent;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.LinkTable;
 import org.paneris.melati.site.model.LinkType;
@@ -19,15 +19,15 @@ import org.paneris.melati.site.model.SiteDatabaseTables;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>Link</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+ * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
-public abstract class LinkBase extends Persistent {
+public abstract class LinkBase extends JdbcPersistent {
 
 
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -39,7 +39,7 @@ public abstract class LinkBase extends Persistent {
   * Retrieves the  <code>LinkTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateBaseJava 
+  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the LinkTable
   */
   public LinkTable getLinkTable() {

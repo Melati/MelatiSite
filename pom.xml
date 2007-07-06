@@ -108,7 +108,7 @@
        <dependency>
         <groupId>org.melati</groupId>
         <artifactId>poem</artifactId>
-        <version>0.7.7-RC1</version>
+        <version>0.7.7-RC2-SNAPSHOT</version>
         <scope>compile</scope>
        </dependency>
       </dependencies>
