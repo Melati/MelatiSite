@@ -54,7 +54,7 @@ public class LinkTypeTable extends LinkTypeTableBase {
     if (p == null) {
       p = (LinkType)newPersistent();
       p.setName(name);
-      p.setDescription(name);
+      p.setDescription(description);
       p.makePersistent();
     }
     return p;
