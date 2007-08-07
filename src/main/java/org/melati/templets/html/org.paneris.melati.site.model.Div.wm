@@ -2,7 +2,7 @@
 <div id="$(object.Style.Name)Title">
 <h3>
 #if($Form.edit != null) #begin
-<a href="$melati.ZoneURL/Admin/$melati.PoemContext.LogicalDatabase/div/$div.troid()/Right?returnTarget&returnURL" 
+<a href="$melati.ZoneURL/Admin/$melati.PoemContext.LogicalDatabase/div/$object.troid()/Right?returnTarget&returnURL" 
    target="admin_record">
 #end
  $ml.rendered($object.Title)
