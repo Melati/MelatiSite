@@ -260,4 +260,42 @@
       <url>scp://www.paneris.net//data/www/MelatiSite</url>
     </site>
   </distributionManagement>
+  <repositories>
+    <repository>
+      <id>melati</id>
+      <name>Melati M2 Repository</name>
+      <url>http://www.melati.org/maven2/</url>
+    </repository>
+    <repository>
+      <id>snapshots</id>
+      <name>Codehaus snapshots</name>
+      <url>http://snapshots.maven.codehaus.org/maven2/</url>
+    </repository>
+   <!-- 
+   <repository>
+     <id>m1</id>
+     <name>Maven 1 Repository</name>
+     <layout>legacy</layout>
+     <url>http://www.ibiblio.org/maven/</url>
+   </repository>
+   <repository>
+     <id>melati1</id>
+     <name>Melati Maven 1 Repository</name>
+     <layout>legacy</layout>
+     <url>http://melati.org/maven/</url>
+   </repository>
+  -->
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>melati</id>
+      <name>Melati M2 Repository</name>
+      <url>http://www.melati.org/maven2/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>snapshots</id>
+      <name>Codehaus snapshots</name>
+      <url>http://snapshots.maven.codehaus.org/maven2/</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
