@@ -1,21 +1,19 @@
-<!-- Start Div.wm -->
+#text #begin
+<!-- Start $Id: -->
+#end
 #if ($object.Title) #begin
 <div class="$(object.Style.Name)Title">
-<h3>
-#if($Form.edit != null) #begin
-<a href="$melati.ZoneURL/Admin/$melati.PoemContext.LogicalDatabase/div/$object.troid()/Right?returnTarget&returnURL" 
-   target="admin_record">
-#end
- $ml.rendered($object.Title)
-#if($Form.edit != null) #begin
-</a>
-#end
-</h3>
+ <h3>
+$ml.rendered($object.Title)
+ </h3>
 </div>
 #end
 #if($object.Content) #begin
 <div class="$(object.Style.Name)Content">
-  $object.Content
+$object.Content
 </div>
 #end
-<!-- End Div.wm -->
+#text #begin
+<!-- End $Id: -->
+#end
+
