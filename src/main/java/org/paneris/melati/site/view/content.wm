@@ -1,24 +1,14 @@
-<!-- start content.wm -->
+#text #begin
+<!-- Start $Source$ -->
+#end
 <div id="content">
 #set $divs = $object.Divs
 #if ($divs.hasMoreElements()) #begin
-#foreach $div in $divs #begin
-   <div class="$(div.Style.Name)Title">
-   <h3>
-#if($Form.edit != null) #begin
-<a href="$melati.ZoneURL/Admin/$melati.PoemContext.LogicalDatabase/div/$div.troid()/Right?returnTarget&amp;returnURL" 
-   target="admin_record">
-$div.Title
-</a>
-#end #else #begin
-$div.Title
-#end
-</h3>
-   </div>
-   <div class="$(div.Style.Name)Content">
-   $div.Content
-   </div>
-#end
+ #foreach $div in $divs #begin
+$ml.rendered($div)
+ #end
 #end 
 </div>
-<!-- end content.wm -->
+#text #begin
+<!-- End $Source$ -->
+#end
