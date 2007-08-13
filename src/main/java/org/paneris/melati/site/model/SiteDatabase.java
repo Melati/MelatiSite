@@ -14,12 +14,13 @@ public class SiteDatabase extends SiteDatabaseBase
   private Page homePage;
   
   public void connect(
+      String name,
       String dbmsclass,
       String url,
       String username,
       String password,
       int maxConnections) {
-      super.connect(dbmsclass, url, username, password, maxConnections);
+      super.connect(name, dbmsclass, url, username, password, maxConnections);
 
       inSession(AccessToken.root, new PoemTask() {
         public void run() {
