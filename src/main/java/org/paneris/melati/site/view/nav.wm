@@ -1,14 +1,51 @@
 <div class="nav">
-#set $url = "/$homePage.RelativeDisplayUrlByContent"
-#if ($Form.style != null) #begin 
+#set $url = "$melati.Database.HomePage.RelativeDisplayUrlByContent"
+#if ($Form && $Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
 #end
-<a href="$url" class="nav">Home</a>
-#foreach $l in $homePage.Children #begin
-#set $url = "/$l.RelativeDisplayUrlByContent"
-#if ($Form.style != null) #begin 
+
+<ul>
+ <li><a href="$url">$melati.Database.HomePage.Displayname</a></li>
+</ul>
+
+#if ($melati.Database.HomePage.Children.length != 0) #begin
+ #foreach $l in $melati.Database.HomePage.Children #begin
+  #set $url = "$l.RelativeDisplayUrlByContent"
+  #if ($Form && $Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
-#end
-&nbsp;&nbsp;<a href="$url" class="nav">$l.Displayname</a>
+  #end
+<ul>
+  
+ <li><a href="$url" class="menuItem">$l.Displayname</a>
+  #if ($l.Children.length != 0) #begin
+
+  <ul>
+   #foreach $l2 in $l.Children #begin
+    #set $url2 = "$l2.RelativeDisplayUrlByContent"
+    #if ($Form && $Form.style != null) #begin 
+     #set $url2 = "$url2?style=$Form.style"
+    #end
+
+   <li><a href="$url2" class="menuItem">$l2.Displayname</a>
+    #if ($l2.Children.length != 0) #begin
+
+    <ul>
+     #foreach $l3 in $l2.Children #begin
+      #set $url3 = "$l3.RelativeDisplayUrlByContent"
+      #if ($Form && $Form.style != null) #begin 
+       #set $url3 = "$url3?style=$Form.style"
+      #end
+
+     <li><a href="$url3"class="menuItem">$l3.Displayname</a></li>
+     #end
+    </ul>
+    #end
+   </li>
+   #end
+  </ul>
+  #end
+ </li>
+</ul>
+ #end
 #end
 </div>
