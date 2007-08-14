@@ -12,7 +12,6 @@ import org.melati.poem.GroupCapabilityTable;
 import org.melati.poem.TableCategoryTable;
 import org.melati.poem.TableInfoTable;
 import org.melati.poem.ColumnInfoTable;
-import org.melati.poem.SettingTable;
 import org.paneris.melati.site.model.PageTable;
 import org.paneris.melati.site.model.DivTable;
 import org.paneris.melati.site.model.TemplateTable;
@@ -22,6 +21,7 @@ import org.paneris.melati.site.model.UploadedFileTypeTable;
 import org.paneris.melati.site.model.StyleTable;
 import org.paneris.melati.site.model.LinkTable;
 import org.paneris.melati.site.model.LinkTypeTable;
+import org.paneris.melati.site.model.SettingTable;
 
 /**
  * Melati POEM generated Database base class.
@@ -36,7 +36,6 @@ public class SiteDatabaseBase extends PoemDatabase {
   private TableCategoryTable tab_tablecategory = null;
   private TableInfoTable tab_tableinfo = null;
   private ColumnInfoTable tab_columninfo = null;
-  private SettingTable tab_setting = null;
   private PageTable tab_page = null;
   private DivTable tab_div = null;
   private TemplateTable tab_template = null;
@@ -46,6 +45,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   private StyleTable tab_style = null;
   private LinkTable tab_link = null;
   private LinkTypeTable tab_linktype = null;
+  private SettingTable tab_setting = null;
 
   protected SiteDatabaseBase() {
     redefineTable(tab_user = new UserTable(this, "user", DefinitionSource.dsd));
@@ -56,7 +56,6 @@ public class SiteDatabaseBase extends PoemDatabase {
     redefineTable(tab_tablecategory = new TableCategoryTable(this, "tablecategory", DefinitionSource.dsd));
     redefineTable(tab_tableinfo = new TableInfoTable(this, "tableinfo", DefinitionSource.dsd));
     redefineTable(tab_columninfo = new ColumnInfoTable(this, "columninfo", DefinitionSource.dsd));
-    redefineTable(tab_setting = new SettingTable(this, "setting", DefinitionSource.dsd));
     redefineTable(tab_page = new PageTable(this, "page", DefinitionSource.dsd));
     redefineTable(tab_div = new DivTable(this, "div", DefinitionSource.dsd));
     redefineTable(tab_template = new TemplateTable(this, "template", DefinitionSource.dsd));
@@ -66,6 +65,7 @@ public class SiteDatabaseBase extends PoemDatabase {
     redefineTable(tab_style = new StyleTable(this, "style", DefinitionSource.dsd));
     redefineTable(tab_link = new LinkTable(this, "link", DefinitionSource.dsd));
     redefineTable(tab_linktype = new LinkTypeTable(this, "linktype", DefinitionSource.dsd));
+    redefineTable(tab_setting = new SettingTable(this, "setting", DefinitionSource.dsd));
   }
 
 
@@ -155,17 +155,6 @@ public class SiteDatabaseBase extends PoemDatabase {
   */
   public ColumnInfoTable getColumnInfoTable() {
     return tab_columninfo;
-  }
-
-
- /**
-  * Retrieves the SettingTable table.
-  *
-  * @generator org.melati.poem.prepro.TableDef#generateTableAccessorJava 
-  * @return the SettingTable from this database
-  */
-  public SettingTable getSettingTable() {
-    return tab_setting;
   }
 
 
@@ -266,6 +255,17 @@ public class SiteDatabaseBase extends PoemDatabase {
   */
   public LinkTypeTable getLinkTypeTable() {
     return tab_linktype;
+  }
+
+
+ /**
+  * Retrieves the SettingTable table.
+  *
+  * @generator org.melati.poem.prepro.TableDef#generateTableAccessorJava 
+  * @return the org.melati.poem.SettingTable from this database
+  */
+  public org.melati.poem.SettingTable getSettingTable() {
+    return (org.melati.poem.SettingTable)tab_setting;
   }
 }
 

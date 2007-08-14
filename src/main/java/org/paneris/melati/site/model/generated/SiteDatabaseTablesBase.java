@@ -2,7 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
-// 20 tables in database
+// 21 tables in database
 import org.melati.poem.UserTable;
 import org.melati.poem.GroupTable;
 import org.melati.poem.CapabilityTable;
@@ -12,7 +12,7 @@ import org.melati.poem.TableCategoryTable;
 import org.melati.poem.TableInfoTable;
 // abstract import org.melati.poem.ValueInfoTable;
 import org.melati.poem.ColumnInfoTable;
-import org.melati.poem.SettingTable;
+// hidden import org.melati.poem.SettingTable;
 import org.paneris.melati.site.model.PageTable;
 import org.paneris.melati.site.model.DivTable;
 // abstract import org.paneris.melati.site.model.UploadedFileTable;
@@ -23,6 +23,7 @@ import org.paneris.melati.site.model.UploadedFileTypeTable;
 import org.paneris.melati.site.model.StyleTable;
 import org.paneris.melati.site.model.LinkTable;
 import org.paneris.melati.site.model.LinkTypeTable;
+// hides import org.paneris.melati.site.model.SettingTable;
 
 /**
  * Melati POEM generated base interface to the tables in 
@@ -96,14 +97,6 @@ public interface SiteDatabaseTablesBase {
   ColumnInfoTable getColumnInfoTable();
 
  /**
-  * Retrieves the <code>SettingTable</code> table.
-  * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableAccessorDefnJava 
-  * @return the SettingTable from this database
-  */
-  SettingTable getSettingTable();
-
- /**
   * Retrieves the <code>PageTable</code> table.
   * 
   * @generator org.melati.poem.prepro.TableDef#generateTableAccessorDefnJava 
@@ -174,6 +167,14 @@ public interface SiteDatabaseTablesBase {
   * @return the LinkTypeTable from this database
   */
   LinkTypeTable getLinkTypeTable();
+
+ /**
+  * Retrieves the <code>SettingTable</code> tableas a  <code>org.melati.poem.SettingTable</code>.
+  * 
+  * @generator org.melati.poem.prepro.TableDef#generateTableAccessorDefnJava 
+  * @return the org.melati.poem.SettingTable from this database
+  */
+  org.melati.poem.SettingTable getSettingTable();
 }
 
 
