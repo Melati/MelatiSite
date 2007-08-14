@@ -161,7 +161,6 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
         k++;
       }
     }
-    System.out.println("length:" + kids.length + " j:" + j + " k:" + k);
     return children;
   }
 
