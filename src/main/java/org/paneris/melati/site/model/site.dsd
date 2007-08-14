@@ -322,4 +322,9 @@ table LinkType
       (searchability = primary);
 }
 
+table Setting extends org.melati.poem.Setting
+    (displayorder = 3040)  {
+  // So we have our own local version
+}
+
 
