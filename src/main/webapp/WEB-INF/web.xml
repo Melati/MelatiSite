@@ -5,7 +5,7 @@
   "http://java.sun.com/dtd/web-app_2_3.dtd">
 
   <!-- ============================================================= -->
-  <!--  A simple Servlet 2.2 setup for Melati                        -->
+  <!--  A simple Servlet setup for Melati                        -->
   <!--                                                               -->
   <!-- $Date$                                  -->
   <!-- $Author$                                               -->
@@ -98,16 +98,6 @@
     <servlet-class>org.melati.login.Logout</servlet-class>
   </servlet>
   
-<!-- examples/contacts setup -->
-  <servlet>
-    <servlet-name>org.melati.example.contacts.Search</servlet-name>
-    <servlet-class>org.melati.example.contacts.Search</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>org.melati.example.contacts.ContactView</servlet-name>
-    <servlet-class>org.melati.example.contacts.ContactView</servlet-class>
-  </servlet>
-
 
 <!-- site Specific -->
   <servlet>
