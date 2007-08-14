@@ -1,5 +1,11 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
 #if ($Form.style == "plain") #begin 
 #include as template "org/paneris/melati/site/view/bodyPlain.wm"
 #end #else #begin
 #include as template "$mainTemplet"
+#end
+#text #begin
+<!-- End $Source$ -->
 #end
