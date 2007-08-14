@@ -1,0 +1,4 @@
+*.lck
+*.backup
+*.log
+*.properties
