@@ -65,11 +65,11 @@
     <url>http://www.paneris.net/</url>
   </organization>
   <build>
-    <sourceDirectory>src/main</sourceDirectory>
-    <testSourceDirectory>src/test</testSourceDirectory>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/test/java</testSourceDirectory>
     <resources>
       <resource>
-        <directory>src/main</directory>
+        <directory>src/main/java</directory>
         <includes>
           <include>**/*.wm</include>
           <include>**/*.dsd</include>
@@ -81,12 +81,6 @@
           <include>**/*.properties</include>
         </includes>
       </resource-->
-      <resource>
-        <directory>www</directory>
-        <includes>
-          <include>**/*.css</include>
-        </includes>
-      </resource>
     </resources>
     <plugins>
      <plugin>
@@ -114,6 +108,43 @@
       </dependencies>
      </plugin>
 
+    <!-- Copy the images etc to melati-static, side effect is that the java files end up there too ! -->
+    <plugin>
+     <groupId>org.codehaus.mojo</groupId>
+     <artifactId>dependency-maven-plugin</artifactId>
+     <executions>
+       <execution>
+         <id>unzip-resources</id>
+         <phase>generate-resources</phase>
+         <goals>
+           <goal>unpack</goal>
+         </goals>
+         <configuration>
+           <artifactItems>
+             <artifactItem>
+               <groupId>org.melati</groupId>
+               <artifactId>melati</artifactId>
+               <version>0.7.8-RC1-SNAPSHOT</version>
+               <classifier>sources</classifier>
+             </artifactItem>
+           </artifactItems>
+           <outputDirectory>${basedir}/src/main/webapp</outputDirectory>
+           <excludes>**org**</excludes>
+         </configuration>
+       </execution>
+     </executions>
+    </plugin>
+    <plugin>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>maven-jetty-plugin</artifactId>
+      <configuration>
+       <contextPath>/</contextPath>
+       <scanTargets>
+        <scanTarget>${basedir}/src/main/webapp</scanTarget>
+       </scanTargets>
+       <scanIntervalSeconds>10</scanIntervalSeconds>
+      </configuration>
+    </plugin>
      <plugin>
        <artifactId>maven-compiler-plugin</artifactId>
        <configuration>
