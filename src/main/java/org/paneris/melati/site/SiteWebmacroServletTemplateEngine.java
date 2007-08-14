@@ -26,7 +26,7 @@ public class SiteWebmacroServletTemplateEngine extends WebmacroServletTemplateEn
    */
   public SiteWebmacroServletTemplateEngine() {
     super();
-    roots.add("org/paneris/melati/site/view/");
+    addRoot("org/paneris/melati/site/view");
   }
 
 }
