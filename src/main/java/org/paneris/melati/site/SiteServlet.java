@@ -39,8 +39,9 @@ public abstract class SiteServlet extends TemplateServlet {
   protected static final String STATIC_ROOT = "/dist/MelatiSite/www";
   private String DB_NAME = "site";
 
-  /* (non-Javadoc)
-   * @see org.melati.servlet.ConfigServlet#doConfiguredRequest(org.melati.Melati)
+  /** 
+   * {@inheritDoc}
+   * @see org.melati.servlet.PoemServlet#doConfiguredRequest(org.melati.Melati)
    */
   protected void doConfiguredRequest(final Melati melati)
       throws ServletException, IOException {
