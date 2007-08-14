@@ -115,7 +115,7 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
   }
 
   /**
-   * XML does not allow forward slashes in Is, so we use periods.
+   * XML does not allow forward slashes in Ids, so we use periods.
    * 
    * @return The table name, a period followed by the troid.
    */
