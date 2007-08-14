@@ -265,7 +265,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * @return the org.melati.poem.SettingTable from this database
   */
   public org.melati.poem.SettingTable getSettingTable() {
-    return (org.melati.poem.SettingTable)tab_setting;
+    return tab_setting;
   }
 }
 
