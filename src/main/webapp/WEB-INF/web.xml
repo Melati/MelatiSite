@@ -5,11 +5,11 @@
   "http://java.sun.com/dtd/web-app_2_3.dtd">
 
   <!-- ============================================================= -->
-  <!--  A simple Servlet setup for Melati                        -->
+  <!--  A simple Servlet setup for Melati                            -->
   <!--                                                               -->
   <!-- $Date$                                  -->
   <!-- $Author$                                               -->
-  <!--                                                               -->
+  <!-- $Source$  -->
   <!-- ============================================================= -->
 <web-app>
 
@@ -286,6 +286,24 @@
   <servlet-mapping>
     <servlet-name>org.paneris.melati.site.Display</servlet-name>
     <url-pattern>/Display/*</url-pattern>
+  </servlet-mapping>
+
+
+
+<!-- Generated from DB (Site) to configure init params -->
+
+  <!-- Page Home (Home) -->
+  <servlet>
+    <servlet-name>ConfiguredHome</servlet-name>
+    <servlet-class>org.paneris.melati.site.Display</servlet-class>
+    <init-param>
+      <param-name>pathinfo</param-name>
+      <param-value>page/Home.html</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConfiguredHome</servlet-name>
+    <url-pattern>/Home.html</url-pattern>
   </servlet-mapping>
 
 
