@@ -1,0 +1,32 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
+<div class="defaultContent">
+<h1>$melati.Database.HomePage.Displayname</h1>
+#set $object = $melati.Database.HomePage
+#include as template "$melati.templateName("content")"
+#if ($melati.Database.HomePage.Children.length != 0) #begin
+ #foreach $l in $melati.Database.HomePage.Children #begin
+<h2>$l.Displayname</h2>
+  #set $object = $l
+  #include as template "$melati.templateName("content")"
+  #if ($l.Children.length != 0) #begin
+   #foreach $l2 in $l.Children #begin
+   <h3>$l2.Displayname</h3>
+    #set $object = $l2
+    #include as template "$melati.templateName("content")"
+    #if ($l2.Children.length != 0) #begin
+     #foreach $l3 in $l2.Children #begin
+     <h4>$l3.Displayname</h4>
+      #set $object = $l3
+      #include as template "$melati.templateName("content")"
+     #end
+    #end
+   #end
+  #end
+ #end
+#end
+</div>
+#text #begin
+<!-- End $Source$ -->
+#end
