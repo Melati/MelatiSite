@@ -12,6 +12,8 @@ public class SiteDatabase extends SiteDatabaseBase
   // programmer's domain-specific code here
 
   private Page homePage;
+  private Setting description;
+  private Setting keywords;
   
   public void connect(
       String name,
@@ -26,6 +28,18 @@ public class SiteDatabase extends SiteDatabaseBase
         public void run() {
 
           homePage = getPageTable().ensure("Home");
+          description =
+            (Setting)getSettingTable().ensure(
+                "description",
+                "A site developed using MelatiSite.",
+                "Site description",
+                "Descriptive text used in meta tags");
+          keywords =
+            (Setting)getSettingTable().ensure(
+                "keywords",
+                "MelatiSite, Melati, PanEris",
+                "Site keywords",
+                "Comma separated values for use in keywords meta tag");
 
         }
       });
@@ -37,6 +51,20 @@ public class SiteDatabase extends SiteDatabaseBase
   public Page getHomePage() {
     return homePage;
   }
+
+  /**
+   * @return the description 
+   */
+  public String getDescription() {
+    return description.getValue();
+  }
+  /**
+   * @return the keywords
+   */
+  public String getKeywords() {
+    return keywords.getValue();
+  }
+  
 }
 
 
