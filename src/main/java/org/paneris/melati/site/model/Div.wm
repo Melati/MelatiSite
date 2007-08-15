@@ -1,18 +1,28 @@
 #text #begin
 <!-- Start $Source$ -->
 #end
+
+<div class="$(object.Style.Name)Content">
+#if ($object.Image) #begin
+  <div class="divImageHolder"
+  ><img src="$div.Image.Url" height="$div.Image.Height" width="$div.Image.Width" alt="$div.Image.Description" title="$div.Image.Description" 
+  /></div>
+#end
 #if ($object.Title) #begin
-<div class="$(object.Style.Name)Title">
- <h3>
+ <div class="$(object.Style.Name)Title">
+
+  <h3>
 $ml.rendered($object.Title)
- </h3>
-</div>
+  </h3>
+  
+ </div>
 #end
 #if($object.Content) #begin
-<div class="$(object.Style.Name)Content">
+ <div class="$(object.Style.Name)Content">
 $object.Content
-</div>
+ </div>
 #end
+</div>
 #text #begin
 <!-- End $Source$ -->
 #end
