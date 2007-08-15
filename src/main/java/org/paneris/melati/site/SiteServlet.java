@@ -31,11 +31,9 @@ import org.melati.util.StringUtils;
  */
 public abstract class SiteServlet extends TemplateServlet {
 
-  /** turn on placement of debugging info into context */
+  /** Turn on placement of debugging info into context */
   public static final boolean DEBUG = true;
     
-  /** The path prefix for a template.*/
-  public static final String templatePrefix = "org/paneris/melati/site/view/";
   protected static final String STATIC_ROOT = "/dist/MelatiSite/www";
   private String DB_NAME = "site";
 
@@ -63,7 +61,7 @@ public abstract class SiteServlet extends TemplateServlet {
       System.err.println("pathinfo:" + pathInfo);
       System.err.println("Ref:" + melati.getRequest().getHeader("Referer"));
       String referer = melati.getRequest().getHeader("Referer");
-      // FIXME IE leaves referer empty in redirects !!
+      // IE leaves referer empty in redirects !!
       if (referer != null  && referer.indexOf(pathInfo) == -1) {
         melati.getResponse().sendRedirect(pathInfo);
         return;
@@ -80,21 +78,6 @@ public abstract class SiteServlet extends TemplateServlet {
     System.err.println("FS:" + fsName + " " + it.exists());
     return it.exists();    
   }
-  
-  /**
-   * Add template prefix and extension to template name.
-   * @param name the simple name of the template.
-   * @return the fully qualified name of template on CLASSPATH
-   */
-  public String siteTemplate(String name) {
-    return addExtension(getTemplatePrefix() + name);
-  }
-  /**
-   * @return the template path prefix
-   */
-  public String getTemplatePrefix() {
-    return templatePrefix;
-  }
 
   /**
    * Concrete class for {@link TemplateServlet}.
@@ -105,7 +88,7 @@ public abstract class SiteServlet extends TemplateServlet {
    */
   protected String doTemplateRequest(Melati melati, ServletTemplateContext context)
       throws Exception {
-    return siteTemplate(reallyDoTemplateRequest(melati, context));
+    return melati.templateName(reallyDoTemplateRequest(melati, context));
   }
 
   /**
