@@ -151,7 +151,7 @@ public class TemplateTableBase extends UploadedFileTable {
           }
 
           protected String defaultDescription() {
-            return "Path in the file system relative to template root";
+            return "Key by which template engine can locate template, no need for extension";
           }
 
           protected int defaultWidth() {

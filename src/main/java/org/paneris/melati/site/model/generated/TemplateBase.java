@@ -53,7 +53,8 @@ public abstract class TemplateBase extends UploadedFile {
   */
   protected Integer id;
  /**
-  * url - Path in the file system relative to template root 
+  * url - Key by which template engine can locate template, no need for 
+  * extension 
   */
   protected String url;
 
@@ -182,7 +183,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Retrieves the Url value, with locking, for this 
   * <code>Template</code> <code>Persistent</code>.
   * Field description: 
-  *   Path in the file system relative to template root 
+  *   Key by which template engine can locate template, no need for extension 
   * 
   * @generator org.melati.poem.prepro.AtomFieldDef#generateBaseMethods 
   * @throws AccessPoemException 
@@ -203,7 +204,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Sets the <code>Url</code> value, with checking, for this 
   * <code>Template</code> <code>Persistent</code>.
   * Field description: 
-  *   Path in the file system relative to template root 
+  *   Key by which template engine can locate template, no need for extension 
   * 
   * @generator org.melati.poem.prepro.AtomFieldDef#generateBaseMethods  
   * @param cooked  a validated <code>int</code> 

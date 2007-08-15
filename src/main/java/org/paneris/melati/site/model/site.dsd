@@ -178,7 +178,7 @@ table Template extends UploadedFile
       (displaylevel = record);
 
   String url (size=unlimited) (width=40)
-      (description = "Path in the file system relative to template root")
+      (description = "Key by which template engine can locate template, no need for extension")
       (displaylevel = primary)
       (displayorderpriority = 0)
       (renderinfo = "Upload")
