@@ -1,0 +1,11 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
+<div id="menu">
+
+#include as template "$melati.templateName("nav")"
+
+</div>
+#text #begin
+<!-- End $Source$ -->
+#end

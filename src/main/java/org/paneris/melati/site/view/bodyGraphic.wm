@@ -2,7 +2,7 @@
 <!-- Start $Source$ -->
 #end
 <body bgcolor="#ffffff" >
-#include as template "$melati.templateName("nav")"
+#include as template "$melati.templateName("menu")"
 
 
 #include as template "$contentTemplet"

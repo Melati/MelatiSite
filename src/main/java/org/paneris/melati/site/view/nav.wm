@@ -1,7 +1,9 @@
+#comment #begin
+This template does not have a div associated, so that the bodyPlain menu is not css styled.
+#end
 #text #begin
 <!-- Start $Source$ -->
 #end
-<div id="menu">
 #set $url = "$melati.Database.HomePage.RelativeDisplayUrlByContent"
 #if ($Form && $Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
@@ -51,7 +53,6 @@
 </ul>
  #end
 #end
-</div>
 #text #begin
 <!-- End $Source$ -->
 #end

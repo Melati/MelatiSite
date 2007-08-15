@@ -7,13 +7,13 @@
 #if ($Form && $Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
 #end
-<a href="$url" class="nav">$melati.Database.HomePage.Displayname</a>
+<a href="$url" >$melati.Database.HomePage.Displayname</a>
 #foreach $l in $melati.Database.HomePage.Children #begin
 #set $url = "$l.RelativeDisplayUrlByContent"
 #if ($Form && $Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
 #end
-&nbsp;&nbsp;<a href="$url" class="nav">$l.Displayname</a>
+&nbsp;&nbsp;<a href="$url" >$l.Displayname</a>
 #end
 
 </div>
