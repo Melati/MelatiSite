@@ -5,7 +5,11 @@
 <div class="$(object.Style.Name)Content">
 #if ($object.Image) #begin
   <div class="divImageHolder"
-  ><img src="$div.Image.Url" height="$div.Image.Height" width="$div.Image.Width" alt="$div.Image.Description" title="$div.Image.Description" 
+  ><img src="$object.Image.Url" 
+        height="$object.Image.Height" 
+        width="$object.Image.Width" 
+        alt="$object.Image.Description" 
+        title="$object.Image.Description" 
   /></div>
 #end
 #if ($object.Title) #begin
