@@ -1,7 +1,8 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
 #set $ml = $melati.HTMLMarkupLanguage
 $melati.setVariableExceptionHandler($melati.PassbackVariableExceptionHandler)
-
-<!-- start content.wm -->
 <div id="content">
 <div class="defaultTitle">
 <h3>
@@ -38,8 +39,11 @@ We will be in touch with the latest news and special offers.
 The following message has been sent:
 </p>
 <div style="border: 1px solid black;">
-#include "org/paneris/wvm/view/HtmlMessage.wm"
+#include "$melati.templateName("HtmlMessage")"
 </div>
 #end
 </div>
-<!-- end content.wm -->
+
+#text #begin
+<!-- End $Source$ -->
+#end

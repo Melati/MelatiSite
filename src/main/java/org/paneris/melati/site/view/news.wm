@@ -1,12 +1,18 @@
 #set $Response.ContentType = "text/html"
+#text #begin
+<!-- Start $Source$ -->
+#end
 #set $ml = $melati.HTMLMarkupLanguage
 #set $onVariableException = $melati.PassbackVariableExceptionHandler
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-#include as template "org/paneris/melati/site/view/head.wm"
-#set $contentTemplet = "org/paneris/melati/site/view/newsContent.wm"
-#set $mainTemplet = "org/paneris/melati/site/view/bodyGraphic.wm"
-#include as template "org/paneris/melati/site/view/body.wm"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+#include as template "$melati.templateName("head")"
+#set $contentTemplet = "$melati.templateName("newsContent")"
+#set $mainTemplet = "$melati.templateName("bodyGraphic")"
+#include as template "$melati.templateName("body")"
 </html>
+#text #begin
+<!-- End $Source$ -->
+#end
 
 

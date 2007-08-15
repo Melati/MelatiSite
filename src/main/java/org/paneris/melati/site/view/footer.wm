@@ -1,7 +1,22 @@
-<!-- begin footer.wm -->
+#text #begin
+<!-- Start $Source$ -->
+#end
 <div id="footer">
 
-#include as template "org/paneris/melati/site/view/nav.wm"
+#set $url = "$melati.Database.HomePage.RelativeDisplayUrlByContent"
+#if ($Form && $Form.style != null) #begin 
+#set $url = "$url?style=$Form.style"
+#end
+<a href="$url" class="nav">$melati.Database.HomePage.Displayname</a>
+#foreach $l in $melati.Database.HomePage.Children #begin
+#set $url = "$l.RelativeDisplayUrlByContent"
+#if ($Form && $Form.style != null) #begin 
+#set $url = "$url?style=$Form.style"
+#end
+&nbsp;&nbsp;<a href="$url" class="nav">$l.Displayname</a>
+#end
 
 </div>
-<!-- end footer.wm -->
+#text #begin
+<!-- End $Source$ -->
+#end

@@ -1,4 +1,10 @@
 #set $Response.ContentType = "text/plain"
+#text #begin
+<!-- Start $Source$ -->
+#end
+
+#set $packageName = "org.paneris.melati.site"
+
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!DOCTYPE web-app
@@ -7,7 +13,9 @@
 
 #text #begin
   <!-- ============================================================= -->
-  <!--  A simple Servlet setup for Melati                            -->
+  <!--  A generated Servlet setup for Melati                         -->
+  <!--                                                               -->
+  <!-- BE SURE TO EDIT THE TEMPLATE NOT THE RENDERED RESULT          -->
   <!--                                                               -->
   <!-- $Date$                                  -->
   <!-- $Author$                                               -->
@@ -16,10 +24,9 @@
 #end
 <web-app>
 
-  <display-name>Site</display-name>
+  <display-name>$melati.Database.DisplayName</display-name>
 
 <!-- Register every servlet used in the site -->
-<!-- I don't like this -->
 
   <servlet>
     <servlet-name>org.melati.admin.Admin</servlet-name>
@@ -102,15 +109,15 @@
   </servlet>
   
 
-<!-- site Specific -->
+<!-- $melati.Database.DisplayName Specific -->
   <servlet>
-    <servlet-name>org.paneris.melati.site.Populate</servlet-name>
-    <servlet-class>org.paneris.melati.site.Populate</servlet-class>
+    <servlet-name>$(packageName).Populate</servlet-name>
+    <servlet-class>$(packageName).Populate</servlet-class>
   </servlet>
 
   <servlet>
-    <servlet-name>org.paneris.melati.site.Display</servlet-name>
-    <servlet-class>org.paneris.melati.site.Display</servlet-class>
+    <servlet-name>$(packageName).Display</servlet-name>
+    <servlet-class>$(packageName).Display</servlet-class>
   </servlet>
 
 <!-- Now map them to URLs -->
@@ -272,22 +279,22 @@
     <url-pattern>/Logout/*</url-pattern>
   </servlet-mapping>
 
-<!-- Site specific -->
+<!-- $melati.Database.DisplayName specific -->
   <servlet-mapping>
-    <servlet-name>org.paneris.melati.site.Populate</servlet-name>
-    <url-pattern>/org.paneris.melati.site.Populate/*</url-pattern>
+    <servlet-name>$(packageName).Populate</servlet-name>
+    <url-pattern>/$(packageName).Populate/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>org.paneris.melati.site.Populate</servlet-name>
+    <servlet-name>$(packageName).Populate</servlet-name>
     <url-pattern>/Populate/*</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>org.paneris.melati.site.Display</servlet-name>
-    <url-pattern>/org.paneris.melati.site.Display/*</url-pattern>
+    <servlet-name>$(packageName).Display</servlet-name>
+    <url-pattern>/$(packageName).Display/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>org.paneris.melati.site.Display</servlet-name>
+    <servlet-name>$(packageName).Display</servlet-name>
     <url-pattern>/Display/*</url-pattern>
   </servlet-mapping>
 
@@ -300,7 +307,7 @@
   <!-- Page $page.Name ($page.Displayname) -->
   <servlet>
     <servlet-name>Configured$page.Name</servlet-name>
-    <servlet-class>org.paneris.melati.site.Display</servlet-class>
+    <servlet-class>$(packageName).Display</servlet-class>
     <init-param>
       <param-name>pathinfo</param-name>
       <param-value>page/$page.RelativeDisplayUrlByContent</param-value>
@@ -315,12 +322,12 @@
 
 <!-- End of generated values -->
 
+   <listener>	 
+     <listener-class>org.melati.servlet.PoemServletContextListener</listener-class>
+   </listener>
 </web-app>
 
 
-
-
-
-
-
-
+#text #begin
+<!-- End $Source$ -->
+#end

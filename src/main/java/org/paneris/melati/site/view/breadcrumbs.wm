@@ -1,4 +1,6 @@
-<!-- begin breadcrumbs.wm -->
+#text #begin
+<!-- Start $Source$ -->
+#end
 #if ($object) #begin
 #foreach $a in $object.Ancestors #begin
 #set $url = "$melati.ZoneURL/$a.RelativeDisplayUrlById"
@@ -9,4 +11,6 @@
 #end
 <b>$object.Displayname</b>
 #end
-<!-- end breadcrumbs.wm -->
+#text #begin
+<!-- End $Source$ -->
+#end

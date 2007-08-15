@@ -2,14 +2,13 @@
 <!-- Start $Source$ -->
 #end
 <body bgcolor="#ffffff" >
-#include as template "org/paneris/melati/site/view/nav.wm"
+#include as template "$melati.templateName("nav")"
 
 
 #include as template "$contentTemplet"
 
 
-#include as template "org/paneris/melati/site/view/footer.wm"
-#include as template "org/paneris/melati/site/view/bottom.wm"
+#include as template "$melati.templateName("bottom")"
 
 #text #begin
 <!-- End $Source$ -->

@@ -1,11 +1,17 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
 #set $Response.ContentType = "text/html"
 #set $ml = $melati.HTMLMarkupLanguage
 #set $onVariableException = $melati.PassbackVariableExceptionHandler
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 #include as template "$melati.templateName("head")"
-#set $contentTemplet = $melati.templateName("siteContent")
-#set $mainTemplet = $melati.templateName("bodyGraphic")
+#set $contentTemplet = "$melati.templateName("siteContent")"
+#set $mainTemplet = "$melati.templateName("bodyGraphic")"
 #include as template "$melati.templateName("body")"
 </html>
 
+#text #begin
+<!-- End $Source$ -->
+#end

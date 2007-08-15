@@ -1,3 +1,6 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
 <div class="defaultContent">
 <ul>
 #set $url = "$melati.ZoneURL/$homePage.RelativeDisplayUrlById"
@@ -60,3 +63,6 @@
  </ul>
 </ul>
 </div>
+#text #begin
+<!-- End $Source$ -->
+#end

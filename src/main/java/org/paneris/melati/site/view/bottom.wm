@@ -1,27 +1,31 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
 <div class="colophon">
 <a href="?style=plain&amp;w3c">Text Only</a>
 </div>
 <div class="colophon">
-By <a href='http://paneris.org/'>PanEris</a> using <a href='http://melati.org/'>Melati</a>.
+By <a href='http://paneris.com/'>PanEris</a> using <a href='http://melati.org/'>Melati</a>.
 </div>
 <div  class="copyright">
-Copyright &copy; Melati/Site 2006
+Copyright &copy; $melati.Database.DisplayName 2007
 </div>
 
 #if($Form.w3c != null) #begin
 <div class="validity">
-<br>
- <a href="http://validator.w3.org/check/referer"><img 
+<br />
+ <a href="http://validator.w3.org/check?uri=referer"><img
  border="0"
- src="/images/valid-html401.png"
- alt="Valid HTML 4.01!" height="31" width="88"></a>
+    src="/images/valid-xhtml10-blue.png"
+    alt="Valid XHTML 1.0 Transitional" 
+    height="31" width="88" /></a>
 &nbsp;
  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img 
   border="0"
   width="88"
   height="31" 
   src="/images/vcss.png" 
-  alt="Valid CSS!"></a>
+  alt="Valid CSS!" /></a>
 </div>
 #end
 
@@ -37,6 +41,10 @@ $agent specific code
 #if($Form.edit != null) #begin
 <div class="edit">
 <br>
-<a href="$melati.ZoneURL/Admin/site/page/$object.troid()/Right?returnTarget&amp;returnURL" target="admin_record">Edit</a>
+<a href="$melati.ZoneURL/Admin/$melati.Database.Name/page/$object.troid()/Right?returnTarget&amp;returnURL" target="admin_record">Edit</a>
 </div>
+#end
+
+#text #begin
+<!-- End $Source$ -->
 #end

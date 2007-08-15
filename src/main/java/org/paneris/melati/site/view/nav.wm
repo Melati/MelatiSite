@@ -1,4 +1,8 @@
+#text #begin
+<!-- Start $Source$ -->
+#end
 <div class="nav">
+<div id="menu">
 #set $url = "$melati.Database.HomePage.RelativeDisplayUrlByContent"
 #if ($Form && $Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
@@ -49,3 +53,7 @@
  #end
 #end
 </div>
+</div>
+#text #begin
+<!-- End $Source$ -->
+#end
