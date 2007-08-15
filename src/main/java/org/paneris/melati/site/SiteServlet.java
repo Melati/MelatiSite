@@ -34,7 +34,7 @@ public abstract class SiteServlet extends TemplateServlet {
   /** Turn on placement of debugging info into context */
   public static final boolean DEBUG = true;
     
-  protected static final String STATIC_ROOT = "/dist/MelatiSite/www";
+  protected static final String STATIC_ROOT = "/dist/MelatiSite/src/main/webapp";
   private String DB_NAME = "site";
 
   /** 
