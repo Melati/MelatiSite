@@ -5,7 +5,7 @@
 <title>
 $melati.Database.DisplayName
 #if ($object) #begin
-- $object.Displayname
+ - $object.Displayname
 #end
 </title>
 #if ($baseUrl) #begin
@@ -17,6 +17,7 @@ $melati.Database.DisplayName
 <meta name="keywords" 
       content="$melati.Database.Keywords" />
 #if ($object) #begin
+
 <meta name="description" content="$object.Displayname" />
 #end
 
@@ -56,6 +57,11 @@ body {
 }
 </style>
 <![endif]-->
+
+#if($headTemplet) #begin
+#include as template "$headTemplet"
+#end
+
 </head>
 
 #text #begin

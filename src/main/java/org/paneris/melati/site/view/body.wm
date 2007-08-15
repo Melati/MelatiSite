@@ -2,11 +2,7 @@
 <!-- Start $Source$ -->
 #end
 
-#if ($Form.style == "plain") #begin 
-#include as template "$melati.templateName("bodyPlain")"
-#end #else #begin
-#include as template "$mainTemplet"
-#end
+#include as template "$bodyTemplet"
 
 #text #begin
 <!-- End $Source$ -->
