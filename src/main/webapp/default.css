@@ -1,11 +1,15 @@
 /* Default HTML 2 CSS */
+HTML, BODY {
+ height: 100%;
+}
 BODY {
   font-family: "Century Gothic", sans-serif, Helvetica;
   line-height: 1.1;
-  background: white;
+ font-size: 11px;
+ background-color: #FFFFFF;
   color: black;
-  font-size: 11px;
   border: 0px;
+ width: 100%;
   margin: 0px;
 }
 
@@ -32,12 +36,13 @@ BODY {
 .defaultContent P {
   display: block;
   border-width: 1px;
+  margin-left: 25px;
+  margin-right: 10px;
 }
 .defaultContent A:hover {
   background-color: #d6ebfe;
 }
-
-TH.sales, TD.sales, DIV#content, .salestitle {
+TH.contentTable, TD.contentTable, DIV#content, .contentTableTitle {
   font-family: "Century Gothic", Helvetica, sans-serif;
   font-size: 13px;
   font-style: normal;
@@ -50,13 +55,11 @@ TH.sales, TD.sales, DIV#content, .salestitle {
   line-height: 1.2;
   visibility: visible;
 }
-
-TH.sales, .salestitle {
+TH.contentTable, .contentTableTitle {
  font-weight: bolder;
 }
 DIV#content {
-  width : 100%;
-  height : 100%;
+  width : 95%;
   position: relative;
   top: 0px;
   left: 6px;
@@ -65,26 +68,27 @@ DIV#content {
   padding: 7px;
 }
 
-TABLE.sales {
-  position: relative;
+TABLE.contentTable {
+  position: absolute;
   border: solid 1px;
   margin: 8px;
+  overflow:auto;
+  display: table;
 }
-TH.sales {
+TH.contentTable {
   font-weight: bold;
   padding: 6px;
   border: solid 1px;
 }
-TD.sales {
+TD.contentTable {
   border: solid 1px black;
 }
 
-#nav {
-  font-weight : bold;
-  font-family: "Century Gothic", sans-serif, Helvetica;
-  font-size: 13px;
-  
-}
+
+
+
+
+/* bottom matter */
 
 .edit {
   text-align: right;
@@ -93,37 +97,29 @@ TD.sales {
   font-family: "Century Gothic", sans-serif, Helvetica;
   font-size: 10px;
   text-align: right;
+  margin-right: 2px;
 }
 .colophon {
   font-family: "Century Gothic", sans-serif, Helvetica;
   font-size: 10px;
   text-align: left;
 }
+.colophon A {
+ color: black;
+ font-weight: normal;
+ font-size: 10px;
+}
 .validity {
   text-align: right;
 }
-DIV#nav {
-  position: relative;
-  top: 1px;
-  width: 550px;
-}
+
+
 A {
  font-family: "Century Gothic", sans-serif, Helvetica;
 }
-A.link, A.link1 {
- font-family: "Century Gothic", sans-serif, Helvetica;
+
+A.link {
  font-size: 11px;
-}
-A.nav{
-	font-family : "Century Gothic", sans-serif, Helvetica;
-	font-weight : bold;
-	font-style : normal;
-	font-size : 10pt;
-}
-A.nav:link { color: #000033; text-decoration: none; }          /* unvisited link */
-A.nav:visited { color: #333333; text-decoration: none; }        /* visited links */
-A.nav:active { color: #993333; text-decoration: none; }        /* active links */
-A.nav:Hover { color: #006633; background-color: #FFFFFF;
 }
 
 
@@ -133,41 +129,68 @@ DIV#frontPageImage {
  background-repeat:repeat;
  width: 100%;
 }
+
 H1, H2, H3, H4, H5, H6, P, UL, OL, DIR, MENU, DIV,
 DT, DD, ADDRESS, BLOCKQUOTE, PRE, BR, HR, FORM, DL {
-  display: block; }
+ display: block;
+}
 
-P {padding-top: 1px; padding-bottom: 1px; margin-top: 2px; margin-bottom: 4px;}
+P {
+ padding-top: 1px; 
+ padding-bottom: 1px; 
+ margin-top: 2px; 
+ margin-bottom: 4px;
+ font-size: 13px;
+}
 
 B, STRONG, I, EM, CITE, VAR, TT, CODE, KBD, SAMP,
 IMG, SPAN { display: inline }
 
-LI { display: list-item }
+LI { 
+ font-size: 11pt;
+ display: list-item;
+}
 
-H1, H2, H3, H4, H5, H6 { margin-top: 1px; }
+
+H1, H2, H3 { margin-top: 18px; }
+H4, H5, H6 { margin-top: 1px; }
 H1, H2, H3, H4, H5, H6 { font-weight: bold }
 H1 { margin-bottom: 3px ;}
 H2, H3, H4, H5, H6 { margin-bottom: 2px ;}
 H4, H5 { font-style: italic }
 
-H1 { font-size: 15px; }
-H2 { font-size: 14px; }
+H1 { font-size: 16px; }
+H2 { font-size: 16px; }
+H3 { font-size: 16px; }
 
 
 B, STRONG { font-weight: bolder }  /* relative to the parent */
-I, CITE, EM, VAR, ADDRESS, BLOCKQUOTE { font-style: italic }
+I, CITE, EM, VAR { font-style: italic }
+ADDRESS, BLOCKQUOTE { font-style: normal }
 PRE, TT, CODE, KBD, SAMP { font-family: monospace }
 
 PRE { white-space: pre }
 
 ADDRESS { }
-BLOCKQUOTE { margin-left: 1em; margin-right: 5em; border:1px solid;}
+BLOCKQUOTE {
+  margin-left: 1em;
+  margin-right: 5em;
+  border:1px solid;
+}
 
-UL, DIR { list-style: disc; }
+UL, DIR {
+ list-style: disc; 
+}
 OL { list-style: decimal;}
-UL, OL, DIR { border: 1px solid; margin:1px; width:63%; }
-MENU { margin: 0 }                  /* tight formatting */
-LI { margin-left: 1em }
+UL, OL, DIR { 
+ /* border: 1px solid;  */
+ /* margin:1px;  */
+ /* width:63%;  */
+}
+MENU { margin: 0 }   
+LI {
+  /* margin-left: 1em  */
+}
 
 DT { margin-bottom: 0 }
 DD { margin-top: 0; margin-left: 3em }
@@ -186,53 +209,6 @@ A:link IMG {  }
 A:visited IMG { }
 A:active IMG { }
 
-/* Portal Styles */
-.hdr1 {
-	font-family: "Century Gothic", Helvetica, sans-serif;
-	font-size: 14px;
-	font-weight: normal;
-	color: #666666;
-	line-height: normal;
-	word-spacing: 1pt;
-	letter-spacing: 1px;
-
-
-}
-.lbtitle {
-	font-family: "Century Gothic", Helvetica, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: normal;
-	color: #333333;
-	text-decoration: underline;
-	letter-spacing: 1pt;
-	word-spacing: 1pt;
-}
-.help {
-	font-family: "Century Gothic", Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	font-weight: normal;
-	color: #666666;
-	letter-spacing: 1pt;
-	word-spacing: 1pt;
-}
-
-P, .body1 {
-        font-family: "Century Gothic", Helvetica, sans-serif;
-        font-size: 13px;
-        font-style: normal;
-        color: #000000;
-		letter-spacing : normal;
-}
-.body1bld {
-        font-family: "Century Gothic", Helvetica, sans-serif;
-        font-size: 12px;
-        font-style: normal;
-        color: #000000;
-        font-weight: bold;
-	letter-spacing: 1px;
-}
 /*
 Email specific additions 
 */
@@ -300,3 +276,137 @@ TD.castleImage{
   height: 285px !important;
   max-height: 285px !important;
 }
+
+.contact {
+}
+.body1 {
+  font-family: "Century Gothic", sans-serif, Helvetica;
+  line-height: 1.1;
+  background: white;
+  color: black;
+  font-size: 10pt;
+  border: 0px;
+  margin: 0px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+/**************** menu coding *****************/
+.menu {
+  background-repeat: repeat-x;
+  /* background-color: #8B3A41; */
+}
+
+#menu {
+  white-space: nowrap;
+  float: left;
+  font-family: Trebuchet, Geneva, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: bold;
+  color: #666666; 
+  background-color: #B2D986;
+  background-image: url(images/Navbar_rgt_tile.jpg);
+  background-repeat: repeat;
+  position: relative; 
+  visibility: visible;
+  height: 17px;
+  /* left: 162px; */
+  /* top: 73px; */
+  margin: 0px;
+  padding: 0px;
+  text-indent: 5px;
+  vertical-align: middle;
+  line-height: 22px;
+  letter-spacing: 0.12em;
+  display: table;
+  width: 785px;;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  z-index: 5;
+  /* background-color: #000000; */
+  display: block;
+  position: static;
+  border: 0px solid blue;
+  width:auto;
+  /* max-width:110px; */
+  /* See head.wm for width expression */
+}
+
+#menu>ul {
+  width:auto;
+  max-width: 150px;
+  min-width: 110px;
+}
+
+#menu a {
+ display: block;
+ margin-left : 2px;
+ margin-right : 2px;
+ text-decoration: none;
+ color: #000000;
+ font-size: 11px;
+ font-style: normal;
+ font-weight: bold;
+ border:none;
+}
+
+#menu a:hover {
+  color: #000000;
+  background-color: #B2D986;
+  background-image: url(images/Navbar_rgt_tile.jpg); 
+ /* background-image: url(images/green_menu_bac.gif) */
+}
+
+#menu li {
+  white-space: nowrap;
+  position: relative;
+  border: 0px solid green;
+}
+#menu ul li {
+ display: block;
+}
+
+#menu ul ul {
+ position: absolute;
+ z-index: 10;
+ min-width: 120px;
+ white-space: nowrap;
+ text-align:left;
+}
+
+#menu ul ul ul {
+ position: absolute;
+ top: 0;
+ z-index: 20;
+/* left: 100%;*/
+}
+
+div#menu ul ul,
+div#menu ul li:hover ul ul,
+div#menu ul ul li:hover ul ul
+{
+  position: absolute;
+  display: none;
+}
+
+div#menu ul li:hover ul,
+div#menu ul ul li:hover ul,
+div#menu ul ul ul li:hover ul
+{
+  position: absolute;
+  display: block;
+  background-color: #B2D986;
+  z-index: 30;
+}
+
+/* Menu Item A tags */
+.menuItem {
+}
+
