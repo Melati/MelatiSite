@@ -29,9 +29,10 @@ $melati.Database.DisplayName
 <link rel="stylesheet" type="text/css" media="screen" title="Default" href="default.css" />
 #end
 <link rel="stylesheet" title="Plain" href="printer.css" type="text/css" media="print" />
+#text #begin 
 <!--[if IE]>
 <style type="text/css" media="screen">
- \#menu ul li {
+ #menu ul li {
    float: left; width: 100%;
  }
 </style>
@@ -42,21 +43,22 @@ body {
   font-size: 100%;
   behavior: url("/csshover2.htc");
 }
-\#pageBody {
+ #pageBody {
   /* width:expression(document.body.clientWidth > 1024? "1024px": "auto" ); */
 }
-\#menu ul li a {
+ #menu ul li a {
   height: 1%;
  }
-\#menu ul {
+ #menu ul {
   width:expression("110" + "px"); 
 }
 
-\#menu a, \#menu h2 {
+ #menu a, #menu h2 {
 /* font: bold 0.7em/1.4em arial, helvetica, sans-serif; */
 }
 </style>
 <![endif]-->
+#end 
 
 #if($headTemplet) #begin
 #include as template "$headTemplet"
