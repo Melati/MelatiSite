@@ -108,6 +108,42 @@
       </dependencies>
      </plugin>
 
+     <plugin>
+       <groupId>org.codehaus.mojo</groupId>
+       <artifactId>exec-maven-plugin</artifactId>
+       <executions>
+         <execution>
+          <id>generateWebXml</id>
+          <phase>test</phase>
+           <goals>
+             <goal>java</goal>
+           </goals>
+         </execution>
+       </executions>
+       <configuration>
+         <mainClass>org.melati.app.TemplateApp</mainClass>
+         <arguments>
+           <argument>${artifactId}</argument>
+           <argument>page</argument>
+           <argument>0</argument>
+           <argument>org/paneris/melati/site/view/web.xml</argument>
+           <argument>-output</argument>
+           <argument>web.xml</argument>
+         </arguments>
+         <cleanupDaemonThreads>true</cleanupDaemonThreads>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.wm</include>
+          <include>**/*.dsd</include>
+        </includes>
+      </resource>
+    </resources>
+       </configuration>
+    </plugin>
+
     <!-- Copy the images etc to melati-static, side effect is that the java files end up there too ! -->
     <plugin>
      <groupId>org.codehaus.mojo</groupId>
