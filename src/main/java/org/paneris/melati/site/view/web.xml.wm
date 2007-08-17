@@ -1,10 +1,12 @@
+#if ($Response) #begin
 #set $Response.ContentType = "text/plain"
-#text #begin
-<!-- Start $Source$ -->
 #end
 
-#set $packageName = "org.paneris.melati.site"
-
+#if ($Form.package) #begin
+ #set $packageName = $Form.package
+#end #else #begin
+ #set $packageName = "org.paneris.melati.site"
+#end
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!DOCTYPE web-app
@@ -19,7 +21,6 @@
   <!--                                                               -->
   <!-- $Date$                                  -->
   <!-- $Author$                                               -->
-  <!-- $Source$  -->
   <!-- ============================================================= -->
 #end
 <web-app>
@@ -64,16 +65,6 @@
   </servlet>
 
   <servlet>
-    <servlet-name>org.melati.test.CharsetServletTest</servlet-name>
-    <servlet-class>org.melati.test.CharsetServletTest</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>org.melati.test.CharsetTemplateServletTest</servlet-name>
-    <servlet-class>org.melati.test.CharsetTemplateServletTest</servlet-class>
-  </servlet>
-
-  <servlet>
     <servlet-name>org.melati.test.TemplateServletTest</servlet-name>
     <servlet-class>org.melati.test.TemplateServletTest</servlet-class>
   </servlet>
@@ -81,6 +72,16 @@
   <servlet>
     <servlet-name>org.melati.test.TemplateServletTestOverride</servlet-name>
     <servlet-class>org.melati.test.TemplateServletTestOverride</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>org.melati.test.CharsetServletTest</servlet-name>
+    <servlet-class>org.melati.test.CharsetServletTest</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>org.melati.test.CharsetTemplateServletTest</servlet-name>
+    <servlet-class>org.melati.test.CharsetTemplateServletTest</servlet-class>
   </servlet>
 
   <servlet>
@@ -197,24 +198,6 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>org.melati.test.CharsetServletTest</servlet-name>
-    <url-pattern>/melati/org.melati.test.CharsetServletTest/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>org.melati.test.CharsetServletTest</servlet-name>
-    <url-pattern>/org.melati.test.CharsetServletTest/*</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-    <servlet-name>org.melati.test.CharsetTemplateServletTest</servlet-name>
-    <url-pattern>/melati/org.melati.test.CharsetTemplateServletTest/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>org.melati.test.CharsetTemplateServletTest</servlet-name>
-    <url-pattern>/org.melati.test.CharsetTemplateServletTest/*</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
     <servlet-name>org.melati.test.TemplateServletTest</servlet-name>
     <url-pattern>/melati/org.melati.test.TemplateServletTest/*</url-pattern>
   </servlet-mapping>
@@ -232,6 +215,24 @@
     <url-pattern>/org.melati.test.TemplateServletTestOverride/*</url-pattern>
   </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>org.melati.test.CharsetServletTest</servlet-name>
+    <url-pattern>/melati/org.melati.test.CharsetServletTest/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>org.melati.test.CharsetServletTest</servlet-name>
+    <url-pattern>/org.melati.test.CharsetServletTest/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>org.melati.test.CharsetTemplateServletTest</servlet-name>
+    <url-pattern>/melati/org.melati.test.CharsetTemplateServletTest/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>org.melati.test.CharsetTemplateServletTest</servlet-name>
+    <url-pattern>/org.melati.test.CharsetTemplateServletTest/*</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>org.melati.test.FlushingServletTest</servlet-name>
     <url-pattern>/melati/org.melati.test.FlushingServletTest/*</url-pattern>
@@ -327,7 +328,3 @@
    </listener>
 </web-app>
 
-
-#text #begin
-<!-- End $Source$ -->
-#end
