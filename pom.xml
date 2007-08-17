@@ -75,12 +75,6 @@
           <include>**/*.dsd</include>
         </includes>
       </resource>
-      <!--resource>
-        <directory>src/conf</directory>
-        <includes>
-          <include>**/*.properties</include>
-        </includes>
-      </resource-->
     </resources>
     <plugins>
      <plugin>
@@ -115,33 +109,41 @@
          <execution>
           <id>generateWebXml</id>
           <phase>test</phase>
-           <goals>
-             <goal>java</goal>
-           </goals>
+          <goals>
+           <goal>java</goal>
+          </goals>
+          <configuration>
+           <mainClass>org.melati.app.TemplateApp</mainClass>
+           <arguments>
+             <argument>${artifactId}</argument>
+             <argument>page</argument>
+             <argument>0</argument>
+             <argument>org/paneris/melati/site/view/web.xml</argument>
+             <argument>-output</argument>
+             <argument>web.xml</argument>
+           </arguments>
+           <cleanupDaemonThreads>true</cleanupDaemonThreads>
+           <resources>
+             <!-- we need these to build and to run jetty but we do not want them in the jar -->
+            <resource>
+             <directory>src/main/webapp/WEB-INF/classes</directory>
+             <includes>
+              <include>**/*.properties</include>
+             </includes>
+            </resource>
+           </resources>
+           <dependencies>
+            <dependency>
+             <groupId>g</groupId>
+             <artifactId>f</artifactId>
+             <version>2.0</version>
+             <scope>system</scope>
+             <systemPath>src/main/webapp/WEB-INF/classes/org.melati.LogicalDatabase.properties</systemPath>
+            </dependency>
+           </dependencies>
+          </configuration>
          </execution>
        </executions>
-       <configuration>
-         <mainClass>org.melati.app.TemplateApp</mainClass>
-         <arguments>
-           <argument>${artifactId}</argument>
-           <argument>page</argument>
-           <argument>0</argument>
-           <argument>org/paneris/melati/site/view/web.xml</argument>
-           <argument>-output</argument>
-           <argument>web.xml</argument>
-         </arguments>
-         <cleanupDaemonThreads>true</cleanupDaemonThreads>
-    <resources>
-      <resource>
-        <directory>src/main/java</directory>
-        <includes>
-          <include>**/*.properties</include>
-          <include>**/*.wm</include>
-          <include>**/*.dsd</include>
-        </includes>
-      </resource>
-    </resources>
-       </configuration>
     </plugin>
 
     <!-- Copy the images etc to melati-static, side effect is that the java files end up there too ! -->
