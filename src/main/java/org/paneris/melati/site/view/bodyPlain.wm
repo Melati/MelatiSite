@@ -7,7 +7,7 @@
  <td>&nbsp;</td>
  <td><h2>$melati.Database.DisplayName</h2></td>
  <td>
-  <a href="$melati.ZoneURL/$melati.Database.HomePage.RelativeDisplayUrlById">Graphic Site</a>
+  <a href="$melati.Database.HomePage.RelativeDisplayUrlByContent">Graphic Site</a>
   </td>
 </tr>
 <tr>
