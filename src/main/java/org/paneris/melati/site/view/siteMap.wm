@@ -3,14 +3,14 @@
 #end
 <div class="defaultContent">
 <ul>
-#set $url = "$melati.ZoneURL/$homePage.RelativeDisplayUrlById"
+#set $url = "$homePage.RelativeDisplayUrlById"
 #if ($Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
 #end
 <li><a href="$url">Home</a>
  <ul>
 #foreach $l in $homePage.Children #begin
-#set $url = "$melati.ZoneURL/$l.RelativeDisplayUrlById"
+#set $url = "$l.RelativeDisplayUrlById"
 #if ($Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
 #end
@@ -18,7 +18,7 @@
 #if ($l.Children != null) #begin
  <ul>
 #foreach $l2 in $l.Children #begin
-#set $url2 = "$melati.ZoneURL/$l2.RelativeDisplayUrlById"
+#set $url2 = "$l2.RelativeDisplayUrlById"
 #if ($Form.style != null) #begin 
 #set $url2 = "$url2?style=$Form.style"
 #end
@@ -26,7 +26,7 @@
 #if ($l2.Children != null) #begin
  <ul>
 #foreach $l3 in $l2.Children #begin
-#set $url3 = "$melati.ZoneURL/$l3.RelativeDisplayUrlById"
+#set $url3 = "$l3.RelativeDisplayUrlById"
 #if ($Form.style != null) #begin 
 #set $url3 = "$url3?style=$Form.style"
 #end
@@ -34,7 +34,7 @@
 #if ($l3.Children != null) #begin
  <ul>
 #foreach $l4 in $l3.Children #begin
-#set $url4 = "$melati.ZoneURL/$l4.RelativeDisplayUrlById"
+#set $url4 = "$l4.RelativeDisplayUrlById"
 #if ($Form.style != null) #begin 
 #set $url4 = "$url4?style=$Form.style"
 #end
@@ -42,7 +42,7 @@
 #if ($l4.Children != null) #begin
  <ul>
 #foreach $l5 in $l4.Children #begin
-#set $url5 = "$melati.ZoneURL/$l5.RelativeDisplayUrlById"
+#set $url5 = "$l5.RelativeDisplayUrlById"
 #if ($Form.style != null) #begin 
 #set $url5 = "$url5?style=$Form.style"
 #end

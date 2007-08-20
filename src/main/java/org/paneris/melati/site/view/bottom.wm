@@ -3,7 +3,7 @@
 #end
 <div class="colophon">
 #if ($Form && $Form.style=="plain") #begin
-<a href="$melati.ZoneURL/Display/$melati.Database.Name/page/$melati.Database.HomePage.RelativeDisplayUrlByContent" class="colophon">Graphic Site</a>
+<a href="$melati.Database.HomePage.RelativeDisplayUrlByContent" class="colophon">Graphic Site</a>
 #end #else #begin
 <a href="?style=plain&amp;w3c">Text Only</a>
 #end

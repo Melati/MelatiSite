@@ -3,7 +3,7 @@
 #end
 #if ($object) #begin
 #foreach $a in $object.Ancestors #begin
-#set $url = "$melati.ZoneURL/$a.RelativeDisplayUrlByContent"
+#set $url = "$a.RelativeDisplayUrlByContent"
 #if ($Form.style != null) #begin 
 #set $url = "$url?style=$Form.style"
 #end

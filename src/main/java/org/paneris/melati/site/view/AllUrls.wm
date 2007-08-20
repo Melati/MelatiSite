@@ -5,7 +5,7 @@
 #set $ml = $melati.HTMLMarkupLanguage
 #set $database=$melati.Database
 #foreach $record in $database.PageTable.selection() #begin
-$melati.ZoneURL/$record.RelativeDisplayUrlById $melati.ZoneURL/$record.RelativeDisplayUrlByContent
+$record.RelativeDisplayUrlById $record.RelativeDisplayUrlByContent
 #end
 
 #text #begin
