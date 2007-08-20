@@ -3,7 +3,7 @@
 #end
 <div id="content">
 #set $divs = $object.Divs
-#if ($divs.hasMoreElements()) #begin
+#if ($divs && $divs.hasMoreElements()) #begin
  #foreach $div in $divs #begin
 $ml.rendered($div)
  #end
