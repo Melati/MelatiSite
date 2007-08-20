@@ -1,8 +1,8 @@
 <p>
- <a href="$melati.ZoneURL/Display/page/$object.RelativeDisplayUrlByContent" 
+ <a href="$melati.ZoneURL/Display/$melati.Database.Name/page/$object.RelativeDisplayUrlByContent" 
     target="$object.Troid">Display this page</a>
 </p>
 <p>
- <a href="$melati.ZoneURL/Display/page/web.xml" 
+ <a href="$melati.ZoneURL/Display/$melati.Database.Name/page/web.xml" 
     target="$object.Troid">Regenerate web.xml</a>
 </p>
