@@ -1,9 +1,9 @@
 <html>
 <head>
-<title>MelatiSite</title>
+<title>Melati Site</title>
 </head>
 <body>
-<h2>MelatiSite</h2>
+<h2>Melati Site</h2>
 <h3><a href="Admin/site/Main">Admin</a></h3>
 <h3><a href="Display/page/Home.html">Home</a></h3>
 </body>
