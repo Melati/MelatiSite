@@ -6,7 +6,7 @@
     <title>
 MelatiSite - Content Management System
     </title>
-    <author email="timp@paneris.org">Tim Pizey</author>
+    <author email="timp At paneris.org">Tim Pizey</author>
   </properties>
 
   <body>
@@ -21,7 +21,7 @@ through its database interface.
 The website can be viewed as a tree with the home page as the root.
 The tree view can be viewed by clicking the <b>tree</b> link on the top right  
 frame of a <b>Page</b> record within the 
-<a href="/db/Admin/contacts/Main">Admin System</a>.
+<a href="/db/Admin/site/Main">Admin System</a>.
 </p>
 <subsection name="Creating a new Page">
 <p>
@@ -33,7 +33,7 @@ have written the text and reviewed it on paper before entering it
 in the system.
 </p>
 <p>
-Access the <a href="/db/Admin/contacts/Main">Admin System</a>, where the 
+Access the <a href="/db/Admin/site/Main">Admin System</a>, where the 
 Page Table is the first screen presented to you. 
 </p>
 <ol>
@@ -103,7 +103,7 @@ Then save that page to your local disk and edit it with
 your HTML editor of choice.
 </p>
 <p>
-Use the <a href="/db/Admin/contacts/Main">Admin System</a> to create a new 
+Use the <a href="/db/Admin/site/Main">Admin System</a> to create a new 
 Uploaded File record and upload your editted file.
 </p>
 <p>
@@ -143,7 +143,7 @@ The emails sent by the system have the following configurable settings:
 </table>
 <p>
 Use the Admin System to modify the 
-<a href="/db/Admin/contacts/setting/Main">setting table</a>. 
+<a href="/db/Admin/site/setting/Main">setting table</a>. 
 </p>
 </subsection>
 </section>

@@ -17,7 +17,7 @@ Wemyss Vintage Malts, malt, whiskey, malt whiskey, Scotland, scotch
 
 <section name="Melati Administration System">
 <p>
-The Melati database administration system enables the viewing and editing of 
+The <a href="/db/Admin/site/setting/Main">Melati database administration system</a> enables the viewing and editing of 
 records in a database, offering the same functionality as Access over the web.
 In addition the system can be used to administrate user's authorisations, 
 upload files or download CSV summaries of tables. 
