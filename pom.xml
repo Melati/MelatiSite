@@ -4,7 +4,7 @@
   <groupId>org.paneris</groupId>
   <artifactId>MelatiSite</artifactId>
   <name>Melati Site</name>
-  <version>0.2.2</version>
+  <version>0.2.3</version>
   <description>A content management system.</description>
   <url>http://site.paneris.net/</url>
   <issueManagement>
