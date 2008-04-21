@@ -19,13 +19,18 @@
 
   <body>
    <links>
-    <item name="Context Computing" href="http://www.context-computing.co.uk/" />
+   <item name="Context Computing" href="http://www.context-computing.co.uk/" />
      <item name="PanEris.net"          href="http://www.paneris.net" />
      <item name="Melati"               href="http://melati.net" />
    </links>
    <menu name="Development">
+      <item name="About"               href="index.html"/>
       <item name="Admin system"        href="admin.html"/>
       <item name="Usage"               href="usage.html"/>
+   </menu>
+   <menu name="Powered By">
+      <item name="WVM"                 href="http://www.paneris.net/wvm/index.html"/>
+      <item name="Rimauresq"           href="http://www.paneris.net/rimauresq/index.html"/>
    </menu>
     ${reports}
   </body>
