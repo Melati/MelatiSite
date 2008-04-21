@@ -70,7 +70,7 @@ public class UploadedFileTableBase extends SiteTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
-  protected void init() throws PoemException {
+  public void init() throws PoemException {
     super.init();
     defineColumn(col_type =
         new Column(this, "type",
