@@ -45,7 +45,7 @@ $agent specific code
 #if($Form.edit != null) #begin
 <div class="edit">
 <br>
-<a href="$melati.ZoneURL/Admin/$melati.Database.Name/page/$object.troid()/Right?returnTarget&amp;returnURL" target="admin_record">Edit</a>
+<a href="$melati.ZoneURL/Admin/$melati.Database.Name/page/$object.troid()/Record?returnTarget&amp;returnURL" target="admin_record">Edit</a>
 </div>
 #end
 
