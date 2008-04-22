@@ -11,7 +11,6 @@
 package org.paneris.melati.site;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -24,7 +23,6 @@ import org.melati.poem.Table;
 import org.melati.servlet.PathInfoException;
 import org.melati.servlet.TemplateServlet;
 import org.melati.template.ServletTemplateContext;
-import org.melati.util.MelatiSimpleWriter;
 import org.melati.util.StringUtils;
 
 /**
@@ -63,22 +61,15 @@ public abstract class SiteServlet extends TemplateServlet {
 
     if (pathInfo != "") {
       System.err.println("pathinfo:" + pathInfo);
-      String url = melati.getRequest().getScheme() + "://"
-          + melati.getRequest().getServerName() + ":" 
-          + melati.getRequest().getServerPort()
-          + "/Cache"
-          + pathInfo;
-      System.err.println("url:" + url);
-      melati.getResponse().setHeader("found", "true");
-      melati.getResponse().sendRedirect(url);
+      System.err.println("Ref:" + melati.getRequest().getHeader("Referer"));
+      String referer = melati.getRequest().getHeader("Referer");
+      // IE leaves referer empty in redirects !!
+      if (referer != null  && referer.indexOf(pathInfo) == -1) {
+        melati.getResponse().sendRedirect(pathInfo);
       return;
     }
-    pathInfo = getPathInfo(melati);
-    String fileName = pathInfo.substring(pathInfo.lastIndexOf("/"));
-    melati.setWriter(new MelatiSimpleWriter(new FileWriter(getSTATIC_ROOT()
-        + "/" + fileName)));
+    }
     super.doConfiguredRequest(melati);
-    melati.getResponse().sendRedirect(fileName);
   }
 
   protected boolean fileAt(String filename) {
