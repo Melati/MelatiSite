@@ -119,6 +119,12 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
   public String getUrlName() {
     return StringUtils.tr(getDisplayname(), ' ', '_');
   }
+  /**
+   * @return the name with underscores for spaces and a file extension added.
+   */
+  public String getJavaName() {
+    return StringUtils.tr(getUrlName(), '-', '_');
+  }
 
   /**
    * XML does not allow forward slashes in Ids, so we use periods.
