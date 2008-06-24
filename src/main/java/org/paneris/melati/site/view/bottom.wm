@@ -38,9 +38,12 @@ Copyright &copy; $melati.Database.DisplayName 2007
 #set $agent= "None" 
 #end
 
+#if($agent) #begin
 <!-- 
-$agent specific code 
+##$agent 
+Browser specific code 
 -->
+#end
 
 #if($Form.edit != null) #begin
 <div class="edit">
