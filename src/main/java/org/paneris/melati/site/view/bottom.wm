@@ -12,7 +12,7 @@
 By <a href='http://paneris.com/'>PanEris</a> using <a href='http://melati.org/'>Melati</a>.
 </div>
 <div  class="copyright">
-Copyright &copy; $melati.Database.DisplayName 2007
+Copyright &copy; $melati.Database.DisplayName 2008
 </div>
 
 #if($Form.w3c != null) #begin
