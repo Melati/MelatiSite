@@ -51,14 +51,17 @@ import org.paneris.melati.site.model.HasGetTemplateUrl;
  */
 public class Display extends SiteServlet {
 
+  /**
+   * Stop eclipse wingeing.
+   */
   private static final long serialVersionUID = 1L;
 
   protected String reallyDoTemplateRequest(Melati melati, 
                                            ServletTemplateContext context)
       throws Exception {
 
-    PoemContext mc = melati.getPoemContext();
-    String method = mc.getMethod();
+    PoemContext pc = melati.getPoemContext();
+    String method = pc.getMethod();
 
     Persistent object = melati.getObject();
 
