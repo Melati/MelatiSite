@@ -41,7 +41,10 @@ $melati.Database.DisplayName
 <style type="text/css" media="screen">
 body {
   font-size: 100%;
-  behavior: url("csshover2.htc");
+##
+## Ensure this is in your root directory
+##  
+  behavior: url("/csshover2.htc");
 }
  #pageBody {
   /* width:expression(document.body.clientWidth > 1024? "1024px": "auto" ); */
