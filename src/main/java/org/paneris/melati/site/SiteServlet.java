@@ -63,11 +63,17 @@ public abstract class SiteServlet extends TemplateServlet {
       System.err.println("pathinfo:" + pathInfo);
       System.err.println("Ref:" + melati.getRequest().getHeader("Referer"));
       String referer = melati.getRequest().getHeader("Referer");
+      StringBuffer url = new StringBuffer();
+      String scheme = melati.getRequest().getScheme();
+      url.append(scheme);
+      url.append("://");
+      url.append(melati.getRequest().getServerName());
+      url.append(pathInfo);
       // IE leaves referer empty in redirects !!
       if (referer != null  && referer.indexOf(pathInfo) == -1) {
-        melati.getResponse().sendRedirect(pathInfo);
-      return;
-    }
+        melati.getResponse().sendRedirect(url.toString());
+        return;
+      }
     }
     super.doConfiguredRequest(melati);
   }
