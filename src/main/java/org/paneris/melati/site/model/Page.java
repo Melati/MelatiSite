@@ -111,7 +111,13 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
    * @return the name with underscores for spaces and a file extension added.
    */
   public String getRelativeDisplayUrlByContent() {
-    return StringUtils.tr(getDisplayname(), ' ', '_') + ".html";
+    return getUrlName() + ".html";
+  }
+  /**
+   * @return the name with underscores for spaces and a file extension added.
+   */
+  public String getUrlName() {
+    return StringUtils.tr(getDisplayname(), ' ', '_');
   }
 
   /**
