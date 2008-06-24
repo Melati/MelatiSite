@@ -5,7 +5,7 @@
  *
  * Contact details for copyright holder:
  * 
- *  Tim Pizey (timp@paneris.org)
+ *  Tim Pizey (http://paneris.org/~timp)
  */
 
 package org.paneris.melati.site;
