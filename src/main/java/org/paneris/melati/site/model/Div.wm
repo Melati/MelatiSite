@@ -2,7 +2,7 @@
 <!-- Start $Source$ -->
 #end
 
-<div class="$(object.Style.Name)Content">
+<div class="$(object.Style.Name)">
 #if ($object.Image) #begin
   <div class="divImageHolder"
   ><img src="$object.Image.Url" 
