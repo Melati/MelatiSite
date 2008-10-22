@@ -23,7 +23,7 @@ $ml.rendered($object.Title)
 #end
 #if($object.Content) #begin
  <div class="$(object.Style.Name)Content">
-$ml.rendered($object.Content)
+$object.Content
  </div>
 #end
 </div>
