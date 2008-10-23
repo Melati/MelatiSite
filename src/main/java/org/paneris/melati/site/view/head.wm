@@ -11,6 +11,9 @@ $melati.Database.DisplayName
 #if ($baseUrl) #begin
 <base href="$baseUrl">
 #end 
+#if ($melati.ContentType) #begin
+<meta http-equiv="Content-Type" content="$melati.ContentType" />
+#end
 <meta name="description" 
       content="$melati.Database.Description" />
 <meta name="keywords" 
