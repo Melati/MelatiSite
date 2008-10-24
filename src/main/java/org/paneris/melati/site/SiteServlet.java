@@ -76,6 +76,7 @@ public abstract class SiteServlet extends TemplateServlet {
       }
     }
     super.doConfiguredRequest(melati);
+    melati.setResponseContentType("text/html");
   }
 
   protected boolean fileAt(String filename) {
