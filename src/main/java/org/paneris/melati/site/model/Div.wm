@@ -16,7 +16,7 @@
  <div class="$(object.Style.Name)Title">
 
   <h3>
-$ml.rendered($object.Title)
+$ml.renderedMarkup($object.Title)
   </h3>
   
  </div>
