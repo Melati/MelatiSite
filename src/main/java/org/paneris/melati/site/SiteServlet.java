@@ -53,16 +53,15 @@ public abstract class SiteServlet extends TemplateServlet {
     while (pathInfo != "" && !fileAt(pathInfo)) {
       String s = pathInfo.substring(1);
       int i = s.indexOf('/');
-      if (i != -1)
-        pathInfo = s.substring(i);
-      else
+      if (i == -1)
         pathInfo = "";
+      else
+        pathInfo = s.substring(i);
     }
 
     if (pathInfo != "") {
       System.err.println("pathinfo:" + pathInfo);
       System.err.println("Ref:" + melati.getRequest().getHeader("Referer"));
-      String referer = melati.getRequest().getHeader("Referer");
       StringBuffer url = new StringBuffer();
       String scheme = melati.getRequest().getScheme();
       url.append(scheme);
@@ -70,10 +69,11 @@ public abstract class SiteServlet extends TemplateServlet {
       url.append(melati.getRequest().getServerName());
       url.append(pathInfo);
       // IE leaves referer empty in redirects !!
-      if (referer != null  && referer.indexOf(pathInfo) == -1) {
+      //String referer = melati.getRequest().getHeader("Referer");
+      //if (referer != null  && referer.indexOf(pathInfo) == -1) {
         melati.getResponse().sendRedirect(url.toString());
         return;
-      }
+      //}
     }
     super.doConfiguredRequest(melati);
     melati.setResponseContentType("text/html");
