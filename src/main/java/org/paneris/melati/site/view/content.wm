@@ -1,7 +1,7 @@
 #text #begin
 <!-- Start $Source$ -->
 #end
-<div class="content">
+<div class="pageContent">
 #set $divs = $object.Divs
 #if ($divs && $divs.hasMoreElements()) #begin
  #foreach $div in $divs #begin
