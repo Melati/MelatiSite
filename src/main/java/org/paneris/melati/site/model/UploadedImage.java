@@ -25,7 +25,7 @@ import org.paneris.melati.site.model.generated.UploadedImageBase;
  * an image </td></tr> 
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class UploadedImage extends UploadedImageBase {
 
@@ -37,7 +37,7 @@ public class UploadedImage extends UploadedImageBase {
   *   An image uploaded by a user. 
   * </p>
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public UploadedImage() { }
 

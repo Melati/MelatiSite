@@ -22,7 +22,7 @@ import org.paneris.melati.site.model.generated.LinkTypeBase;
  * link type </td></tr> 
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class LinkType extends LinkTypeBase {
 
@@ -34,7 +34,7 @@ public class LinkType extends LinkTypeBase {
   *   Type of link. 
   * </p>
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public LinkType() { }
 

@@ -20,7 +20,7 @@ import org.paneris.melati.site.model.UploadedImage;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>Div</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
 public abstract class DivBase extends JdbcPersistent {
 
@@ -28,7 +28,7 @@ public abstract class DivBase extends JdbcPersistent {
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -40,7 +40,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the  <code>DivTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the DivTable
   */
   public DivTable getDivTable() {
@@ -86,7 +86,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Id</code> value, without locking, 
   * for this <code>Div</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer id
   */
   public Integer getId_unsafe() {
@@ -98,7 +98,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Sets the <code>Id</code> value directly, without checking, 
   * for this Div <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setId_unsafe(Integer cooked) {
@@ -167,7 +167,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Id</code> value as a <code>Field</code>
   * from this <code>Div</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -183,7 +183,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Page</code> value, without locking, 
   * for this <code>Div</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer page
   */
   public Integer getPage_unsafe() {
@@ -195,7 +195,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Sets the <code>Page</code> value directly, without checking, 
   * for this Div <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setPage_unsafe(Integer cooked) {
@@ -282,7 +282,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Page</code> value as a <code>Field</code>
   * from this <code>Div</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -298,7 +298,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Displayorder</code> value, without locking, 
   * for this <code>Div</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer displayorder
   */
   public Integer getDisplayorder_unsafe() {
@@ -310,7 +310,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Sets the <code>Displayorder</code> value directly, without checking, 
   * for this Div <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setDisplayorder_unsafe(Integer cooked) {
@@ -386,7 +386,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Displayorder</code> value as a <code>Field</code>
   * from this <code>Div</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -402,7 +402,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Style</code> value, without locking, 
   * for this <code>Div</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer style
   */
   public Integer getStyle_unsafe() {
@@ -414,7 +414,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Sets the <code>Style</code> value directly, without checking, 
   * for this Div <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setStyle_unsafe(Integer cooked) {
@@ -501,7 +501,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Style</code> value as a <code>Field</code>
   * from this <code>Div</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -517,7 +517,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Title</code> value, without locking, 
   * for this <code>Div</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the String title
   */
   public String getTitle_unsafe() {
@@ -529,7 +529,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Sets the <code>Title</code> value directly, without checking, 
   * for this Div <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setTitle_unsafe(String cooked) {
@@ -584,7 +584,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Title</code> value as a <code>Field</code>
   * from this <code>Div</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -600,7 +600,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Content</code> value, without locking, 
   * for this <code>Div</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the String content
   */
   public String getContent_unsafe() {
@@ -612,7 +612,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Sets the <code>Content</code> value directly, without checking, 
   * for this Div <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setContent_unsafe(String cooked) {
@@ -667,7 +667,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Content</code> value as a <code>Field</code>
   * from this <code>Div</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -683,7 +683,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Image</code> value, without locking, 
   * for this <code>Div</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer image
   */
   public Integer getImage_unsafe() {
@@ -695,7 +695,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Sets the <code>Image</code> value directly, without checking, 
   * for this Div <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setImage_unsafe(Integer cooked) {
@@ -782,7 +782,7 @@ public abstract class DivBase extends JdbcPersistent {
   * Retrieves the <code>Image</code> value as a <code>Field</code>
   * from this <code>Div</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights

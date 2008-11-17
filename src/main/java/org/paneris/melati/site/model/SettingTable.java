@@ -17,14 +17,14 @@ import org.melati.poem.PoemException;
  * <tr><th>Name</th><th>Type</th><th>Description</th></tr>
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableJava 
+ * @see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
 public class SettingTable extends SettingTableBase {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used

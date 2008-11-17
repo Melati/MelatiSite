@@ -16,7 +16,7 @@ import org.paneris.melati.site.model.UploadedFileTypeTable;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>UploadedFileType</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
 public abstract class UploadedFileTypeBase extends JdbcPersistent {
 
@@ -24,7 +24,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -36,7 +36,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * Retrieves the  <code>UploadedFileTypeTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedFileTypeTable
   */
   public UploadedFileTypeTable getUploadedFileTypeTable() {
@@ -62,7 +62,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * Retrieves the <code>Id</code> value, without locking, 
   * for this <code>UploadedFileType</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer id
   */
   public Integer getId_unsafe() {
@@ -74,7 +74,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * Sets the <code>Id</code> value directly, without checking, 
   * for this UploadedFileType <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setId_unsafe(Integer cooked) {
@@ -143,7 +143,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * Retrieves the <code>Id</code> value as a <code>Field</code>
   * from this <code>UploadedFileType</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -159,7 +159,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * Retrieves the <code>Type</code> value, without locking, 
   * for this <code>UploadedFileType</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the String type
   */
   public String getType_unsafe() {
@@ -171,7 +171,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * Sets the <code>Type</code> value directly, without checking, 
   * for this UploadedFileType <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setType_unsafe(String cooked) {
@@ -226,7 +226,7 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * Retrieves the <code>Type</code> value as a <code>Field</code>
   * from this <code>UploadedFileType</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights

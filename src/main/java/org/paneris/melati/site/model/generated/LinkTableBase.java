@@ -29,7 +29,7 @@ import org.paneris.melati.site.model.SiteTable;
  * Melati POEM generated base class for 
 <code>Table</code> <code>Link</code>.
  *
- * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class LinkTableBase extends SiteTable {
@@ -44,7 +44,7 @@ public class LinkTableBase extends SiteTable {
  /**
   * Constructor. 
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -61,7 +61,7 @@ public class LinkTableBase extends SiteTable {
  /**
   * Get the database tables.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -400,7 +400,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
   public final Column getIdColumn() {
@@ -412,7 +412,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Page</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the page <code>Column</code>
   */
   public final Column getPageColumn() {
@@ -424,7 +424,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Type</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the type <code>Column</code>
   */
   public final Column getTypeColumn() {
@@ -436,7 +436,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Url</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
   */
   public final Column getUrlColumn() {
@@ -448,7 +448,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Displayname</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayname <code>Column</code>
   */
   public final Column getDisplaynameColumn() {
@@ -460,7 +460,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>
   */
   public final Column getDisplayorderColumn() {
@@ -471,7 +471,7 @@ public class LinkTableBase extends SiteTable {
  /**
   * Retrieve the <code>Link</code> as a <code>Link</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -484,7 +484,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieve the <code>Link</code> 
   * as a <code>Link</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public Link getLinkObject(int troid) {

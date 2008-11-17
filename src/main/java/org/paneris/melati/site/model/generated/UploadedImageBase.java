@@ -16,7 +16,7 @@ import org.paneris.melati.site.model.UploadedImageTable;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>UploadedImage</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
 public abstract class UploadedImageBase extends UploadedFile {
 
@@ -24,7 +24,7 @@ public abstract class UploadedImageBase extends UploadedFile {
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -36,7 +36,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the  <code>UploadedImageTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedImageTable
   */
   public UploadedImageTable getUploadedImageTable() {
@@ -70,7 +70,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Id</code> value, without locking, 
   * for this <code>UploadedImage</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer id
   */
   public Integer getId_unsafe() {
@@ -82,7 +82,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Sets the <code>Id</code> value directly, without checking, 
   * for this UploadedImage <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setId_unsafe(Integer cooked) {
@@ -151,7 +151,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Id</code> value as a <code>Field</code>
   * from this <code>UploadedImage</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -167,7 +167,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Url</code> value, without locking, 
   * for this <code>UploadedImage</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the String url
   */
   public String getUrl_unsafe() {
@@ -179,7 +179,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Sets the <code>Url</code> value directly, without checking, 
   * for this UploadedImage <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setUrl_unsafe(String cooked) {
@@ -234,7 +234,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Url</code> value as a <code>Field</code>
   * from this <code>UploadedImage</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -250,7 +250,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Height</code> value, without locking, 
   * for this <code>UploadedImage</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer height
   */
   public Integer getHeight_unsafe() {
@@ -262,7 +262,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Sets the <code>Height</code> value directly, without checking, 
   * for this UploadedImage <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setHeight_unsafe(Integer cooked) {
@@ -338,7 +338,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Height</code> value as a <code>Field</code>
   * from this <code>UploadedImage</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -354,7 +354,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Width</code> value, without locking, 
   * for this <code>UploadedImage</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer width
   */
   public Integer getWidth_unsafe() {
@@ -366,7 +366,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Sets the <code>Width</code> value directly, without checking, 
   * for this UploadedImage <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setWidth_unsafe(Integer cooked) {
@@ -442,7 +442,7 @@ public abstract class UploadedImageBase extends UploadedFile {
   * Retrieves the <code>Width</code> value as a <code>Field</code>
   * from this <code>UploadedImage</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights

@@ -27,7 +27,7 @@ import org.paneris.melati.site.model.generated.LinkBase;
  * <tr><td> displayorder </td><td> Integer </td><td> &nbsp; </td></tr> 
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Link extends LinkBase {
 
@@ -39,7 +39,7 @@ public class Link extends LinkBase {
   *   A link. 
   * </p>
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public Link() { }
 

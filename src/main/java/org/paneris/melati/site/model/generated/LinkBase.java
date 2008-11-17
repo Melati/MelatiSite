@@ -19,7 +19,7 @@ import org.paneris.melati.site.model.SiteDatabaseTables;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>Link</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
 public abstract class LinkBase extends JdbcPersistent {
 
@@ -27,7 +27,7 @@ public abstract class LinkBase extends JdbcPersistent {
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -39,7 +39,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the  <code>LinkTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the LinkTable
   */
   public LinkTable getLinkTable() {
@@ -81,7 +81,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Id</code> value, without locking, 
   * for this <code>Link</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer id
   */
   public Integer getId_unsafe() {
@@ -93,7 +93,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Sets the <code>Id</code> value directly, without checking, 
   * for this Link <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setId_unsafe(Integer cooked) {
@@ -162,7 +162,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Id</code> value as a <code>Field</code>
   * from this <code>Link</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -178,7 +178,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Page</code> value, without locking, 
   * for this <code>Link</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer page
   */
   public Integer getPage_unsafe() {
@@ -190,7 +190,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Sets the <code>Page</code> value directly, without checking, 
   * for this Link <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setPage_unsafe(Integer cooked) {
@@ -277,7 +277,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Page</code> value as a <code>Field</code>
   * from this <code>Link</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -293,7 +293,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Type</code> value, without locking, 
   * for this <code>Link</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer type
   */
   public Integer getType_unsafe() {
@@ -305,7 +305,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Sets the <code>Type</code> value directly, without checking, 
   * for this Link <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setType_unsafe(Integer cooked) {
@@ -392,7 +392,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Type</code> value as a <code>Field</code>
   * from this <code>Link</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -408,7 +408,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Url</code> value, without locking, 
   * for this <code>Link</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the String url
   */
   public String getUrl_unsafe() {
@@ -420,7 +420,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Sets the <code>Url</code> value directly, without checking, 
   * for this Link <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setUrl_unsafe(String cooked) {
@@ -475,7 +475,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Url</code> value as a <code>Field</code>
   * from this <code>Link</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -491,7 +491,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Displayname</code> value, without locking, 
   * for this <code>Link</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the String displayname
   */
   public String getDisplayname_unsafe() {
@@ -503,7 +503,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Sets the <code>Displayname</code> value directly, without checking, 
   * for this Link <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setDisplayname_unsafe(String cooked) {
@@ -558,7 +558,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Displayname</code> value as a <code>Field</code>
   * from this <code>Link</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -574,7 +574,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Displayorder</code> value, without locking, 
   * for this <code>Link</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer displayorder
   */
   public Integer getDisplayorder_unsafe() {
@@ -586,7 +586,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Sets the <code>Displayorder</code> value directly, without checking, 
   * for this Link <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setDisplayorder_unsafe(Integer cooked) {
@@ -655,7 +655,7 @@ public abstract class LinkBase extends JdbcPersistent {
   * Retrieves the <code>Displayorder</code> value as a <code>Field</code>
   * from this <code>Link</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights

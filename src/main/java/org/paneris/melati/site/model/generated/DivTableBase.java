@@ -30,7 +30,7 @@ import org.paneris.melati.site.model.UploadedImage;
  * Melati POEM generated base class for 
 <code>Table</code> <code>Div</code>.
  *
- * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class DivTableBase extends SiteTable {
@@ -46,7 +46,7 @@ public class DivTableBase extends SiteTable {
  /**
   * Constructor. 
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -63,7 +63,7 @@ public class DivTableBase extends SiteTable {
  /**
   * Get the database tables.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -490,7 +490,7 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
   public final Column getIdColumn() {
@@ -502,7 +502,7 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Page</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the page <code>Column</code>
   */
   public final Column getPageColumn() {
@@ -514,7 +514,7 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>
   */
   public final Column getDisplayorderColumn() {
@@ -526,7 +526,7 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Style</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the style <code>Column</code>
   */
   public final Column getStyleColumn() {
@@ -538,7 +538,7 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Title</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the title <code>Column</code>
   */
   public final Column getTitleColumn() {
@@ -550,7 +550,7 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Content</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the content <code>Column</code>
   */
   public final Column getContentColumn() {
@@ -562,7 +562,7 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Image</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the image <code>Column</code>
   */
   public final Column getImageColumn() {
@@ -573,7 +573,7 @@ public class DivTableBase extends SiteTable {
  /**
   * Retrieve the <code>Div</code> as a <code>Div</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -586,7 +586,7 @@ public class DivTableBase extends SiteTable {
   * Retrieve the <code>Div</code> 
   * as a <code>Div</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public Div getDivObject(int troid) {

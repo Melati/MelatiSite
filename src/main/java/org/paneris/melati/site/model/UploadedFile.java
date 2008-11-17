@@ -23,9 +23,11 @@ import org.paneris.melati.site.model.generated.UploadedFileBase;
  * file </td></tr> 
  * <tr><td> deleted </td><td> Boolean </td><td> Whether this file been 
  * deleted or not </td></tr> 
+ * <tr><td> displayname </td><td> String </td><td> The layout's name 
+ * </td></tr> 
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class UploadedFile extends UploadedFileBase {
 
@@ -33,7 +35,7 @@ public class UploadedFile extends UploadedFileBase {
   * Constructor 
   * for a <code>Persistent</code> <code>UploadedFile</code> object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public UploadedFile() { }
 

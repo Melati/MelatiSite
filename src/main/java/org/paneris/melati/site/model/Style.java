@@ -20,7 +20,7 @@ import org.paneris.melati.site.model.generated.StyleBase;
  * <tr><td> name </td><td> String </td><td> The Class id </td></tr> 
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Style extends StyleBase {
 
@@ -32,7 +32,7 @@ public class Style extends StyleBase {
   *   A CSS Class Id. 
   * </p>
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public Style() { }
 

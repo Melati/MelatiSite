@@ -128,7 +128,10 @@ abstract table UploadedFile
         (searchability = primary)
         (integrityfix = prevent);
 
-    String description (size=unlimited) (width=60) (height=5)
+    String description 
+        (size=unlimited)
+        (width=60)
+        (height=5)
         (description = "A description of the file")
         (displaylevel = record)
         (searchability = yes);
@@ -159,7 +162,7 @@ abstract table UploadedFile
         (searchability = yes)
         (uncreateable)
         (uneditable);
-  String displayname 
+    String displayname 
       (size = unlimited)
       (displayname = "Display name")
       (description = "The layout's name")
@@ -177,11 +180,12 @@ table Template extends UploadedFile
   (primary) Integer id
       (displaylevel = record);
 
-  String url (size=unlimited) (width=40)
+  String url (size=unlimited)
+      (width=40)
       (description = "Key by which template engine can locate template, no need for extension")
       (displaylevel = primary)
       (displayorderpriority = 0)
-      (renderinfo = "Upload")
+      (renderinfo = "UploadURL")
       (displaylevel = primary)
       (searchability = yes);
 }
@@ -197,7 +201,8 @@ table UploadedImage extends UploadedFile
     (primary) Integer id
         (displaylevel = record);
 
-    String url (size=unlimited) (width=40)
+    String url (size=unlimited)
+        (width=40)
         (description = "The name of the file, as uploaded")
         (displaylevel = primary)
         (displayorderpriority = 0)
@@ -228,11 +233,12 @@ table UploadedDocument extends UploadedFile
     (primary) Integer id
         (displaylevel = record);
 
-    String url (size=unlimited) (width=40)
+    String url (size=unlimited)
+        (width=40)
         (description = "The name of the file, as uploaded")
         (displaylevel = primary)
         (displayorderpriority = 0)
-        (renderinfo = "Upload")
+        (renderinfo = "UploadURL")
         (searchability = yes);
 }
 
@@ -246,7 +252,8 @@ table UploadedFileType
         (displayorderpriority = 0)
         (displaylevel = summary);
 
-    String type (size=unlimited) (width=40)
+    String type (size=unlimited)
+        (width=40)
         (description = "Type of uploaded file")
         (displaylevel = primary);
 }

@@ -25,9 +25,11 @@ import org.paneris.melati.site.model.generated.DivBase;
  * this DIV </td></tr> 
  * <tr><td> title </td><td> String </td><td> The HTML title </td></tr> 
  * <tr><td> content </td><td> String </td><td> The HTML content </td></tr> 
+ * <tr><td> image </td><td> UploadedImage </td><td> Image associated with 
+ * this div </td></tr> 
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Div extends DivBase {
 
@@ -39,7 +41,7 @@ public class Div extends DivBase {
   *   An HTML fragment. 
   * </p>
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public Div() { }
 

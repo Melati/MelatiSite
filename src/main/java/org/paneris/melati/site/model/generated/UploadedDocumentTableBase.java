@@ -24,7 +24,7 @@ import org.paneris.melati.site.model.UploadedFileTable;
  * Melati POEM generated base class for 
 <code>Table</code> <code>UploadedDocument</code>.
  *
- * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class UploadedDocumentTableBase extends UploadedFileTable {
@@ -35,7 +35,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
  /**
   * Constructor. 
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -52,7 +52,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
  /**
   * Get the database tables.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -159,7 +159,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
           }
 
           protected String defaultRenderinfo() {
-            return "Upload";
+            return "UploadURL";
           }
 
           public Object getRaw_unsafe(Persistent g)
@@ -189,7 +189,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>UploadedDocument</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
   public final Column getIdColumn() {
@@ -201,7 +201,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
   * Retrieves the <code>Url</code> <code>Column</code> for this 
   * <code>UploadedDocument</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
   */
   public final Column getUrlColumn() {
@@ -212,7 +212,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
  /**
   * Retrieve the <code>UploadedDocument</code> as a <code>UploadedDocument</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -225,7 +225,7 @@ public class UploadedDocumentTableBase extends UploadedFileTable {
   * Retrieve the <code>UploadedDocument</code> 
   * as a <code>UploadedDocument</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public UploadedDocument getUploadedDocumentObject(int troid) {

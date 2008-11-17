@@ -16,7 +16,7 @@ import org.paneris.melati.site.model.UploadedFile;
  * Melati POEM generated abstract base class for a <code>Persistent</code> 
  * <code>Template</code> Object.
  *
- * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
  */
 public abstract class TemplateBase extends UploadedFile {
 
@@ -24,7 +24,7 @@ public abstract class TemplateBase extends UploadedFile {
  /**
   * Retrieves the Database object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the database
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -36,7 +36,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Retrieves the  <code>TemplateTable</code> table 
   * which this <code>Persistent</code> is from.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the TemplateTable
   */
   public TemplateTable getTemplateTable() {
@@ -63,7 +63,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Retrieves the <code>Id</code> value, without locking, 
   * for this <code>Template</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the Integer id
   */
   public Integer getId_unsafe() {
@@ -75,7 +75,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Sets the <code>Id</code> value directly, without checking, 
   * for this Template <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setId_unsafe(Integer cooked) {
@@ -144,7 +144,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Retrieves the <code>Id</code> value as a <code>Field</code>
   * from this <code>Template</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights
@@ -160,7 +160,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Retrieves the <code>Url</code> value, without locking, 
   * for this <code>Template</code> <code>Persistent</code>.
   *
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @return the String url
   */
   public String getUrl_unsafe() {
@@ -172,7 +172,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Sets the <code>Url</code> value directly, without checking, 
   * for this Template <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateBaseMethods 
+  * @see org.melati.poem.prepro.FieldDef#generateBaseMethods 
   * @param cooked  the pre-validated value to set
   */
   public void setUrl_unsafe(String cooked) {
@@ -227,7 +227,7 @@ public abstract class TemplateBase extends UploadedFile {
   * Retrieves the <code>Url</code> value as a <code>Field</code>
   * from this <code>Template</code> <code>Persistent</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateFieldCreator 
+  * @see org.melati.poem.prepro.FieldDef#generateFieldCreator 
   * @throws AccessPoemException 
   *         if the current <code>AccessToken</code> 
   *         does not confer write access rights

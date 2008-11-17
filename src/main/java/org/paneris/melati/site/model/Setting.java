@@ -14,7 +14,7 @@ import org.paneris.melati.site.model.generated.SettingBase;
  * <tr><th>Name</th><th>Type</th><th>Description</th></tr>
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Setting extends SettingBase {
 
@@ -22,7 +22,7 @@ public class Setting extends SettingBase {
   * Constructor 
   * for a <code>Persistent</code> <code>Setting</code> object.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public Setting() { }
 

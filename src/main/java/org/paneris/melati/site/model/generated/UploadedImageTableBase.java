@@ -25,7 +25,7 @@ import org.paneris.melati.site.model.UploadedImage;
  * Melati POEM generated base class for 
 <code>Table</code> <code>UploadedImage</code>.
  *
- * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class UploadedImageTableBase extends UploadedFileTable {
@@ -38,7 +38,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
  /**
   * Constructor. 
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -55,7 +55,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
  /**
   * Get the database tables.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -302,7 +302,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
   public final Column getIdColumn() {
@@ -314,7 +314,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Url</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
   */
   public final Column getUrlColumn() {
@@ -326,7 +326,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Height</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the height <code>Column</code>
   */
   public final Column getHeightColumn() {
@@ -338,7 +338,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Width</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @generator org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the width <code>Column</code>
   */
   public final Column getWidthColumn() {
@@ -349,7 +349,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
  /**
   * Retrieve the <code>UploadedImage</code> as a <code>UploadedImage</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -362,7 +362,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieve the <code>UploadedImage</code> 
   * as a <code>UploadedImage</code>.
   *
-  * @generator org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public UploadedImage getUploadedImageObject(int troid) {

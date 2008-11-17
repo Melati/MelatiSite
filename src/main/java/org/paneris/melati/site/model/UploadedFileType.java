@@ -20,7 +20,7 @@ import org.paneris.melati.site.model.generated.UploadedFileTypeBase;
  * <tr><td> type </td><td> String </td><td> Type of uploaded file </td></tr> 
  * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+ * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class UploadedFileType extends UploadedFileTypeBase {
 
@@ -32,7 +32,7 @@ public class UploadedFileType extends UploadedFileTypeBase {
   *   A type of uploaded file. 
   * </p>
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateMainJava 
+  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
   public UploadedFileType() { }
 
