@@ -80,8 +80,10 @@ public class UploadedFileFormDataAdaptorFactory extends
       MultipartFormField field) {
     if (melati.getTable() != null & melati.getTable() instanceof UploadedFileTable) { 
       UploadedFileTable t = (UploadedFileTable)melati.getTable(); 
-      return new DefaultFileFormDataAdaptor(melati, melati.getConfig().getRealPath()
-          + t.getRelativeUrl(), HttpServletRequestCompat.getContextPath(melati.getRequest()) + t.getRelativeUrl());
+      return new DefaultFileFormDataAdaptor(melati, 
+          (String) melati.getDatabase().getSettingTable().getOrDie("UploadDir")
+              + t.getRelativeUrl(), 
+           HttpServletRequestCompat.getContextPath(melati.getRequest()) + t.getRelativeUrl());
     } else  {
       return super.getIt(melati, field);
     }
