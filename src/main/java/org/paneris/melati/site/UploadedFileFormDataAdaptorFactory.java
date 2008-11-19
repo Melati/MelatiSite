@@ -83,7 +83,7 @@ public class UploadedFileFormDataAdaptorFactory extends
       return new DefaultFileFormDataAdaptor(melati, 
           (String) melati.getDatabase().getSettingTable().getOrDie("UploadDir")
               + t.getRelativeUrl(), 
-           HttpServletRequestCompat.getContextPath(melati.getRequest()) + t.getRelativeUrl());
+          (String) melati.getDatabase().getSettingTable().getOrDie("UploadURL") + t.getRelativeUrl());
     } else  {
       return super.getIt(melati, field);
     }
