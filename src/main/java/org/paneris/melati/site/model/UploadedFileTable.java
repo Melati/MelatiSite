@@ -104,4 +104,11 @@ Need canUpload capability?
     super.create(persistent);
   }
 
+  /**
+   * @return the relative url 
+   */
+  public String getRelativeUrl() {
+    return "/";
+  }
+
 }

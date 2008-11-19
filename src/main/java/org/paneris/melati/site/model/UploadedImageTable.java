@@ -80,6 +80,12 @@ ed
     }
     return p;
   }
+  /**
+   * @return the relative url 
+   */
+  public String getRelativeUrl() {
+    return "/images";
+  }
 
 }
 

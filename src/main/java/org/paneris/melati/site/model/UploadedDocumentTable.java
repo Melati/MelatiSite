@@ -44,5 +44,13 @@ public class UploadedDocumentTable extends UploadedDocumentTableBase {
   }
 
   // programmer's domain-specific code here
+  
+  /**
+   * @return the relative url 
+   */
+  public String getRelativeUrl() {
+    return "/docs";
+  }
+
 }
 
