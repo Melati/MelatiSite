@@ -252,7 +252,8 @@ table UploadedFileType
         (displayorderpriority = 0)
         (displaylevel = summary);
 
-    String type (size=unlimited)
+    String type 
+        (size=unlimited)
         (width=40)
         (description = "Type of uploaded file")
         (displaylevel = primary);
