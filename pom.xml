@@ -92,7 +92,7 @@
       </resource>
     </resources>
     <plugins>
-     <!--plugin>
+     <plugin>
       <groupId>org.melati</groupId>
       <artifactId>maven-dsd-plugin</artifactId>
       <executions>
@@ -115,7 +115,7 @@
         <scope>compile</scope>
        </dependency>
       </dependencies>
-     </plugin-->
+     </plugin>
 
 
     <!-- Copy the images etc to melati-static, side effect is that the java files end up there too ! -->
