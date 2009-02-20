@@ -31,6 +31,8 @@ import org.melati.util.StringUtils;
  */
 public abstract class SiteServlet extends TemplateServlet {
 
+  private static final long serialVersionUID = 2807149216380558185L;
+
   /** Turn on placement of debugging info into context */
   public static final boolean DEBUG = true;
 
@@ -68,9 +70,9 @@ public abstract class SiteServlet extends TemplateServlet {
       url.append("://");
       url.append(melati.getRequest().getServerName());
       url.append(pathInfo);
-      // IE leaves referer empty in redirects !!
-      //String referer = melati.getRequest().getHeader("Referer");
-      //if (referer != null  && referer.indexOf(pathInfo) == -1) {
+      // IE leaves referrer empty in redirects !!
+      //String referrer = melati.getRequest().getHeader("Referer");
+      //if (referrer != null  && referrer.indexOf(pathInfo) == -1) {
         melati.getResponse().sendRedirect(url.toString());
         return;
       //}
