@@ -123,9 +123,9 @@ public class Display extends SiteServlet {
         return method;
       }
     }  
-    if (context.getForm("template") != null) {
+    if (context.getFormField("template") != null) {
       System.err.println("return 4");
-      return context.getForm("template");
+      return context.getFormField("template");
     }
     if (object != null && object instanceof Templated) {
       Template t = ((Templated)object).getTemplate();
