@@ -49,13 +49,12 @@ import org.melati.servlet.DefaultFileFormDataAdaptor;
 import org.melati.servlet.FormDataAdaptor;
 import org.melati.servlet.MultipartFormField;
 import org.melati.servlet.PoemFileFormDataAdaptorFactory;
-import org.melati.util.HttpServletRequestCompat;
 import org.melati.util.HttpUtil;
 import org.paneris.melati.site.model.UploadedFileTable;
 
 /**
  * @author timp
- * @since  18 Nov 2008
+ * @since  18 November 2008
  *
  */
 public class UploadedFileFormDataAdaptorFactory extends
