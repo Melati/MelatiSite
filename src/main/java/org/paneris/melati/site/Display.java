@@ -15,7 +15,7 @@ import org.melati.poem.Persistent;
 import org.melati.poem.Column;
 import org.melati.PoemContext;
 import org.melati.template.ServletTemplateContext;
-import org.melati.util.StringUtils;
+import org.melati.poem.util.StringUtils;
 import org.paneris.melati.site.model.Template;
 import org.paneris.melati.site.model.Templated;
 import org.paneris.melati.site.model.HasGetTemplateUrl;
