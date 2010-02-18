@@ -64,6 +64,21 @@
     <name>PanEris</name>
     <url>http://www.paneris.net/</url>
   </organization>
+  <dependencies>
+    <dependency>
+      <groupId>org.melati</groupId>
+      <artifactId>melati</artifactId>
+      <version>0.7.8-RC2-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
     <testSourceDirectory>src/test/java</testSourceDirectory>
@@ -380,45 +395,36 @@
     <repository>
       <id>melati</id>
       <name>Default Repository</name>
-      <url>scp://melati.org/data/www/maven2/</url>
+      <url>scp://www.paneris.net/data/www/maven2/</url>
     </repository>
     <site>
       <id>default</id>
       <name>Defaul Site</name>
-      <url>scp://www.paneris.net//data/www/MelatiSite</url>
+      <url>scp://www.paneris.net/data/www/MelatiSite</url>
     </site>
   </distributionManagement>
   <repositories>
     <repository>
       <id>melati</id>
       <name>Melati M2 Repository</name>
-      <url>http://www.melati.org/maven2/</url>
+      <url>http://www.melati.org/maven2</url>
     </repository>
     <repository>
       <id>snapshots</id>
       <name>Codehaus snapshots</name>
       <url>http://snapshots.maven.codehaus.org/maven2/</url>
     </repository>
-   <!-- 
-   <repository>
-     <id>m1</id>
-     <name>Maven 1 Repository</name>
-     <layout>legacy</layout>
-     <url>http://www.ibiblio.org/maven/</url>
-   </repository>
-   <repository>
-     <id>melati1</id>
-     <name>Melati Maven 1 Repository</name>
-     <layout>legacy</layout>
-     <url>http://melati.org/maven/</url>
-   </repository>
-  -->
   </repositories>
   <pluginRepositories>
     <pluginRepository>
+      <id>local</id>
+      <name>Local Melati M2 Repository</name>
+      <url>http://localhost/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
       <id>melati</id>
       <name>Melati M2 Repository</name>
-      <url>http://www.melati.org/maven2/</url>
+      <url>http://www.melati.org/maven2</url>
     </pluginRepository>
     <pluginRepository>
       <id>snapshots</id>
