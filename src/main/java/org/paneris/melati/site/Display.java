@@ -5,7 +5,7 @@
  *
  * Contact details for copyright holder:
  * 
- *  Tim Pizey (timp@paneris.org)
+ *  Tim Pizey (timp At paneris.org)
  */
 
 package org.paneris.melati.site;
@@ -82,8 +82,7 @@ public class Display extends SiteServlet {
         }
         catch (NumberFormatException e) {
           if (melati.getTable() != null) {
-            String value = StringUtils.tr(method,'.', ' '); 
-            value = StringUtils.tr(method,'_', ' '); 
+            String value = method.replace('.', ' ').replace('_', ' '); 
             Column search = melati.getTable().primaryCriterionColumn();
             Persistent o = search.firstWhereEq(value);
             if (o != null) id = o.troid();
@@ -104,7 +103,7 @@ public class Display extends SiteServlet {
             if (t != null) url = t.getUrl();
             if (url != null) {
               System.err.println("returning url:" + url);
-              return url;
+              return url.substring(0, url.length()-3);
             } else {
               System.err.println("url null");              
             }
@@ -113,7 +112,6 @@ public class Display extends SiteServlet {
           }
           System.err.println("return 1 - really");
           return StringUtils.capitalised(melati.getTable().getName());
-        // StringUtils.tr(melati.getObject().getClass().getName(), '.', '/');
         } else {
           System.err.println("return 2");
           return method;

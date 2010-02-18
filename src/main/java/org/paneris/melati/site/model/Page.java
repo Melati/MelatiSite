@@ -9,7 +9,6 @@ import org.melati.poem.CachedSelection;
 import org.melati.poem.util.ArrayUtils;
 import org.melati.poem.util.EmptyEnumeration;
 import org.melati.template.MarkupLanguage;
-import org.melati.poem.util.StringUtils;
 import org.melati.poem.Treeable;
 import org.paneris.melati.site.model.generated.PageBase;
 
@@ -117,13 +116,13 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
    * @return the name with underscores for spaces and a file extension added.
    */
   public String getUrlName() {
-    return StringUtils.tr(getDisplayname(), ' ', '_');
+    return getDisplayname().replace(' ', '_');
   }
   /**
    * @return the name with underscores for spaces and a file extension added.
    */
   public String getJavaName() {
-    return StringUtils.tr(getUrlName(), '-', '_');
+    return getUrlName().replace('-', '_');
   }
 
   /**
@@ -132,7 +131,7 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
    * @return The table name, a period followed by the troid.
    */
   public String getXmlId() {
-    return StringUtils.tr(toString(), '/', '.');
+    return toString().replace('/', '.');
   }
 
   private CachedSelection divs = null;

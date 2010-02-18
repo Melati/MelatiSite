@@ -27,7 +27,7 @@ import org.melati.poem.util.StringUtils;
 
 /**
  * @author timp
- * 
+ *
  */
 public abstract class SiteServlet extends TemplateServlet {
 
@@ -175,8 +175,7 @@ public abstract class SiteServlet extends TemplateServlet {
           if (r.lastIndexOf(".htm") != -1) {
             r = r.substring(0, r.lastIndexOf(".htm"));
           }
-          String value = StringUtils.tr(r, '.', ' ');
-          value = StringUtils.tr(r, '_', ' ');
+          String value = r.replace('.', ' ').replace('_', ' ');
           Table t = melati.getTable();
           if (t != null) {
             Column c = t.primaryCriterionColumn();
