@@ -1,3 +1,5 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
 
 
