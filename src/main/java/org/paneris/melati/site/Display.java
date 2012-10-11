@@ -83,7 +83,7 @@ public class Display extends SiteServlet {
         catch (NumberFormatException e) {
           if (melati.getTable() != null) {
             String value = method.replace('.', ' ').replace('_', ' '); 
-            Column search = melati.getTable().primaryCriterionColumn();
+            Column<?> search = melati.getTable().primaryCriterionColumn();
             Persistent o = search.firstWhereEq(value);
             if (o != null) id = o.troid();
           }

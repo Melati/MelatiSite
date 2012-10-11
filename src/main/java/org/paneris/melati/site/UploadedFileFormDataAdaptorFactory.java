@@ -50,6 +50,7 @@ import org.melati.servlet.FormDataAdaptor;
 import org.melati.servlet.MultipartFormField;
 import org.melati.servlet.PoemFileFormDataAdaptorFactory;
 import org.melati.util.HttpUtil;
+import org.paneris.melati.site.model.UploadedFile;
 import org.paneris.melati.site.model.UploadedFileTable;
 
 /**
@@ -76,10 +77,11 @@ public class UploadedFileFormDataAdaptorFactory extends
    *          a {@link MultipartFormField}
    * @return a {@link FormDataAdaptor}
    */
+  @SuppressWarnings("unchecked")
   public synchronized FormDataAdaptor getIt(Melati melati,
       MultipartFormField field) {
     if (melati.getTable() != null & melati.getTable() instanceof UploadedFileTable) { 
-      UploadedFileTable t = (UploadedFileTable)melati.getTable(); 
+      UploadedFileTable<UploadedFile> t = (UploadedFileTable<UploadedFile>)melati.getTable(); 
       return new DefaultFileFormDataAdaptor(melati,
           HttpUtil.concatenateUrls(
                (String) melati.getDatabase().getSettingTable().getOrDie("UploadDir"),

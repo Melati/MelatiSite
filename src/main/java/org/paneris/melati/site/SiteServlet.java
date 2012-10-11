@@ -176,9 +176,9 @@ public abstract class SiteServlet extends TemplateServlet {
             r = r.substring(0, r.lastIndexOf(".htm"));
           }
           String value = r.replace('.', ' ').replace('_', ' ');
-          Table t = melati.getTable();
+          Table<?> t = melati.getTable();
           if (t != null) {
-            Column c = t.primaryCriterionColumn();
+            Column<?> c = t.primaryCriterionColumn();
             if (c == null)
               throw new NullPointerException("primaryCriterionColumn null");
             Persistent o = c.firstWhereEq(value);
