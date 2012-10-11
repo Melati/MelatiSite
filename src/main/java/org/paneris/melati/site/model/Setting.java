@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.SettingBase;
 
@@ -14,7 +17,7 @@ import org.paneris.melati.site.model.generated.SettingBase;
  * <tr><th>Name</th><th>Type</th><th>Description</th></tr>
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Setting extends SettingBase {
 
@@ -22,9 +25,11 @@ public class Setting extends SettingBase {
   * Constructor 
   * for a <code>Persistent</code> <code>Setting</code> object.
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public Setting() { }
+  public Setting() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

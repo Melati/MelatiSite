@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.TemplateBase;
 
@@ -21,7 +24,7 @@ import org.paneris.melati.site.model.generated.TemplateBase;
  * locate template, no need for extension </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Template extends TemplateBase {
 
@@ -33,9 +36,11 @@ public class Template extends TemplateBase {
   *   A page template, used to control HTML fragment layout. 
   * </p>
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public Template() { }
+  public Template() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

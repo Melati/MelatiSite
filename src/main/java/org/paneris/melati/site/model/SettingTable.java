@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.SettingTableBase;
 import org.melati.poem.DefinitionSource;
@@ -17,14 +20,14 @@ import org.melati.poem.PoemException;
  * <tr><th>Name</th><th>Type</th><th>Description</th></tr>
  * </table> 
  * 
- * @see  org.melati.poem.prepro.TableDef#generateTableJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class SettingTable extends SettingTableBase {
+public class SettingTable<T extends Setting> extends SettingTableBase<Setting> {
 
  /**
   * Constructor.
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used

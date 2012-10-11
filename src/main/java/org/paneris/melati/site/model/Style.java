@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.StyleBase;
 
@@ -20,7 +23,7 @@ import org.paneris.melati.site.model.generated.StyleBase;
  * <tr><td> name </td><td> String </td><td> The Class id </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Style extends StyleBase {
 
@@ -32,9 +35,11 @@ public class Style extends StyleBase {
   *   A CSS Class Id. 
   * </p>
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public Style() { }
+  public Style() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

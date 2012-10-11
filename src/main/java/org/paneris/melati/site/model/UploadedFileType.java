@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.UploadedFileTypeBase;
 
@@ -20,7 +23,7 @@ import org.paneris.melati.site.model.generated.UploadedFileTypeBase;
  * <tr><td> type </td><td> String </td><td> Type of uploaded file </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class UploadedFileType extends UploadedFileTypeBase {
 
@@ -32,9 +35,11 @@ public class UploadedFileType extends UploadedFileTypeBase {
   *   A type of uploaded file. 
   * </p>
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public UploadedFileType() { }
+  public UploadedFileType() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

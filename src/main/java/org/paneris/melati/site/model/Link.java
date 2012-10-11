@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.LinkBase;
 
@@ -27,7 +30,7 @@ import org.paneris.melati.site.model.generated.LinkBase;
  * <tr><td> displayorder </td><td> Integer </td><td> &nbsp; </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Link extends LinkBase {
 
@@ -39,9 +42,11 @@ public class Link extends LinkBase {
   *   A link. 
   * </p>
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public Link() { }
+  public Link() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

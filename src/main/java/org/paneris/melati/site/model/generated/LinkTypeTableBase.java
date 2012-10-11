@@ -302,7 +302,7 @@ public class LinkTypeTableBase<T extends LinkType> extends SiteTable<T> {
   }
 
   public String defaultDescription() {
-    return "Type of link";
+    return "Media Type for a link";
   }
 
   public boolean defaultRememberAllTroids() {

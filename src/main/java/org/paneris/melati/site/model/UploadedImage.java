@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.UploadedImageBase;
 
@@ -25,7 +28,7 @@ import org.paneris.melati.site.model.generated.UploadedImageBase;
  * an image </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class UploadedImage extends UploadedImageBase {
 
@@ -37,9 +40,11 @@ public class UploadedImage extends UploadedImageBase {
   *   An image uploaded by a user. 
   * </p>
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public UploadedImage() { }
+  public UploadedImage() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

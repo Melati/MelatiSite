@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.UploadedFileBase;
 
@@ -27,7 +30,7 @@ import org.paneris.melati.site.model.generated.UploadedFileBase;
  * </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class UploadedFile extends UploadedFileBase {
 
@@ -35,9 +38,11 @@ public class UploadedFile extends UploadedFileBase {
   * Constructor 
   * for a <code>Persistent</code> <code>UploadedFile</code> object.
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public UploadedFile() { }
+  public UploadedFile() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

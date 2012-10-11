@@ -10,6 +10,7 @@ import org.paneris.melati.site.model.generated.SiteDatabaseBase;
 public class SiteDatabase extends SiteDatabaseBase
                             implements SiteDatabaseTables {
   // programmer's domain-specific code here
+  // Don't forget to delete first line to prevent overwriting
 
   private Page homePage;
   private Setting description;
@@ -64,7 +65,7 @@ public class SiteDatabase extends SiteDatabaseBase
   public String getKeywords() {
     return keywords.getValue();
   }
-  
+
 }
 
 

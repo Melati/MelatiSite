@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.DivBase;
 
@@ -29,7 +32,7 @@ import org.paneris.melati.site.model.generated.DivBase;
  * this div </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Div extends DivBase {
 
@@ -41,9 +44,11 @@ public class Div extends DivBase {
   *   An HTML fragment. 
   * </p>
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public Div() { }
+  public Div() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }

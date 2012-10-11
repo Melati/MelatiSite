@@ -1,4 +1,7 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.paneris.melati.site.model.generated.LinkTypeBase;
 
@@ -8,7 +11,7 @@ import org.paneris.melati.site.model.generated.LinkTypeBase;
  * 
  * <p> 
  * Description: 
- *   Type of link. 
+ *   Media Type for a link. 
  * </p>
  * 
  * <table> 
@@ -22,7 +25,7 @@ import org.paneris.melati.site.model.generated.LinkTypeBase;
  * link type </td></tr> 
  * </table> 
  * 
- * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class LinkType extends LinkTypeBase {
 
@@ -31,12 +34,14 @@ public class LinkType extends LinkTypeBase {
   * for a <code>Persistent</code> <code>LinkType</code> object.
   * <p>
   * Description: 
-  *   Type of link. 
+  *   Media Type for a link. 
   * </p>
   * 
-  * @see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
   */
-  public LinkType() { }
+  public LinkType() { 
+    super();
+}
 
   // programmer's domain-specific code here
 }
