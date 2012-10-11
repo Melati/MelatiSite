@@ -6,65 +6,63 @@ import java.util.Vector;
 import org.melati.Melati;
 import org.melati.admin.AdminSpecialised;
 import org.melati.poem.CachedSelection;
-import org.melati.poem.util.ArrayUtils;
 import org.melati.poem.util.EmptyEnumeration;
 import org.melati.template.MarkupLanguage;
 import org.melati.poem.Treeable;
 import org.paneris.melati.site.model.generated.PageBase;
 
 /**
- * Melati POEM generated, programmer modifiable stub for a
- * <code>Persistent</code> <code>Page</code> object.
+ * Melati POEM generated, programmer modifiable stub 
+ * for a <code>Persistent</code> <code>Page</code> object.
  * 
+ * <p> 
+ * Description: 
+ *   A Page. 
+ * </p>
  * 
- * <table>
- * <tr>
- * <th colspan='3'> Field summary for SQL table <code>Page</code> </th>
- * </tr>
- * <tr>
- * <th>Name</th>
- * <th>Type</th>
- * <th>Description</th>
- * </tr>
- * <tr>
- * <td> fsname </td>
- * <td> String </td>
- * <td> A file system name, no spaces or special characters </td>
- * </tr>
- * <tr>
- * <td> deleted </td>
- * <td> Boolean </td>
- * <td> Whether or not to include this Unit </td>
- * </tr>
- * <tr>
- * <td> lastencached </td>
- * <td> Timestamp </td>
- * <td> When the unit was encached; cleared when the unit is updated </td>
- * </tr>
- * <tr>
- * <td> layout </td>
- * <td> Layout </td>
- * <td> The name of the layout for this Unit </td>
- * </tr>
- * <tr>
- * <td> messageboard </td>
- * <td> Board </td>
- * <td> A messageboard on which this unit can be discussed </td>
- * </tr>
- * </table>
+ * <table> 
+ * <tr><th colspan='3'>
+ * Field summary for SQL table <code>Page</code>
+ * </th></tr>
+ * <tr><th>Name</th><th>Type</th><th>Description</th></tr>
+ * <tr><td> id </td><td> Integer </td><td> &nbsp; </td></tr> 
+ * <tr><td> name </td><td> String </td><td> A file system name, no spaces or 
+ * special characters </td></tr> 
+ * <tr><td> displayname </td><td> String </td><td> The full name used in the 
+ * TITLE. </td></tr> 
+ * <tr><td> displayorder </td><td> Integer </td><td> A rank determining where 
+ * the page appears in a list </td></tr> 
+ * <tr><td> display </td><td> Boolean </td><td> Whether to display this page 
+ * </td></tr> 
+ * <tr><td> deleted </td><td> Boolean </td><td> Soft delete </td></tr> 
+ * <tr><td> lastencached </td><td> Timestamp </td><td> When the page was 
+ * encached; cleared when the page is updated </td></tr> 
+ * <tr><td> parent </td><td> Page </td><td> The parent page (empty for Home). 
+ *  </td></tr> 
+ * <tr><td> template </td><td> Template </td><td> The name of the layout for 
+ * this page </td></tr> 
+ * <tr><td> style </td><td> Style </td><td> The name of the CSS class for 
+ * this page </td></tr> 
+ * </table> 
  * 
- * @generator org.melati.poem.prepro.TableDef#generateMainJava
+ * see org.melati.poem.prepro.TableDef#generatePersistentJava 
  */
 public class Page extends PageBase implements AdminSpecialised, Treeable,
     Templated {
 
-  /**
-   * Constructor for a <code>Persistent</code> <code>Page</code> object.
-   * 
-   * @generator org.melati.poem.prepro.TableDef#generateMainJava
-   */
-  public Page() {
-  }
+ /**
+  * Constructor 
+  * for a <code>Persistent</code> <code>Page</code> object.
+  * <p>
+  * Description: 
+  *   A Page. 
+  * </p>
+  * 
+  * see org.melati.poem.prepro.TableDef#generatePersistentJava 
+  */
+  public Page() { 
+    super();
+}
 
   // programmer's domain-specific code here
 
@@ -73,7 +71,7 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
    */
   public SiteDatabaseTables getSiteDatabase() {
     return (SiteDatabaseTables) getDatabase();
-  }
+}
 
   /**
    * @return a string with non breaking space for spaces
@@ -85,15 +83,15 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
   /**
    * @return an Enumeration of ancestors
    */
-  public Enumeration getAncestors() {
-    Vector v = new Vector();
+  public Enumeration<Page> getAncestors() {
+    Vector<Page> v = new Vector<Page>();
     Page p = getParent();
     while (p != null) {
       v.addElement(p);
       p = p.getParent();
     }
-    Vector reversed = new Vector();
-    for (Enumeration e = v.elements(); e.hasMoreElements();) {
+    Vector<Page> reversed = new Vector<Page>();
+    for (Enumeration<Page> e = v.elements(); e.hasMoreElements();) {
       reversed.insertElementAt(e.nextElement(), 0);
     }
     return reversed.elements();
@@ -134,14 +132,15 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
     return toString().replace('/', '.');
   }
 
-  private CachedSelection divs = null;
+  private CachedSelection<Div> divs = null;
 
   /**
    * @return the divs
    */
-  public Enumeration getDivs() {
+  @SuppressWarnings("unchecked")
+  public Enumeration<Div> getDivs() {
     if (getTroid() == null)
-      return EmptyEnumeration.it;
+      return new EmptyEnumeration<Div>();
     else {
       if (divs == null)
         divs = getSiteDatabase().getDivTable().getPageColumn()
@@ -155,16 +154,14 @@ public class Page extends PageBase implements AdminSpecialised, Treeable,
    */
 
   public Treeable[] getChildren() {
-    Treeable[] children = null;
-    Object[] kids = ArrayUtils.arrayOf(getPageTable().getParentColumn()
-        .referencesTo(this));
-    int j = 0;
+    Object[] kids = super.getChildren();
+    int displayabledChildCount = 0;
     for (int i = 0; i < kids.length; i++) {
       if (((Page) kids[i]).getDisplay().booleanValue()) {
-        j++;
+        displayabledChildCount++;
       }
     }
-    children = new Treeable[j];
+    Treeable[] children = new Treeable[displayabledChildCount];
     int k = 0;
     for (int i = 0; i < kids.length; i++) {
       if (((Page) kids[i]).getDisplay().booleanValue()) {
