@@ -30,16 +30,18 @@ import org.melati.poem.PoemException;
  * this DIV </td></tr> 
  * <tr><td> title </td><td> String </td><td> The HTML title </td></tr> 
  * <tr><td> content </td><td> String </td><td> The HTML content </td></tr> 
+ * <tr><td> image </td><td> UploadedImage </td><td> Image associated with 
+ * this div </td></tr> 
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableMainJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class DivTable extends DivTableBase {
+public class DivTable<T extends Div> extends DivTableBase<Div> {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used

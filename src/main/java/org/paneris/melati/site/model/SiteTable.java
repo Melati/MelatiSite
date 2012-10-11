@@ -1,14 +1,18 @@
+// Delete this line to prevent overwriting of this file
+
 package org.paneris.melati.site.model;
+
 
 import org.melati.poem.JdbcTable;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
+import org.melati.poem.Persistent;
 import org.melati.poem.PoemException;
 
 /**
- * Melati POEM generated, programmer modifyable inheritance hook.
+ * Melati POEM generated, programmer modifiable inheritance hook.
  */
-public class SiteTable extends JdbcTable {
+public class SiteTable<P extends Persistent> extends JdbcTable<P> {
 
  /**
   * Constructor. 
@@ -27,6 +31,7 @@ public class SiteTable extends JdbcTable {
   }
 
   // programmer's domain-specific code here
+  // Don't forget to delete first line to prevent overwriting
 }
 
 

@@ -1,5 +1,6 @@
 package org.paneris.melati.site.model;
 
+
 import org.paneris.melati.site.model.generated.LinkTypeTableBase;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
@@ -10,7 +11,7 @@ import org.melati.poem.PoemException;
  * for a <code>LinkTypeTable</code> object.
  * <p>
  * Description: 
- *   Types of media output. 
+ *   Type of link. 
  * </p>
  *
  * 
@@ -25,14 +26,14 @@ import org.melati.poem.PoemException;
  * link type </td></tr> 
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableMainJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class LinkTypeTable extends LinkTypeTableBase {
+public class LinkTypeTable<T extends LinkType> extends LinkTypeTableBase<LinkType> {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -58,6 +59,6 @@ public class LinkTypeTable extends LinkTypeTableBase {
       p.makePersistent();
     }
     return p;
-  }
+}
 
 }
