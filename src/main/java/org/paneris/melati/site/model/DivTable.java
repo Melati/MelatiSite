@@ -5,6 +5,7 @@ import java.util.Enumeration;
 import org.paneris.melati.site.model.generated.DivTableBase;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
+import org.melati.poem.Persistent;
 import org.melati.poem.PoemException;
 
 /**
@@ -89,7 +90,7 @@ public class DivTable<T extends Div> extends DivTableBase<Div> {
       p = (Div)newPersistent();
       if (page != null) {
         p.setPage(page);
-        Enumeration e = getPageColumn().selectionWhereEq(page.troid());
+        Enumeration<Persistent> e = getPageColumn().selectionWhereEq(page.troid());
         int c = 0;
         while (e.hasMoreElements()) {
           e.nextElement();
