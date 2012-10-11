@@ -311,7 +311,7 @@ table Link
 
 table LinkType
     (displayname = "Link Type") 
-    (description = "Type of link")
+    (description = "Media Type for a link")
     (category = "Codes") 
     (displayorder = 1690)
     (seqcached) 
