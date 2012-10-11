@@ -1,5 +1,6 @@
 package org.paneris.melati.site.model;
 
+
 import org.paneris.melati.site.model.generated.StyleTableBase;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
@@ -23,14 +24,14 @@ import org.melati.poem.PoemException;
  * <tr><td> name </td><td> String </td><td> The Class id </td></tr> 
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableMainJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class StyleTable extends StyleTableBase {
+public class StyleTable<T extends Style> extends StyleTableBase<Style> {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -59,5 +60,5 @@ public class StyleTable extends StyleTableBase {
     }
     return p;
   }
-
 }
+

@@ -1,5 +1,6 @@
 package org.paneris.melati.site.model;
 
+
 import org.paneris.melati.site.model.generated.PageTableBase;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
@@ -26,28 +27,27 @@ import org.melati.poem.PoemException;
  * TITLE. </td></tr> 
  * <tr><td> displayorder </td><td> Integer </td><td> A rank determining where 
  * the page appears in a list </td></tr> 
- * <tr><td> deleted </td><td> Boolean </td><td> Whether or not to include 
- * this Unit </td></tr> 
- * <tr><td> lastencached </td><td> Timestamp </td><td> When the unit was 
- * encached; cleared when the unit is updated </td></tr> 
- * <tr><td> parent </td><td> Page </td><td> The organisation to which this is 
- * affiliated, if any.  </td></tr> 
+ * <tr><td> display </td><td> Boolean </td><td> Whether to display this page 
+ * </td></tr> 
+ * <tr><td> deleted </td><td> Boolean </td><td> Soft delete </td></tr> 
+ * <tr><td> lastencached </td><td> Timestamp </td><td> When the page was 
+ * encached; cleared when the page is updated </td></tr> 
+ * <tr><td> parent </td><td> Page </td><td> The parent page (empty for Home). 
+ *  </td></tr> 
  * <tr><td> template </td><td> Template </td><td> The name of the layout for 
  * this page </td></tr> 
  * <tr><td> style </td><td> Style </td><td> The name of the CSS class for 
  * this page </td></tr> 
- * <tr><td> messageboard </td><td> Board </td><td> A messageboard on which 
- * this unit can be discussed </td></tr> 
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableMainJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class PageTable extends PageTableBase {
+public class PageTable<T extends Page> extends PageTableBase<Page> {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -118,7 +118,7 @@ public class PageTable extends PageTableBase {
     p.setParent(parent);
     return p;
   }
-  
+
   /**
    * @param displayName long name of page
    * @param parent the page's parent
@@ -134,7 +134,6 @@ public class PageTable extends PageTableBase {
         getDivTable().ensure(p, divSubject, divContent);
     return p;
   }
-
 
   /**
    * Remove spaces from a string.

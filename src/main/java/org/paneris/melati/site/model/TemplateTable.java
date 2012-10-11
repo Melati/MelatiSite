@@ -1,5 +1,6 @@
 package org.paneris.melati.site.model;
 
+
 import org.paneris.melati.site.model.generated.TemplateTableBase;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
@@ -20,20 +21,18 @@ import org.melati.poem.PoemException;
  * </th></tr>
  * <tr><th>Name</th><th>Type</th><th>Description</th></tr>
  * <tr><td> id </td><td> Integer </td><td> &nbsp; </td></tr> 
- * <tr><td> displayname </td><td> String </td><td> The layout's name 
- * </td></tr> 
- * <tr><td> pathname </td><td> String </td><td> Path in the file system 
- * relative to template root </td></tr> 
+ * <tr><td> url </td><td> String </td><td> Key by which template engine can 
+ * locate template, no need for extension </td></tr> 
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableMainJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class TemplateTable extends TemplateTableBase {
+public class TemplateTable<T extends Template> extends TemplateTableBase<Template> {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -46,6 +45,7 @@ public class TemplateTable extends TemplateTableBase {
   }
 
   // programmer's domain-specific code here
+
   /**
    * Create or retrieve existing Template by name.
    * 
@@ -65,3 +65,4 @@ public class TemplateTable extends TemplateTableBase {
   }
   
 }
+

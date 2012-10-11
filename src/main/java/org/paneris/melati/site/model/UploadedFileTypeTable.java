@@ -1,5 +1,6 @@
 package org.paneris.melati.site.model;
 
+
 import org.paneris.melati.site.model.generated.UploadedFileTypeTableBase;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
@@ -23,14 +24,14 @@ import org.melati.poem.PoemException;
  * <tr><td> type </td><td> String </td><td> Type of uploaded file </td></tr> 
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableMainJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class UploadedFileTypeTable extends UploadedFileTypeTableBase {
+public class UploadedFileTypeTable<T extends UploadedFileType> extends UploadedFileTypeTableBase<UploadedFileType> {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -57,4 +58,6 @@ public class UploadedFileTypeTable extends UploadedFileTypeTableBase {
     return p;
   }
 
+
 }
+

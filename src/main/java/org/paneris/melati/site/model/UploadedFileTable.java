@@ -1,9 +1,11 @@
 package org.paneris.melati.site.model;
 
+
 import org.paneris.melati.site.model.generated.UploadedFileTableBase;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.Database;
 import org.melati.poem.PoemException;
+
 import org.melati.poem.Persistent;
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.InitialisationPoemException;
@@ -12,13 +14,10 @@ import org.melati.poem.PoemThread;
 import org.melati.poem.User;
 import java.sql.Date;
 
+
 /**
  * Melati POEM generated, programmer modifiable stub 
  * for a <code>UploadedFileTable</code> object.
- * <p>
- * Description: 
- *   A file uploaded by a user. 
- * </p>
  *
  * 
  * <table> 
@@ -37,16 +36,18 @@ import java.sql.Date;
  * file </td></tr> 
  * <tr><td> deleted </td><td> Boolean </td><td> Whether this file been 
  * deleted or not </td></tr> 
+ * <tr><td> displayname </td><td> String </td><td> The layout's name 
+ * </td></tr> 
  * </table> 
  * 
- * @generator  org.melati.poem.prepro.TableDef#generateTableMainJava 
+ * see  org.melati.poem.prepro.TableDef#generateTableJava 
  */
-public class UploadedFileTable extends UploadedFileTableBase {
+public class UploadedFileTable<T extends UploadedFile> extends UploadedFileTableBase<UploadedFile> {
 
  /**
   * Constructor.
   * 
-  * @generator org.melati.poem.prepro.TableDef#generateTableMainJava 
+  * see org.melati.poem.prepro.TableDef#generateTableJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -59,7 +60,7 @@ public class UploadedFileTable extends UploadedFileTableBase {
   }
 
   // programmer's domain-specific code here
-
+  
   public void create(Persistent persistent)
       throws AccessPoemException, ValidationPoemException,
              InitialisationPoemException {
@@ -111,4 +112,6 @@ Need canUpload capability?
     return "/";
   }
 
+  
 }
+
