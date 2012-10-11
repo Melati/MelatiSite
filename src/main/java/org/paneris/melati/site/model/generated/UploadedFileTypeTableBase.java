@@ -2,6 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Database;
@@ -23,18 +24,18 @@ import org.paneris.melati.site.model.UploadedFileType;
  * Melati POEM generated base class for 
 <code>Table</code> <code>UploadedFileType</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class UploadedFileTypeTableBase extends SiteTable {
 
-  private Column col_id = null;
-  private Column col_type = null;
+  private Column<Integer> col_id = null;
+  private Column<String> col_type = null;
 
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -51,7 +52,7 @@ public class UploadedFileTypeTableBase extends SiteTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -61,7 +62,7 @@ public class UploadedFileTypeTableBase extends SiteTable {
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
-        new Column(this, "id",
+        new Column<Integer>(this, "id",
                    new TroidPoemType(),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -74,7 +75,7 @@ public class UploadedFileTypeTableBase extends SiteTable {
             ((UploadedFileType)g).setId((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((UploadedFileType)g).getIdField();
           }
 
@@ -120,7 +121,7 @@ public class UploadedFileTypeTableBase extends SiteTable {
         });
 
     defineColumn(col_type =
-        new Column(this, "type",
+        new Column<String>(this, "type",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -133,7 +134,7 @@ public class UploadedFileTypeTableBase extends SiteTable {
             ((UploadedFileType)g).setType((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((UploadedFileType)g).getTypeField();
           }
 
@@ -180,10 +181,10 @@ public class UploadedFileTypeTableBase extends SiteTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>UploadedFileType</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
-  public final Column getIdColumn() {
+  public final Column<Integer> getIdColumn() {
     return col_id;
   }
 
@@ -192,10 +193,10 @@ public class UploadedFileTypeTableBase extends SiteTable {
   * Retrieves the <code>Type</code> <code>Column</code> for this 
   * <code>UploadedFileType</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the type <code>Column</code>
   */
-  public final Column getTypeColumn() {
+  public final Column<String> getTypeColumn() {
     return col_type;
   }
 
@@ -203,7 +204,7 @@ public class UploadedFileTypeTableBase extends SiteTable {
  /**
   * Retrieve the <code>UploadedFileType</code> as a <code>UploadedFileType</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -216,7 +217,7 @@ public class UploadedFileTypeTableBase extends SiteTable {
   * Retrieve the <code>UploadedFileType</code> 
   * as a <code>UploadedFileType</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public UploadedFileType getUploadedFileTypeObject(int troid) {

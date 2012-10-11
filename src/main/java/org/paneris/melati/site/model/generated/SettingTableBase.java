@@ -2,9 +2,11 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import org.melati.poem.Database;
 import org.melati.poem.DefinitionSource;
 import org.melati.poem.JdbcPersistent;
+import org.melati.poem.Persistent;
 import org.melati.poem.PoemException;
 import org.melati.poem.SettingTable;
 import org.paneris.melati.site.model.Setting;
@@ -15,7 +17,7 @@ import org.paneris.melati.site.model.SiteDatabaseTables;
  * Melati POEM generated base class for 
 <code>Table</code> <code>Setting</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class SettingTableBase extends SettingTable {
@@ -24,7 +26,7 @@ public class SettingTableBase extends SettingTable {
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -41,7 +43,7 @@ public class SettingTableBase extends SettingTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -56,7 +58,7 @@ public class SettingTableBase extends SettingTable {
  /**
   * Retrieve the <code>Setting</code> as a <code>org.melati.poem.Setting</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -69,7 +71,7 @@ public class SettingTableBase extends SettingTable {
   * Retrieve the <code>Setting</code> 
   * as a <code>org.melati.poem.Setting</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public org.melati.poem.Setting getSettingObject(int troid) {

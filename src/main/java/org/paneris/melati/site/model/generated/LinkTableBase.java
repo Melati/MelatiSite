@@ -2,6 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Database;
@@ -29,22 +30,22 @@ import org.paneris.melati.site.model.SiteTable;
  * Melati POEM generated base class for 
 <code>Table</code> <code>Link</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class LinkTableBase extends SiteTable {
 
-  private Column col_id = null;
-  private Column col_page = null;
-  private Column col_type = null;
-  private Column col_url = null;
-  private Column col_displayname = null;
-  private Column col_displayorder = null;
+  private Column<Integer> col_id = null;
+  private Column<Integer> col_page = null;
+  private Column<Integer> col_type = null;
+  private Column<String> col_url = null;
+  private Column<String> col_displayname = null;
+  private Column<Integer> col_displayorder = null;
 
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -61,7 +62,7 @@ public class LinkTableBase extends SiteTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -71,7 +72,7 @@ public class LinkTableBase extends SiteTable {
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
-        new Column(this, "id",
+        new Column<Integer>(this, "id",
                    new TroidPoemType(),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -84,7 +85,7 @@ public class LinkTableBase extends SiteTable {
             ((Link)g).setId((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Link)g).getIdField();
           }
 
@@ -126,7 +127,7 @@ public class LinkTableBase extends SiteTable {
         });
 
     defineColumn(col_page =
-        new Column(this, "page",
+        new Column<Integer>(this, "page",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getPageTable(), false),
                    DefinitionSource.dsd) { 
@@ -140,7 +141,7 @@ public class LinkTableBase extends SiteTable {
             ((Link)g).setPage((Page)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Link)g).getPageField();
           }
 
@@ -194,7 +195,7 @@ public class LinkTableBase extends SiteTable {
         });
 
     defineColumn(col_type =
-        new Column(this, "type",
+        new Column<Integer>(this, "type",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getLinkTypeTable(), false),
                    DefinitionSource.dsd) { 
@@ -208,7 +209,7 @@ public class LinkTableBase extends SiteTable {
             ((Link)g).setType((LinkType)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Link)g).getTypeField();
           }
 
@@ -242,7 +243,7 @@ public class LinkTableBase extends SiteTable {
         });
 
     defineColumn(col_url =
-        new Column(this, "url",
+        new Column<String>(this, "url",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -255,7 +256,7 @@ public class LinkTableBase extends SiteTable {
             ((Link)g).setUrl((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((Link)g).getUrlField();
           }
 
@@ -293,7 +294,7 @@ public class LinkTableBase extends SiteTable {
         });
 
     defineColumn(col_displayname =
-        new Column(this, "displayname",
+        new Column<String>(this, "displayname",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -306,7 +307,7 @@ public class LinkTableBase extends SiteTable {
             ((Link)g).setDisplayname((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((Link)g).getDisplaynameField();
           }
 
@@ -348,7 +349,7 @@ public class LinkTableBase extends SiteTable {
         });
 
     defineColumn(col_displayorder =
-        new Column(this, "displayorder",
+        new Column<Integer>(this, "displayorder",
                    new IntegerPoemType(false),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -361,7 +362,7 @@ public class LinkTableBase extends SiteTable {
             ((Link)g).setDisplayorder((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Link)g).getDisplayorderField();
           }
 
@@ -400,10 +401,10 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
-  public final Column getIdColumn() {
+  public final Column<Integer> getIdColumn() {
     return col_id;
   }
 
@@ -412,10 +413,10 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Page</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the page <code>Column</code>
   */
-  public final Column getPageColumn() {
+  public final Column<Integer> getPageColumn() {
     return col_page;
   }
 
@@ -424,10 +425,10 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Type</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the type <code>Column</code>
   */
-  public final Column getTypeColumn() {
+  public final Column<Integer> getTypeColumn() {
     return col_type;
   }
 
@@ -436,10 +437,10 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Url</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
   */
-  public final Column getUrlColumn() {
+  public final Column<String> getUrlColumn() {
     return col_url;
   }
 
@@ -448,10 +449,10 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Displayname</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayname <code>Column</code>
   */
-  public final Column getDisplaynameColumn() {
+  public final Column<String> getDisplaynameColumn() {
     return col_displayname;
   }
 
@@ -460,10 +461,10 @@ public class LinkTableBase extends SiteTable {
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
   * <code>Link</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>
   */
-  public final Column getDisplayorderColumn() {
+  public final Column<Integer> getDisplayorderColumn() {
     return col_displayorder;
   }
 
@@ -471,7 +472,7 @@ public class LinkTableBase extends SiteTable {
  /**
   * Retrieve the <code>Link</code> as a <code>Link</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -484,7 +485,7 @@ public class LinkTableBase extends SiteTable {
   * Retrieve the <code>Link</code> 
   * as a <code>Link</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public Link getLinkObject(int troid) {

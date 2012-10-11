@@ -2,6 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Database;
@@ -25,20 +26,20 @@ import org.paneris.melati.site.model.UploadedImage;
  * Melati POEM generated base class for 
 <code>Table</code> <code>UploadedImage</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class UploadedImageTableBase extends UploadedFileTable {
 
-  private Column col_id = null;
-  private Column col_url = null;
-  private Column col_height = null;
-  private Column col_width = null;
+  private Column<Integer> col_id = null;
+  private Column<String> col_url = null;
+  private Column<Integer> col_height = null;
+  private Column<Integer> col_width = null;
 
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -55,7 +56,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -65,7 +66,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
-        new Column(this, "id",
+        new Column<Integer>(this, "id",
                    new TroidPoemType(),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -78,7 +79,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
             ((UploadedImage)g).setId((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((UploadedImage)g).getIdField();
           }
 
@@ -120,7 +121,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
         });
 
     defineColumn(col_url =
-        new Column(this, "url",
+        new Column<String>(this, "url",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -133,7 +134,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
             ((UploadedImage)g).setUrl((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((UploadedImage)g).getUrlField();
           }
 
@@ -187,7 +188,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
         });
 
     defineColumn(col_height =
-        new Column(this, "height",
+        new Column<Integer>(this, "height",
                    new IntegerPoemType(true),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -200,7 +201,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
             ((UploadedImage)g).setHeight((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((UploadedImage)g).getHeightField();
           }
 
@@ -242,7 +243,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
         });
 
     defineColumn(col_width =
-        new Column(this, "width",
+        new Column<Integer>(this, "width",
                    new IntegerPoemType(true),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -255,7 +256,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
             ((UploadedImage)g).setWidth((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((UploadedImage)g).getWidthField();
           }
 
@@ -302,10 +303,10 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
-  public final Column getIdColumn() {
+  public final Column<Integer> getIdColumn() {
     return col_id;
   }
 
@@ -314,10 +315,10 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Url</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
   */
-  public final Column getUrlColumn() {
+  public final Column<String> getUrlColumn() {
     return col_url;
   }
 
@@ -326,10 +327,10 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Height</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the height <code>Column</code>
   */
-  public final Column getHeightColumn() {
+  public final Column<Integer> getHeightColumn() {
     return col_height;
   }
 
@@ -338,10 +339,10 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieves the <code>Width</code> <code>Column</code> for this 
   * <code>UploadedImage</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the width <code>Column</code>
   */
-  public final Column getWidthColumn() {
+  public final Column<Integer> getWidthColumn() {
     return col_width;
   }
 
@@ -349,7 +350,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
  /**
   * Retrieve the <code>UploadedImage</code> as a <code>UploadedImage</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -362,7 +363,7 @@ public class UploadedImageTableBase extends UploadedFileTable {
   * Retrieve the <code>UploadedImage</code> 
   * as a <code>UploadedImage</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public UploadedImage getUploadedImageObject(int troid) {

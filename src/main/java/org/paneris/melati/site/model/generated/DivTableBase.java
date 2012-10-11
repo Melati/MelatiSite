@@ -2,6 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Database;
@@ -30,23 +31,23 @@ import org.paneris.melati.site.model.UploadedImage;
  * Melati POEM generated base class for 
 <code>Table</code> <code>Div</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class DivTableBase extends SiteTable {
 
-  private Column col_id = null;
-  private Column col_page = null;
-  private Column col_displayorder = null;
-  private Column col_style = null;
-  private Column col_title = null;
-  private Column col_content = null;
-  private Column col_image = null;
+  private Column<Integer> col_id = null;
+  private Column<Integer> col_page = null;
+  private Column<Integer> col_displayorder = null;
+  private Column<Integer> col_style = null;
+  private Column<String> col_title = null;
+  private Column<String> col_content = null;
+  private Column<Integer> col_image = null;
 
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -63,7 +64,7 @@ public class DivTableBase extends SiteTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -73,7 +74,7 @@ public class DivTableBase extends SiteTable {
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
-        new Column(this, "id",
+        new Column<Integer>(this, "id",
                    new TroidPoemType(),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -86,7 +87,7 @@ public class DivTableBase extends SiteTable {
             ((Div)g).setId((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Div)g).getIdField();
           }
 
@@ -128,7 +129,7 @@ public class DivTableBase extends SiteTable {
         });
 
     defineColumn(col_page =
-        new Column(this, "page",
+        new Column<Integer>(this, "page",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getPageTable(), true),
                    DefinitionSource.dsd) { 
@@ -142,7 +143,7 @@ public class DivTableBase extends SiteTable {
             ((Div)g).setPage((Page)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Div)g).getPageField();
           }
 
@@ -180,7 +181,7 @@ public class DivTableBase extends SiteTable {
         });
 
     defineColumn(col_displayorder =
-        new Column(this, "displayorder",
+        new Column<Integer>(this, "displayorder",
                    new IntegerPoemType(false),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -193,7 +194,7 @@ public class DivTableBase extends SiteTable {
             ((Div)g).setDisplayorder((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Div)g).getDisplayorderField();
           }
 
@@ -239,7 +240,7 @@ public class DivTableBase extends SiteTable {
         });
 
     defineColumn(col_style =
-        new Column(this, "style",
+        new Column<Integer>(this, "style",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getStyleTable(), true),
                    DefinitionSource.dsd) { 
@@ -253,7 +254,7 @@ public class DivTableBase extends SiteTable {
             ((Div)g).setStyle((Style)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Div)g).getStyleField();
           }
 
@@ -299,7 +300,7 @@ public class DivTableBase extends SiteTable {
         });
 
     defineColumn(col_title =
-        new Column(this, "title",
+        new Column<String>(this, "title",
                    new StringPoemType(true, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -312,7 +313,7 @@ public class DivTableBase extends SiteTable {
             ((Div)g).setTitle((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((Div)g).getTitleField();
           }
 
@@ -354,7 +355,7 @@ public class DivTableBase extends SiteTable {
         });
 
     defineColumn(col_content =
-        new Column(this, "content",
+        new Column<String>(this, "content",
                    new StringPoemType(true, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -367,7 +368,7 @@ public class DivTableBase extends SiteTable {
             ((Div)g).setContent((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((Div)g).getContentField();
           }
 
@@ -413,7 +414,7 @@ public class DivTableBase extends SiteTable {
         });
 
     defineColumn(col_image =
-        new Column(this, "image",
+        new Column<Integer>(this, "image",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getUploadedImageTable(), true),
                    DefinitionSource.dsd) { 
@@ -427,7 +428,7 @@ public class DivTableBase extends SiteTable {
             ((Div)g).setImage((UploadedImage)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Div)g).getImageField();
           }
 
@@ -490,10 +491,10 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
-  public final Column getIdColumn() {
+  public final Column<Integer> getIdColumn() {
     return col_id;
   }
 
@@ -502,10 +503,10 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Page</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the page <code>Column</code>
   */
-  public final Column getPageColumn() {
+  public final Column<Integer> getPageColumn() {
     return col_page;
   }
 
@@ -514,10 +515,10 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>
   */
-  public final Column getDisplayorderColumn() {
+  public final Column<Integer> getDisplayorderColumn() {
     return col_displayorder;
   }
 
@@ -526,10 +527,10 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Style</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the style <code>Column</code>
   */
-  public final Column getStyleColumn() {
+  public final Column<Integer> getStyleColumn() {
     return col_style;
   }
 
@@ -538,10 +539,10 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Title</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the title <code>Column</code>
   */
-  public final Column getTitleColumn() {
+  public final Column<String> getTitleColumn() {
     return col_title;
   }
 
@@ -550,10 +551,10 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Content</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the content <code>Column</code>
   */
-  public final Column getContentColumn() {
+  public final Column<String> getContentColumn() {
     return col_content;
   }
 
@@ -562,10 +563,10 @@ public class DivTableBase extends SiteTable {
   * Retrieves the <code>Image</code> <code>Column</code> for this 
   * <code>Div</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the image <code>Column</code>
   */
-  public final Column getImageColumn() {
+  public final Column<Integer> getImageColumn() {
     return col_image;
   }
 
@@ -573,7 +574,7 @@ public class DivTableBase extends SiteTable {
  /**
   * Retrieve the <code>Div</code> as a <code>Div</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -586,7 +587,7 @@ public class DivTableBase extends SiteTable {
   * Retrieve the <code>Div</code> 
   * as a <code>Div</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public Div getDivObject(int troid) {

@@ -2,6 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import java.sql.Date;
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.BooleanPoemType;
@@ -30,23 +31,23 @@ import org.paneris.melati.site.model.UploadedFileType;
  * Melati POEM generated base class for 
 <code>Table</code> <code>UploadedFile</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class UploadedFileTableBase extends SiteTable {
 
-  private Column col_type = null;
-  private Column col_description = null;
-  private Column col_size = null;
-  private Column col_when = null;
-  private Column col_uploadedby = null;
-  private Column col_deleted = null;
-  private Column col_displayname = null;
+  private Column<Integer> col_type = null;
+  private Column<String> col_description = null;
+  private Column<Integer> col_size = null;
+  private Column<Date> col_when = null;
+  private Column<Integer> col_uploadedby = null;
+  private Column<Boolean> col_deleted = null;
+  private Column<String> col_displayname = null;
 
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -63,7 +64,7 @@ public class UploadedFileTableBase extends SiteTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -73,7 +74,7 @@ public class UploadedFileTableBase extends SiteTable {
   public void init() throws PoemException {
     super.init();
     defineColumn(col_type =
-        new Column(this, "type",
+        new Column<Integer>(this, "type",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getUploadedFileTypeTable(), false),
                    DefinitionSource.dsd) { 
@@ -87,7 +88,7 @@ public class UploadedFileTableBase extends SiteTable {
             ((UploadedFile)g).setType((UploadedFileType)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((UploadedFile)g).getTypeField();
           }
 
@@ -129,7 +130,7 @@ public class UploadedFileTableBase extends SiteTable {
         });
 
     defineColumn(col_description =
-        new Column(this, "description",
+        new Column<String>(this, "description",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -142,7 +143,7 @@ public class UploadedFileTableBase extends SiteTable {
             ((UploadedFile)g).setDescription((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((UploadedFile)g).getDescriptionField();
           }
 
@@ -192,7 +193,7 @@ public class UploadedFileTableBase extends SiteTable {
         });
 
     defineColumn(col_size =
-        new Column(this, "size",
+        new Column<Integer>(this, "size",
                    new IntegerPoemType(true),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -205,7 +206,7 @@ public class UploadedFileTableBase extends SiteTable {
             ((UploadedFile)g).setSize((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((UploadedFile)g).getSizeField();
           }
 
@@ -247,7 +248,7 @@ public class UploadedFileTableBase extends SiteTable {
         });
 
     defineColumn(col_when =
-        new Column(this, "when",
+        new Column<Date>(this, "when",
                    new DatePoemType(false),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -260,7 +261,7 @@ public class UploadedFileTableBase extends SiteTable {
             ((UploadedFile)g).setWhen((Date)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Date> asField(Persistent g) {
             return ((UploadedFile)g).getWhenField();
           }
 
@@ -310,7 +311,7 @@ public class UploadedFileTableBase extends SiteTable {
         });
 
     defineColumn(col_uploadedby =
-        new Column(this, "uploadedby",
+        new Column<Integer>(this, "uploadedby",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getUserTable(), false),
                    DefinitionSource.dsd) { 
@@ -324,7 +325,7 @@ public class UploadedFileTableBase extends SiteTable {
             ((UploadedFile)g).setUploadedby((User)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((UploadedFile)g).getUploadedbyField();
           }
 
@@ -378,7 +379,7 @@ public class UploadedFileTableBase extends SiteTable {
         });
 
     defineColumn(col_deleted =
-        new Column(this, "deleted",
+        new Column<Boolean>(this, "deleted",
                    new BooleanPoemType(false),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -391,7 +392,7 @@ public class UploadedFileTableBase extends SiteTable {
             ((UploadedFile)g).setDeleted((Boolean)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Boolean> asField(Persistent g) {
             return ((UploadedFile)g).getDeletedField();
           }
 
@@ -441,7 +442,7 @@ public class UploadedFileTableBase extends SiteTable {
         });
 
     defineColumn(col_displayname =
-        new Column(this, "displayname",
+        new Column<String>(this, "displayname",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -454,7 +455,7 @@ public class UploadedFileTableBase extends SiteTable {
             ((UploadedFile)g).setDisplayname((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((UploadedFile)g).getDisplaynameField();
           }
 
@@ -505,10 +506,10 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieves the <code>Type</code> <code>Column</code> for this 
   * <code>UploadedFile</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the type <code>Column</code>
   */
-  public final Column getTypeColumn() {
+  public final Column<Integer> getTypeColumn() {
     return col_type;
   }
 
@@ -517,10 +518,10 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieves the <code>Description</code> <code>Column</code> for this 
   * <code>UploadedFile</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the description <code>Column</code>
   */
-  public final Column getDescriptionColumn() {
+  public final Column<String> getDescriptionColumn() {
     return col_description;
   }
 
@@ -529,10 +530,10 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieves the <code>Size</code> <code>Column</code> for this 
   * <code>UploadedFile</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the size <code>Column</code>
   */
-  public final Column getSizeColumn() {
+  public final Column<Integer> getSizeColumn() {
     return col_size;
   }
 
@@ -541,10 +542,10 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieves the <code>When</code> <code>Column</code> for this 
   * <code>UploadedFile</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the when <code>Column</code>
   */
-  public final Column getWhenColumn() {
+  public final Column<Date> getWhenColumn() {
     return col_when;
   }
 
@@ -553,10 +554,10 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieves the <code>Uploadedby</code> <code>Column</code> for this 
   * <code>UploadedFile</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the uploadedby <code>Column</code>
   */
-  public final Column getUploadedbyColumn() {
+  public final Column<Integer> getUploadedbyColumn() {
     return col_uploadedby;
   }
 
@@ -565,10 +566,10 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieves the <code>Deleted</code> <code>Column</code> for this 
   * <code>UploadedFile</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the deleted <code>Column</code>
   */
-  public final Column getDeletedColumn() {
+  public final Column<Boolean> getDeletedColumn() {
     return col_deleted;
   }
 
@@ -577,10 +578,10 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieves the <code>Displayname</code> <code>Column</code> for this 
   * <code>UploadedFile</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayname <code>Column</code>
   */
-  public final Column getDisplaynameColumn() {
+  public final Column<String> getDisplaynameColumn() {
     return col_displayname;
   }
 
@@ -588,7 +589,7 @@ public class UploadedFileTableBase extends SiteTable {
  /**
   * Retrieve the <code>UploadedFile</code> as a <code>UploadedFile</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -601,7 +602,7 @@ public class UploadedFileTableBase extends SiteTable {
   * Retrieve the <code>UploadedFile</code> 
   * as a <code>UploadedFile</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public UploadedFile getUploadedFileObject(int troid) {

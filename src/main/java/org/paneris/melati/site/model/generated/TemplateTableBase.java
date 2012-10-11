@@ -2,6 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.Column;
 import org.melati.poem.Database;
@@ -24,18 +25,18 @@ import org.paneris.melati.site.model.UploadedFileTable;
  * Melati POEM generated base class for 
 <code>Table</code> <code>Template</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class TemplateTableBase extends UploadedFileTable {
 
-  private Column col_id = null;
-  private Column col_url = null;
+  private Column<Integer> col_id = null;
+  private Column<String> col_url = null;
 
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -52,7 +53,7 @@ public class TemplateTableBase extends UploadedFileTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -62,7 +63,7 @@ public class TemplateTableBase extends UploadedFileTable {
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
-        new Column(this, "id",
+        new Column<Integer>(this, "id",
                    new TroidPoemType(),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -75,7 +76,7 @@ public class TemplateTableBase extends UploadedFileTable {
             ((Template)g).setId((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Template)g).getIdField();
           }
 
@@ -117,7 +118,7 @@ public class TemplateTableBase extends UploadedFileTable {
         });
 
     defineColumn(col_url =
-        new Column(this, "url",
+        new Column<String>(this, "url",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -130,7 +131,7 @@ public class TemplateTableBase extends UploadedFileTable {
             ((Template)g).setUrl((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((Template)g).getUrlField();
           }
 
@@ -189,10 +190,10 @@ public class TemplateTableBase extends UploadedFileTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>Template</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
-  public final Column getIdColumn() {
+  public final Column<Integer> getIdColumn() {
     return col_id;
   }
 
@@ -201,10 +202,10 @@ public class TemplateTableBase extends UploadedFileTable {
   * Retrieves the <code>Url</code> <code>Column</code> for this 
   * <code>Template</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the url <code>Column</code>
   */
-  public final Column getUrlColumn() {
+  public final Column<String> getUrlColumn() {
     return col_url;
   }
 
@@ -212,7 +213,7 @@ public class TemplateTableBase extends UploadedFileTable {
  /**
   * Retrieve the <code>Template</code> as a <code>Template</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -225,7 +226,7 @@ public class TemplateTableBase extends UploadedFileTable {
   * Retrieve the <code>Template</code> 
   * as a <code>Template</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public Template getTemplateObject(int troid) {

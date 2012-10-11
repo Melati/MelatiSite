@@ -2,6 +2,7 @@
 
 package org.paneris.melati.site.model.generated;
 
+
 import java.sql.Timestamp;
 import org.melati.poem.AccessPoemException;
 import org.melati.poem.BooleanPoemType;
@@ -32,26 +33,26 @@ import org.paneris.melati.site.model.Template;
  * Melati POEM generated base class for 
 <code>Table</code> <code>Page</code>.
  *
- * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+ * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
 public class PageTableBase extends SiteTable {
 
-  private Column col_id = null;
-  private Column col_name = null;
-  private Column col_displayname = null;
-  private Column col_displayorder = null;
-  private Column col_display = null;
-  private Column col_deleted = null;
-  private Column col_lastencached = null;
-  private Column col_parent = null;
-  private Column col_template = null;
-  private Column col_style = null;
+  private Column<Integer> col_id = null;
+  private Column<String> col_name = null;
+  private Column<String> col_displayname = null;
+  private Column<Integer> col_displayorder = null;
+  private Column<Boolean> col_display = null;
+  private Column<Boolean> col_deleted = null;
+  private Column<Timestamp> col_lastencached = null;
+  private Column<Integer> col_parent = null;
+  private Column<Integer> col_template = null;
+  private Column<Integer> col_style = null;
 
  /**
   * Constructor. 
   * 
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param database          the POEM database we are using
   * @param name              the name of this <code>Table</code>
   * @param definitionSource  which definition is being used
@@ -68,7 +69,7 @@ public class PageTableBase extends SiteTable {
  /**
   * Get the database tables.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @return the database tables
   */
   public SiteDatabaseTables getSiteDatabaseTables() {
@@ -78,7 +79,7 @@ public class PageTableBase extends SiteTable {
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
-        new Column(this, "id",
+        new Column<Integer>(this, "id",
                    new TroidPoemType(),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -91,7 +92,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setId((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Page)g).getIdField();
           }
 
@@ -137,7 +138,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_name =
-        new Column(this, "name",
+        new Column<String>(this, "name",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -150,7 +151,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setName((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((Page)g).getNameField();
           }
 
@@ -188,7 +189,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_displayname =
-        new Column(this, "displayname",
+        new Column<String>(this, "displayname",
                    new StringPoemType(false, -1),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -201,7 +202,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setDisplayname((String)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<String> asField(Persistent g) {
             return ((Page)g).getDisplaynameField();
           }
 
@@ -255,7 +256,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_displayorder =
-        new Column(this, "displayorder",
+        new Column<Integer>(this, "displayorder",
                    new IntegerPoemType(false),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -268,7 +269,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setDisplayorder((Integer)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Page)g).getDisplayorderField();
           }
 
@@ -314,7 +315,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_display =
-        new Column(this, "display",
+        new Column<Boolean>(this, "display",
                    new BooleanPoemType(false),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -327,7 +328,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setDisplay((Boolean)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Boolean> asField(Persistent g) {
             return ((Page)g).getDisplayField();
           }
 
@@ -373,7 +374,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_deleted =
-        new Column(this, "deleted",
+        new Column<Boolean>(this, "deleted",
                    new DeletedPoemType(),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -386,7 +387,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setDeleted((Boolean)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Boolean> asField(Persistent g) {
             return ((Page)g).getDeletedField();
           }
 
@@ -432,7 +433,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_lastencached =
-        new Column(this, "lastencached",
+        new Column<Timestamp>(this, "lastencached",
                    new TimestampPoemType(true),
                    DefinitionSource.dsd) { 
           public Object getCooked(Persistent g)
@@ -445,7 +446,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setLastencached((Timestamp)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Timestamp> asField(Persistent g) {
             return ((Page)g).getLastencachedField();
           }
 
@@ -487,7 +488,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_parent =
-        new Column(this, "parent",
+        new Column<Integer>(this, "parent",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getPageTable(), true),
                    DefinitionSource.dsd) { 
@@ -501,7 +502,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setParent((Page)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Page)g).getParentField();
           }
 
@@ -543,7 +544,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_template =
-        new Column(this, "template",
+        new Column<Integer>(this, "template",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getTemplateTable(), true),
                    DefinitionSource.dsd) { 
@@ -557,7 +558,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setTemplate((Template)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Page)g).getTemplateField();
           }
 
@@ -595,7 +596,7 @@ public class PageTableBase extends SiteTable {
         });
 
     defineColumn(col_style =
-        new Column(this, "style",
+        new Column<Integer>(this, "style",
                    new ReferencePoemType(getSiteDatabaseTables().
                                              getStyleTable(), true),
                    DefinitionSource.dsd) { 
@@ -609,7 +610,7 @@ public class PageTableBase extends SiteTable {
             ((Page)g).setStyle((Style)cooked);
           }
 
-          public Field asField(Persistent g) {
+          public Field<Integer> asField(Persistent g) {
             return ((Page)g).getStyleField();
           }
 
@@ -652,10 +653,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Id</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the id <code>Column</code>
   */
-  public final Column getIdColumn() {
+  public final Column<Integer> getIdColumn() {
     return col_id;
   }
 
@@ -664,10 +665,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Name</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the name <code>Column</code>
   */
-  public final Column getNameColumn() {
+  public final Column<String> getNameColumn() {
     return col_name;
   }
 
@@ -676,10 +677,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Displayname</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayname <code>Column</code>
   */
-  public final Column getDisplaynameColumn() {
+  public final Column<String> getDisplaynameColumn() {
     return col_displayname;
   }
 
@@ -688,10 +689,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Displayorder</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the displayorder <code>Column</code>
   */
-  public final Column getDisplayorderColumn() {
+  public final Column<Integer> getDisplayorderColumn() {
     return col_displayorder;
   }
 
@@ -700,10 +701,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Display</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the display <code>Column</code>
   */
-  public final Column getDisplayColumn() {
+  public final Column<Boolean> getDisplayColumn() {
     return col_display;
   }
 
@@ -712,10 +713,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Deleted</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the deleted <code>Column</code>
   */
-  public final Column getDeletedColumn() {
+  public final Column<Boolean> getDeletedColumn() {
     return col_deleted;
   }
 
@@ -724,10 +725,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Lastencached</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the lastencached <code>Column</code>
   */
-  public final Column getLastencachedColumn() {
+  public final Column<Timestamp> getLastencachedColumn() {
     return col_lastencached;
   }
 
@@ -736,10 +737,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Parent</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the parent <code>Column</code>
   */
-  public final Column getParentColumn() {
+  public final Column<Integer> getParentColumn() {
     return col_parent;
   }
 
@@ -748,10 +749,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Template</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the template <code>Column</code>
   */
-  public final Column getTemplateColumn() {
+  public final Column<Integer> getTemplateColumn() {
     return col_template;
   }
 
@@ -760,10 +761,10 @@ public class PageTableBase extends SiteTable {
   * Retrieves the <code>Style</code> <code>Column</code> for this 
   * <code>Page</code> <code>Table</code>.
   * 
-  * @see org.melati.poem.prepro.FieldDef#generateColAccessor 
+  * see org.melati.poem.prepro.FieldDef#generateColAccessor 
   * @return the style <code>Column</code>
   */
-  public final Column getStyleColumn() {
+  public final Column<Integer> getStyleColumn() {
     return col_style;
   }
 
@@ -771,7 +772,7 @@ public class PageTableBase extends SiteTable {
  /**
   * Retrieve the <code>Page</code> as a <code>Page</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Oject ID
   * @return the <code>Persistent</code> identified by the <code>troid</code>
   */
@@ -784,7 +785,7 @@ public class PageTableBase extends SiteTable {
   * Retrieve the <code>Page</code> 
   * as a <code>Page</code>.
   *
-  * @see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
   * @param troid a Table Row Object ID
   * @return the <code>Persistent</code> identified   */
   public Page getPageObject(int troid) {
