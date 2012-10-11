@@ -60,7 +60,7 @@ public interface Templated {
     throws AccessPoemException;
   
   /**
-  * Retrieves the <code>Template</code> object reffered to.
+  * Retrieves the <code>Template</code> object referred to.
   *  
   * @generator org.melati.poem.prepro.ReferenceFieldDef#generateBaseMethods 
   * @throws AccessPoemException  
@@ -94,5 +94,5 @@ public interface Templated {
   *         does not confer write access rights
   * @return the Integer template
   */
-  Field getTemplateField() throws AccessPoemException;
+  Field<Integer> getTemplateField() throws AccessPoemException;
 }
