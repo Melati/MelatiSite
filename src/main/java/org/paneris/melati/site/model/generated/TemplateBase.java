@@ -14,6 +14,7 @@ import org.melati.poem.ValidationPoemException;
 import org.melati.poem.util.EmptyEnumeration;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.Template;
 import org.paneris.melati.site.model.TemplateTable;
 import org.paneris.melati.site.model.UploadedFile;
 
@@ -45,12 +46,14 @@ public abstract class TemplateBase extends UploadedFile {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the TemplateTable
   */
-  public TemplateTable getTemplateTable() {
-    return (TemplateTable)getTable();
+  @SuppressWarnings("unchecked")
+  public TemplateTable<Template> getTemplateTable() {
+    return (TemplateTable<Template>)getTable();
   }
 
-  private TemplateTable _getTemplateTable() {
-    return (TemplateTable)getTable();
+  @SuppressWarnings("unchecked")
+  private TemplateTable<Template> _getTemplateTable() {
+    return (TemplateTable<Template>)getTable();
   }
 
   // Fields in this table 

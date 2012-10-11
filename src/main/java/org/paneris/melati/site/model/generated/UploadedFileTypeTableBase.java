@@ -21,13 +21,12 @@ import org.paneris.melati.site.model.UploadedFileType;
 
 
 /**
- * Melati POEM generated base class for 
-<code>Table</code> <code>UploadedFileType</code>.
+ * Melati POEM generated base class for <code>Table</code> <code>UploadedFileType</code>.
  *
  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class UploadedFileTypeTableBase extends SiteTable {
+public class UploadedFileTypeTableBase<T extends UploadedFileType> extends SiteTable<T> {
 
   private Column<Integer> col_id = null;
   private Column<String> col_type = null;
@@ -59,6 +58,12 @@ public class UploadedFileTypeTableBase extends SiteTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
+
+ /**
+  * Initialise this table by defining its columns.
+  *
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  */
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
@@ -79,23 +84,23 @@ public class UploadedFileTypeTableBase extends SiteTable {
             return ((UploadedFileType)g).getIdField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.summary;
           }
 
-          protected Integer defaultDisplayOrderPriority() {
+          public Integer defaultDisplayOrderPriority() {
             return new Integer(0);
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 0;
           }
 
@@ -138,19 +143,19 @@ public class UploadedFileTypeTableBase extends SiteTable {
             return ((UploadedFileType)g).getTypeField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "Type of uploaded file";
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 40;
           }
 
@@ -227,19 +232,19 @@ public class UploadedFileTypeTableBase extends SiteTable {
   protected JdbcPersistent _newPersistent() {
     return new UploadedFileType();
   }
-  protected String defaultDisplayName() {
+  public String defaultDisplayName() {
     return "Uploaded File Type";
   }
 
-  protected String defaultDescription() {
+  public String defaultDescription() {
     return "A type of uploaded file";
   }
 
-  protected String defaultCategory() {
+  public String defaultCategory() {
     return "Codes";
   }
 
-  protected int defaultDisplayOrder() {
+  public int defaultDisplayOrder() {
     return 1810;
   }
 }

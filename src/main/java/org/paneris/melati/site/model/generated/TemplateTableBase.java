@@ -22,13 +22,12 @@ import org.paneris.melati.site.model.UploadedFileTable;
 
 
 /**
- * Melati POEM generated base class for 
-<code>Table</code> <code>Template</code>.
+ * Melati POEM generated base class for <code>Table</code> <code>Template</code>.
  *
  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class TemplateTableBase extends UploadedFileTable {
+public class TemplateTableBase<T extends Template> extends UploadedFileTable<T> {
 
   private Column<Integer> col_id = null;
   private Column<String> col_url = null;
@@ -60,6 +59,12 @@ public class TemplateTableBase extends UploadedFileTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
+
+ /**
+  * Initialise this table by defining its columns.
+  *
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  */
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
@@ -80,19 +85,19 @@ public class TemplateTableBase extends UploadedFileTable {
             return ((Template)g).getIdField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 0;
           }
 
@@ -135,31 +140,31 @@ public class TemplateTableBase extends UploadedFileTable {
             return ((Template)g).getUrlField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.yes;
           }
 
-          protected Integer defaultDisplayOrderPriority() {
+          public Integer defaultDisplayOrderPriority() {
             return new Integer(0);
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "Key by which template engine can locate template, no need for extension";
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 40;
           }
 
-          protected String defaultRenderinfo() {
+          public String defaultRenderinfo() {
             return "UploadURL";
           }
 
@@ -236,23 +241,23 @@ public class TemplateTableBase extends UploadedFileTable {
   protected JdbcPersistent _newPersistent() {
     return new Template();
   }
-  protected String defaultDisplayName() {
+  public String defaultDisplayName() {
     return "Template";
   }
 
-  protected String defaultDescription() {
+  public String defaultDescription() {
     return "A page template, used to control HTML fragment layout";
   }
 
-  protected boolean defaultRememberAllTroids() {
+  public boolean defaultRememberAllTroids() {
     return true;
   }
 
-  protected String defaultCategory() {
+  public String defaultCategory() {
     return "Data";
   }
 
-  protected int defaultDisplayOrder() {
+  public int defaultDisplayOrder() {
     return 600;
   }
 }

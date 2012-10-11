@@ -8,6 +8,7 @@ import org.melati.poem.Column;
 import org.melati.poem.Field;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.UploadedDocument;
 import org.paneris.melati.site.model.UploadedDocumentTable;
 import org.paneris.melati.site.model.UploadedFile;
 
@@ -39,12 +40,14 @@ public abstract class UploadedDocumentBase extends UploadedFile {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedDocumentTable
   */
-  public UploadedDocumentTable getUploadedDocumentTable() {
-    return (UploadedDocumentTable)getTable();
+  @SuppressWarnings("unchecked")
+  public UploadedDocumentTable<UploadedDocument> getUploadedDocumentTable() {
+    return (UploadedDocumentTable<UploadedDocument>)getTable();
   }
 
-  private UploadedDocumentTable _getUploadedDocumentTable() {
-    return (UploadedDocumentTable)getTable();
+  @SuppressWarnings("unchecked")
+  private UploadedDocumentTable<UploadedDocument> _getUploadedDocumentTable() {
+    return (UploadedDocumentTable<UploadedDocument>)getTable();
   }
 
   // Fields in this table 

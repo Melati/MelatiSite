@@ -9,6 +9,7 @@ import org.melati.poem.Field;
 import org.melati.poem.JdbcPersistent;
 import org.melati.poem.NoSuchRowPoemException;
 import org.melati.poem.ValidationPoemException;
+import org.paneris.melati.site.model.Link;
 import org.paneris.melati.site.model.LinkTable;
 import org.paneris.melati.site.model.LinkType;
 import org.paneris.melati.site.model.Page;
@@ -42,12 +43,14 @@ public abstract class LinkBase extends JdbcPersistent {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the LinkTable
   */
-  public LinkTable getLinkTable() {
-    return (LinkTable)getTable();
+  @SuppressWarnings("unchecked")
+  public LinkTable<Link> getLinkTable() {
+    return (LinkTable<Link>)getTable();
   }
 
-  private LinkTable _getLinkTable() {
-    return (LinkTable)getTable();
+  @SuppressWarnings("unchecked")
+  private LinkTable<Link> _getLinkTable() {
+    return (LinkTable<Link>)getTable();
   }
 
   // Fields in this table 

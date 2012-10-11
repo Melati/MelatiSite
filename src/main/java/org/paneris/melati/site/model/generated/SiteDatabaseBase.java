@@ -5,23 +5,41 @@ package org.paneris.melati.site.model.generated;
 
 import org.melati.poem.PoemDatabase;
 import org.melati.poem.DefinitionSource;
+import org.melati.poem.User;
 import org.melati.poem.UserTable;
+import org.melati.poem.Group;
 import org.melati.poem.GroupTable;
+import org.melati.poem.Capability;
 import org.melati.poem.CapabilityTable;
+import org.melati.poem.GroupMembership;
 import org.melati.poem.GroupMembershipTable;
+import org.melati.poem.GroupCapability;
 import org.melati.poem.GroupCapabilityTable;
+import org.melati.poem.TableCategory;
 import org.melati.poem.TableCategoryTable;
+import org.melati.poem.TableInfo;
 import org.melati.poem.TableInfoTable;
+import org.melati.poem.ColumnInfo;
 import org.melati.poem.ColumnInfoTable;
+import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.PageTable;
+import org.paneris.melati.site.model.Div;
 import org.paneris.melati.site.model.DivTable;
+import org.paneris.melati.site.model.Template;
 import org.paneris.melati.site.model.TemplateTable;
+import org.paneris.melati.site.model.UploadedImage;
 import org.paneris.melati.site.model.UploadedImageTable;
+import org.paneris.melati.site.model.UploadedDocument;
 import org.paneris.melati.site.model.UploadedDocumentTable;
+import org.paneris.melati.site.model.UploadedFileType;
 import org.paneris.melati.site.model.UploadedFileTypeTable;
+import org.paneris.melati.site.model.Style;
 import org.paneris.melati.site.model.StyleTable;
+import org.paneris.melati.site.model.Link;
 import org.paneris.melati.site.model.LinkTable;
+import org.paneris.melati.site.model.LinkType;
 import org.paneris.melati.site.model.LinkTypeTable;
+import org.paneris.melati.site.model.Setting;
 import org.paneris.melati.site.model.SettingTable;
 
 /**
@@ -29,44 +47,45 @@ import org.paneris.melati.site.model.SettingTable;
  */
 public class SiteDatabaseBase extends PoemDatabase {
 
-  private UserTable tab_user = null;
-  private GroupTable tab_group = null;
-  private CapabilityTable tab_capability = null;
-  private GroupMembershipTable tab_groupmembership = null;
-  private GroupCapabilityTable tab_groupcapability = null;
-  private TableCategoryTable tab_tablecategory = null;
-  private TableInfoTable tab_tableinfo = null;
-  private ColumnInfoTable tab_columninfo = null;
-  private PageTable tab_page = null;
-  private DivTable tab_div = null;
-  private TemplateTable tab_template = null;
-  private UploadedImageTable tab_uploadedimage = null;
-  private UploadedDocumentTable tab_uploadeddocument = null;
-  private UploadedFileTypeTable tab_uploadedfiletype = null;
-  private StyleTable tab_style = null;
-  private LinkTable tab_link = null;
-  private LinkTypeTable tab_linktype = null;
-  private SettingTable tab_setting = null;
+  private UserTable<User> tab_user = null;
+  private GroupTable<Group> tab_group = null;
+  private CapabilityTable<Capability> tab_capability = null;
+  private GroupMembershipTable<GroupMembership> tab_groupmembership = null;
+  private GroupCapabilityTable<GroupCapability> tab_groupcapability = null;
+  private TableCategoryTable<TableCategory> tab_tablecategory = null;
+  private TableInfoTable<TableInfo> tab_tableinfo = null;
+  private ColumnInfoTable<ColumnInfo> tab_columninfo = null;
+  private PageTable<Page> tab_page = null;
+  private DivTable<Div> tab_div = null;
+  private TemplateTable<Template> tab_template = null;
+  private UploadedImageTable<UploadedImage> tab_uploadedimage = null;
+  private UploadedDocumentTable<UploadedDocument> tab_uploadeddocument = null;
+  private UploadedFileTypeTable<UploadedFileType> tab_uploadedfiletype = null;
+  private StyleTable<Style> tab_style = null;
+  private LinkTable<Link> tab_link = null;
+  private LinkTypeTable<LinkType> tab_linktype = null;
+  private SettingTable<Setting> tab_setting = null;
 
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   protected SiteDatabaseBase() {
-    redefineTable(tab_user = new UserTable(this, "user", DefinitionSource.dsd));
-    redefineTable(tab_group = new GroupTable(this, "group", DefinitionSource.dsd));
-    redefineTable(tab_capability = new CapabilityTable(this, "capability", DefinitionSource.dsd));
-    redefineTable(tab_groupmembership = new GroupMembershipTable(this, "groupMembership", DefinitionSource.dsd));
-    redefineTable(tab_groupcapability = new GroupCapabilityTable(this, "groupCapability", DefinitionSource.dsd));
-    redefineTable(tab_tablecategory = new TableCategoryTable(this, "tableCategory", DefinitionSource.dsd));
-    redefineTable(tab_tableinfo = new TableInfoTable(this, "tableInfo", DefinitionSource.dsd));
-    redefineTable(tab_columninfo = new ColumnInfoTable(this, "columnInfo", DefinitionSource.dsd));
-    redefineTable(tab_page = new PageTable(this, "Page", DefinitionSource.dsd));
-    redefineTable(tab_div = new DivTable(this, "Div", DefinitionSource.dsd));
-    redefineTable(tab_template = new TemplateTable(this, "Template", DefinitionSource.dsd));
-    redefineTable(tab_uploadedimage = new UploadedImageTable(this, "UploadedImage", DefinitionSource.dsd));
-    redefineTable(tab_uploadeddocument = new UploadedDocumentTable(this, "UploadedDocument", DefinitionSource.dsd));
-    redefineTable(tab_uploadedfiletype = new UploadedFileTypeTable(this, "UploadedFileType", DefinitionSource.dsd));
-    redefineTable(tab_style = new StyleTable(this, "Style", DefinitionSource.dsd));
-    redefineTable(tab_link = new LinkTable(this, "Link", DefinitionSource.dsd));
-    redefineTable(tab_linktype = new LinkTypeTable(this, "LinkType", DefinitionSource.dsd));
-    redefineTable(tab_setting = new SettingTable(this, "Setting", DefinitionSource.dsd));
+    redefineTable(tab_user = new UserTable<User>(this, "user", DefinitionSource.dsd));
+    redefineTable(tab_group = new GroupTable<Group>(this, "group", DefinitionSource.dsd));
+    redefineTable(tab_capability = new CapabilityTable<Capability>(this, "capability", DefinitionSource.dsd));
+    redefineTable(tab_groupmembership = new GroupMembershipTable<GroupMembership>(this, "groupMembership", DefinitionSource.dsd));
+    redefineTable(tab_groupcapability = new GroupCapabilityTable<GroupCapability>(this, "groupCapability", DefinitionSource.dsd));
+    redefineTable(tab_tablecategory = new TableCategoryTable<TableCategory>(this, "tableCategory", DefinitionSource.dsd));
+    redefineTable(tab_tableinfo = new TableInfoTable<TableInfo>(this, "tableInfo", DefinitionSource.dsd));
+    redefineTable(tab_columninfo = new ColumnInfoTable<ColumnInfo>(this, "columnInfo", DefinitionSource.dsd));
+    redefineTable(tab_page = new PageTable<Page>(this, "Page", DefinitionSource.dsd));
+    redefineTable(tab_div = new DivTable<Div>(this, "Div", DefinitionSource.dsd));
+    redefineTable(tab_template = new TemplateTable<Template>(this, "Template", DefinitionSource.dsd));
+    redefineTable(tab_uploadedimage = new UploadedImageTable<UploadedImage>(this, "UploadedImage", DefinitionSource.dsd));
+    redefineTable(tab_uploadeddocument = new UploadedDocumentTable<UploadedDocument>(this, "UploadedDocument", DefinitionSource.dsd));
+    redefineTable(tab_uploadedfiletype = new UploadedFileTypeTable<UploadedFileType>(this, "UploadedFileType", DefinitionSource.dsd));
+    redefineTable(tab_style = new StyleTable<Style>(this, "Style", DefinitionSource.dsd));
+    redefineTable(tab_link = new LinkTable<Link>(this, "Link", DefinitionSource.dsd));
+    redefineTable(tab_linktype = new LinkTypeTable<LinkType>(this, "LinkType", DefinitionSource.dsd));
+    redefineTable(tab_setting = new org.paneris.melati.site.model.SettingTable(this, "Setting", DefinitionSource.dsd));
   }
 
 
@@ -76,7 +95,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the UserTable from this database
   */
-  public UserTable getUserTable() {
+  public UserTable<User> getUserTable() {
     return tab_user;
   }
 
@@ -87,7 +106,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the GroupTable from this database
   */
-  public GroupTable getGroupTable() {
+  public GroupTable<Group> getGroupTable() {
     return tab_group;
   }
 
@@ -98,7 +117,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the CapabilityTable from this database
   */
-  public CapabilityTable getCapabilityTable() {
+  public CapabilityTable<Capability> getCapabilityTable() {
     return tab_capability;
   }
 
@@ -109,7 +128,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the GroupMembershipTable from this database
   */
-  public GroupMembershipTable getGroupMembershipTable() {
+  public GroupMembershipTable<GroupMembership> getGroupMembershipTable() {
     return tab_groupmembership;
   }
 
@@ -120,7 +139,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the GroupCapabilityTable from this database
   */
-  public GroupCapabilityTable getGroupCapabilityTable() {
+  public GroupCapabilityTable<GroupCapability> getGroupCapabilityTable() {
     return tab_groupcapability;
   }
 
@@ -131,7 +150,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the TableCategoryTable from this database
   */
-  public TableCategoryTable getTableCategoryTable() {
+  public TableCategoryTable<TableCategory> getTableCategoryTable() {
     return tab_tablecategory;
   }
 
@@ -142,7 +161,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the TableInfoTable from this database
   */
-  public TableInfoTable getTableInfoTable() {
+  public TableInfoTable<TableInfo> getTableInfoTable() {
     return tab_tableinfo;
   }
 
@@ -154,7 +173,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the ColumnInfoTable from this database
   */
-  public ColumnInfoTable getColumnInfoTable() {
+  public ColumnInfoTable<ColumnInfo> getColumnInfoTable() {
     return tab_columninfo;
   }
 
@@ -165,7 +184,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the PageTable from this database
   */
-  public PageTable getPageTable() {
+  public PageTable<Page> getPageTable() {
     return tab_page;
   }
 
@@ -176,7 +195,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the DivTable from this database
   */
-  public DivTable getDivTable() {
+  public DivTable<Div> getDivTable() {
     return tab_div;
   }
 
@@ -188,7 +207,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the TemplateTable from this database
   */
-  public TemplateTable getTemplateTable() {
+  public TemplateTable<Template> getTemplateTable() {
     return tab_template;
   }
 
@@ -199,7 +218,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the UploadedImageTable from this database
   */
-  public UploadedImageTable getUploadedImageTable() {
+  public UploadedImageTable<UploadedImage> getUploadedImageTable() {
     return tab_uploadedimage;
   }
 
@@ -210,7 +229,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the UploadedDocumentTable from this database
   */
-  public UploadedDocumentTable getUploadedDocumentTable() {
+  public UploadedDocumentTable<UploadedDocument> getUploadedDocumentTable() {
     return tab_uploadeddocument;
   }
 
@@ -221,7 +240,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the UploadedFileTypeTable from this database
   */
-  public UploadedFileTypeTable getUploadedFileTypeTable() {
+  public UploadedFileTypeTable<UploadedFileType> getUploadedFileTypeTable() {
     return tab_uploadedfiletype;
   }
 
@@ -232,7 +251,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the StyleTable from this database
   */
-  public StyleTable getStyleTable() {
+  public StyleTable<Style> getStyleTable() {
     return tab_style;
   }
 
@@ -243,7 +262,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the LinkTable from this database
   */
-  public LinkTable getLinkTable() {
+  public LinkTable<Link> getLinkTable() {
     return tab_link;
   }
 
@@ -254,7 +273,7 @@ public class SiteDatabaseBase extends PoemDatabase {
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the LinkTypeTable from this database
   */
-  public LinkTypeTable getLinkTypeTable() {
+  public LinkTypeTable<LinkType> getLinkTypeTable() {
     return tab_linktype;
   }
 
@@ -262,10 +281,22 @@ public class SiteDatabaseBase extends PoemDatabase {
  /**
   * Retrieves the SettingTable table.
   *
+  * Deprecated: use getSiteSettingTable
   * see org.melati.poem.prepro.TableDef#generateTableAccessorJava 
   * @return the org.melati.poem.SettingTable from this database
   */
-  public org.melati.poem.SettingTable getSettingTable() {
+  @SuppressWarnings({ "rawtypes", "unchecked" })
+  public org.melati.poem.SettingTable<org.melati.poem.Setting> getSettingTable() {
+    return (org.melati.poem.SettingTable)tab_setting;
+  }
+
+ /**
+  * Retrieves our (Site) SettingTable table.
+  *
+  * see org.melati.poem.prepro.TableDef#generateSubclassedTableAccessorDeclaration 
+  * @return the org.melati.poem.SettingTable from this database
+  */
+  public SettingTable<Setting> getSiteSettingTable() {
     return tab_setting;
   }
 }

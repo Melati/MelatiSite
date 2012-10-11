@@ -12,6 +12,7 @@ import org.melati.poem.NoSuchRowPoemException;
 import org.melati.poem.User;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.UploadedFile;
 import org.paneris.melati.site.model.UploadedFileTable;
 import org.paneris.melati.site.model.UploadedFileType;
 
@@ -43,12 +44,14 @@ public abstract class UploadedFileBase extends JdbcPersistent {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedFileTable
   */
-  public UploadedFileTable getUploadedFileTable() {
-    return (UploadedFileTable)getTable();
+  @SuppressWarnings("unchecked")
+  public UploadedFileTable<UploadedFile> getUploadedFileTable() {
+    return (UploadedFileTable<UploadedFile>)getTable();
   }
 
-  private UploadedFileTable _getUploadedFileTable() {
-    return (UploadedFileTable)getTable();
+  @SuppressWarnings("unchecked")
+  private UploadedFileTable<UploadedFile> _getUploadedFileTable() {
+    return (UploadedFileTable<UploadedFile>)getTable();
   }
 
   // Fields in this table 

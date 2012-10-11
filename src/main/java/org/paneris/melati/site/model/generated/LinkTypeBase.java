@@ -14,6 +14,7 @@ import org.melati.poem.JdbcPersistent;
 import org.melati.poem.ValidationPoemException;
 import org.melati.poem.util.EmptyEnumeration;
 import org.paneris.melati.site.model.Link;
+import org.paneris.melati.site.model.LinkType;
 import org.paneris.melati.site.model.LinkTypeTable;
 import org.paneris.melati.site.model.SiteDatabaseTables;
 
@@ -45,12 +46,14 @@ public abstract class LinkTypeBase extends JdbcPersistent {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the LinkTypeTable
   */
-  public LinkTypeTable getLinkTypeTable() {
-    return (LinkTypeTable)getTable();
+  @SuppressWarnings("unchecked")
+  public LinkTypeTable<LinkType> getLinkTypeTable() {
+    return (LinkTypeTable<LinkType>)getTable();
   }
 
-  private LinkTypeTable _getLinkTypeTable() {
-    return (LinkTypeTable)getTable();
+  @SuppressWarnings("unchecked")
+  private LinkTypeTable<LinkType> _getLinkTypeTable() {
+    return (LinkTypeTable<LinkType>)getTable();
   }
 
   // Fields in this table 

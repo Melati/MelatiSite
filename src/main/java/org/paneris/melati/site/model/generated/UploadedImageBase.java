@@ -15,6 +15,7 @@ import org.melati.poem.util.EmptyEnumeration;
 import org.paneris.melati.site.model.Div;
 import org.paneris.melati.site.model.SiteDatabaseTables;
 import org.paneris.melati.site.model.UploadedFile;
+import org.paneris.melati.site.model.UploadedImage;
 import org.paneris.melati.site.model.UploadedImageTable;
 
 
@@ -45,12 +46,14 @@ public abstract class UploadedImageBase extends UploadedFile {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedImageTable
   */
-  public UploadedImageTable getUploadedImageTable() {
-    return (UploadedImageTable)getTable();
+  @SuppressWarnings("unchecked")
+  public UploadedImageTable<UploadedImage> getUploadedImageTable() {
+    return (UploadedImageTable<UploadedImage>)getTable();
   }
 
-  private UploadedImageTable _getUploadedImageTable() {
-    return (UploadedImageTable)getTable();
+  @SuppressWarnings("unchecked")
+  private UploadedImageTable<UploadedImage> _getUploadedImageTable() {
+    return (UploadedImageTable<UploadedImage>)getTable();
   }
 
   // Fields in this table 

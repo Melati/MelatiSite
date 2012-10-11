@@ -9,6 +9,7 @@ import org.melati.poem.Field;
 import org.melati.poem.JdbcPersistent;
 import org.melati.poem.ValidationPoemException;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.UploadedFileType;
 import org.paneris.melati.site.model.UploadedFileTypeTable;
 
 
@@ -39,12 +40,14 @@ public abstract class UploadedFileTypeBase extends JdbcPersistent {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the UploadedFileTypeTable
   */
-  public UploadedFileTypeTable getUploadedFileTypeTable() {
-    return (UploadedFileTypeTable)getTable();
+  @SuppressWarnings("unchecked")
+  public UploadedFileTypeTable<UploadedFileType> getUploadedFileTypeTable() {
+    return (UploadedFileTypeTable<UploadedFileType>)getTable();
   }
 
-  private UploadedFileTypeTable _getUploadedFileTypeTable() {
-    return (UploadedFileTypeTable)getTable();
+  @SuppressWarnings("unchecked")
+  private UploadedFileTypeTable<UploadedFileType> _getUploadedFileTypeTable() {
+    return (UploadedFileTypeTable<UploadedFileType>)getTable();
   }
 
   // Fields in this table 

@@ -51,12 +51,14 @@ public abstract class PageBase extends JdbcPersistent {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the PageTable
   */
-  public PageTable getPageTable() {
-    return (PageTable)getTable();
+  @SuppressWarnings("unchecked")
+  public PageTable<Page> getPageTable() {
+    return (PageTable<Page>)getTable();
   }
 
-  private PageTable _getPageTable() {
-    return (PageTable)getTable();
+  @SuppressWarnings("unchecked")
+  private PageTable<Page> _getPageTable() {
+    return (PageTable<Page>)getTable();
   }
 
   // Fields in this table 

@@ -30,13 +30,12 @@ import org.paneris.melati.site.model.Template;
 
 
 /**
- * Melati POEM generated base class for 
-<code>Table</code> <code>Page</code>.
+ * Melati POEM generated base class for <code>Table</code> <code>Page</code>.
  *
  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class PageTableBase extends SiteTable {
+public class PageTableBase<T extends Page> extends SiteTable<T> {
 
   private Column<Integer> col_id = null;
   private Column<String> col_name = null;
@@ -76,6 +75,12 @@ public class PageTableBase extends SiteTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
+
+ /**
+  * Initialise this table by defining its columns.
+  *
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  */
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
@@ -96,23 +101,23 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getIdField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.no;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 0;
           }
 
@@ -155,15 +160,15 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getNameField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "A file system name, no spaces or special characters";
           }
 
@@ -206,31 +211,31 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getDisplaynameField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.primary;
           }
 
-          protected String defaultDisplayName() {
+          public String defaultDisplayName() {
             return "Display Name";
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 2;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The full name used in the TITLE.";
           }
 
-          protected boolean defaultUnique() {
+          public boolean defaultUnique() {
             return true;
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 20;
           }
 
@@ -273,23 +278,23 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getDisplayorderField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Integer defaultDisplayOrderPriority() {
+          public Integer defaultDisplayOrderPriority() {
             return new Integer(0);
           }
 
-          protected String defaultDisplayName() {
+          public String defaultDisplayName() {
             return "Display order";
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 3;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "A rank determining where the page appears in a list";
           }
 
@@ -332,23 +337,23 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getDisplayField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.yes;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 4;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "Whether to display this page";
           }
 
-          protected boolean defaultIndexed() {
+          public boolean defaultIndexed() {
             return true;
           }
 
@@ -391,23 +396,23 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getDeletedField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.detail;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.no;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 5;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "Soft delete";
           }
 
-          protected boolean defaultIndexed() {
+          public boolean defaultIndexed() {
             return true;
           }
 
@@ -450,19 +455,19 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getLastencachedField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected String defaultDisplayName() {
+          public String defaultDisplayName() {
             return "Last encached";
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1000;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "When the page was encached; cleared when the page is updated";
           }
 
@@ -506,19 +511,19 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getParentField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.summary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.yes;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1001;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The parent page (empty for Home). ";
           }
 
@@ -562,15 +567,15 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getTemplateField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1002;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The name of the layout for this page";
           }
 
@@ -614,15 +619,15 @@ public class PageTableBase extends SiteTable {
             return ((Page)g).getStyleField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1003;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The name of the CSS class for this page";
           }
 
@@ -795,19 +800,19 @@ public class PageTableBase extends SiteTable {
   protected JdbcPersistent _newPersistent() {
     return new Page();
   }
-  protected String defaultDescription() {
+  public String defaultDescription() {
     return "A Page";
   }
 
-  protected boolean defaultRememberAllTroids() {
+  public boolean defaultRememberAllTroids() {
     return true;
   }
 
-  protected String defaultCategory() {
+  public String defaultCategory() {
     return "Data";
   }
 
-  protected int defaultDisplayOrder() {
+  public int defaultDisplayOrder() {
     return 200;
   }
 }

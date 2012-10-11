@@ -28,13 +28,12 @@ import org.paneris.melati.site.model.UploadedImage;
 
 
 /**
- * Melati POEM generated base class for 
-<code>Table</code> <code>Div</code>.
+ * Melati POEM generated base class for <code>Table</code> <code>Div</code>.
  *
  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class DivTableBase extends SiteTable {
+public class DivTableBase<T extends Div> extends SiteTable<T> {
 
   private Column<Integer> col_id = null;
   private Column<Integer> col_page = null;
@@ -71,6 +70,12 @@ public class DivTableBase extends SiteTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
+
+ /**
+  * Initialise this table by defining its columns.
+  *
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  */
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
@@ -91,19 +96,19 @@ public class DivTableBase extends SiteTable {
             return ((Div)g).getIdField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 0;
           }
 
@@ -147,15 +152,15 @@ public class DivTableBase extends SiteTable {
             return ((Div)g).getPageField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.summary;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The Page to which this fragment belongs";
           }
 
@@ -198,23 +203,23 @@ public class DivTableBase extends SiteTable {
             return ((Div)g).getDisplayorderField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Integer defaultDisplayOrderPriority() {
+          public Integer defaultDisplayOrderPriority() {
             return new Integer(0);
           }
 
-          protected String defaultDisplayName() {
+          public String defaultDisplayName() {
             return "Display order";
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 2;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "A rank determining where the div appears in a page";
           }
 
@@ -258,23 +263,23 @@ public class DivTableBase extends SiteTable {
             return ((Div)g).getStyleField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.summary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.primary;
           }
 
-          protected Integer defaultDisplayOrderPriority() {
+          public Integer defaultDisplayOrderPriority() {
             return new Integer(1);
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 3;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The name of the CSS class for this DIV";
           }
 
@@ -317,19 +322,19 @@ public class DivTableBase extends SiteTable {
             return ((Div)g).getTitleField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 4;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The HTML title";
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 60;
           }
 
@@ -372,23 +377,23 @@ public class DivTableBase extends SiteTable {
             return ((Div)g).getContentField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 5;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The HTML content";
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 60;
           }
 
-          protected int defaultHeight() {
+          public int defaultHeight() {
             return 20;
           }
 
@@ -432,31 +437,31 @@ public class DivTableBase extends SiteTable {
             return ((Div)g).getImageField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.no;
           }
 
-          protected String defaultDisplayName() {
+          public String defaultDisplayName() {
             return "Image";
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 3;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "Image associated with this div";
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 1;
           }
 
-          protected int defaultHeight() {
+          public int defaultHeight() {
             return 1;
           }
 
@@ -597,19 +602,19 @@ public class DivTableBase extends SiteTable {
   protected JdbcPersistent _newPersistent() {
     return new Div();
   }
-  protected String defaultDescription() {
+  public String defaultDescription() {
     return "An HTML fragment";
   }
 
-  protected boolean defaultRememberAllTroids() {
+  public boolean defaultRememberAllTroids() {
     return true;
   }
 
-  protected String defaultCategory() {
+  public String defaultCategory() {
     return "Data";
   }
 
-  protected int defaultDisplayOrder() {
+  public int defaultDisplayOrder() {
     return 550;
   }
 }

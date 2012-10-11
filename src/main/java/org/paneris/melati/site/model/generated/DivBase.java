@@ -9,6 +9,7 @@ import org.melati.poem.Field;
 import org.melati.poem.JdbcPersistent;
 import org.melati.poem.NoSuchRowPoemException;
 import org.melati.poem.ValidationPoemException;
+import org.paneris.melati.site.model.Div;
 import org.paneris.melati.site.model.DivTable;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
@@ -43,12 +44,14 @@ public abstract class DivBase extends JdbcPersistent {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the DivTable
   */
-  public DivTable getDivTable() {
-    return (DivTable)getTable();
+  @SuppressWarnings("unchecked")
+  public DivTable<Div> getDivTable() {
+    return (DivTable<Div>)getTable();
   }
 
-  private DivTable _getDivTable() {
-    return (DivTable)getTable();
+  @SuppressWarnings("unchecked")
+  private DivTable<Div> _getDivTable() {
+    return (DivTable<Div>)getTable();
   }
 
   // Fields in this table 

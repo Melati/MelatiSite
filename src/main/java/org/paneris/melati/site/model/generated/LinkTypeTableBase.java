@@ -22,13 +22,12 @@ import org.paneris.melati.site.model.SiteTable;
 
 
 /**
- * Melati POEM generated base class for 
-<code>Table</code> <code>LinkType</code>.
+ * Melati POEM generated base class for <code>Table</code> <code>LinkType</code>.
  *
  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class LinkTypeTableBase extends SiteTable {
+public class LinkTypeTableBase<T extends LinkType> extends SiteTable<T> {
 
   private Column<Integer> col_id = null;
   private Column<String> col_name = null;
@@ -61,6 +60,12 @@ public class LinkTypeTableBase extends SiteTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
+
+ /**
+  * Initialise this table by defining its columns.
+  *
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  */
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
@@ -81,19 +86,19 @@ public class LinkTypeTableBase extends SiteTable {
             return ((LinkType)g).getIdField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 0;
           }
 
@@ -136,19 +141,19 @@ public class LinkTypeTableBase extends SiteTable {
             return ((LinkType)g).getNameField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.primary;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The category's name";
           }
 
@@ -191,19 +196,19 @@ public class LinkTypeTableBase extends SiteTable {
             return ((LinkType)g).getDescriptionField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.primary;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 2;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The a description of the link type";
           }
 
@@ -292,23 +297,23 @@ public class LinkTypeTableBase extends SiteTable {
   protected JdbcPersistent _newPersistent() {
     return new LinkType();
   }
-  protected String defaultDisplayName() {
+  public String defaultDisplayName() {
     return "Link Type";
   }
 
-  protected String defaultDescription() {
+  public String defaultDescription() {
     return "Type of link";
   }
 
-  protected boolean defaultRememberAllTroids() {
+  public boolean defaultRememberAllTroids() {
     return true;
   }
 
-  protected String defaultCategory() {
+  public String defaultCategory() {
     return "Codes";
   }
 
-  protected int defaultDisplayOrder() {
+  public int defaultDisplayOrder() {
     return 1690;
   }
 }

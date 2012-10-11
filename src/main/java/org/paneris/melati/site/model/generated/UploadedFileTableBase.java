@@ -28,13 +28,12 @@ import org.paneris.melati.site.model.UploadedFileType;
 
 
 /**
- * Melati POEM generated base class for 
-<code>Table</code> <code>UploadedFile</code>.
+ * Melati POEM generated base class for <code>Table</code> <code>UploadedFile</code>.
  *
  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class UploadedFileTableBase extends SiteTable {
+public class UploadedFileTableBase<T extends UploadedFile> extends SiteTable<T> {
 
   private Column<Integer> col_type = null;
   private Column<String> col_description = null;
@@ -71,6 +70,12 @@ public class UploadedFileTableBase extends SiteTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
+
+ /**
+  * Initialise this table by defining its columns.
+  *
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  */
   public void init() throws PoemException {
     super.init();
     defineColumn(col_type =
@@ -92,15 +97,15 @@ public class UploadedFileTableBase extends SiteTable {
             return ((UploadedFile)g).getTypeField();
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.primary;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 0;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The type of this file";
           }
 
@@ -147,27 +152,27 @@ public class UploadedFileTableBase extends SiteTable {
             return ((UploadedFile)g).getDescriptionField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.yes;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "A description of the file";
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 60;
           }
 
-          protected int defaultHeight() {
+          public int defaultHeight() {
             return 5;
           }
 
@@ -210,19 +215,19 @@ public class UploadedFileTableBase extends SiteTable {
             return ((UploadedFile)g).getSizeField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.no;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 2;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The size of this file";
           }
 
@@ -265,27 +270,27 @@ public class UploadedFileTableBase extends SiteTable {
             return ((UploadedFile)g).getWhenField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.summary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.no;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 3;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The date on which this file was uploaded";
           }
 
@@ -329,31 +334,31 @@ public class UploadedFileTableBase extends SiteTable {
             return ((UploadedFile)g).getUploadedbyField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.summary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.yes;
           }
 
-          protected String defaultDisplayName() {
+          public String defaultDisplayName() {
             return "Uploaded By";
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 4;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The user who uploaded this file";
           }
 
@@ -396,27 +401,27 @@ public class UploadedFileTableBase extends SiteTable {
             return ((UploadedFile)g).getDeletedField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.summary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.yes;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 5;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "Whether this file been deleted or not";
           }
 
@@ -459,23 +464,23 @@ public class UploadedFileTableBase extends SiteTable {
             return ((UploadedFile)g).getDisplaynameField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.primary;
           }
 
-          protected String defaultDisplayName() {
+          public String defaultDisplayName() {
             return "Display name";
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 6;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The layout's name";
           }
 
@@ -608,19 +613,19 @@ public class UploadedFileTableBase extends SiteTable {
   public UploadedFile getUploadedFileObject(int troid) {
     return (UploadedFile)getObject(troid);
   }
-  protected boolean defaultRememberAllTroids() {
+  public boolean defaultRememberAllTroids() {
     return true;
   }
 
-  protected Integer defaultCacheLimit() {
+  public Integer defaultCacheLimit() {
     return new Integer(999999999);
   }
 
-  protected String defaultCategory() {
+  public String defaultCategory() {
     return "Data";
   }
 
-  protected int defaultDisplayOrder() {
+  public int defaultDisplayOrder() {
     return 2;
   }
 }

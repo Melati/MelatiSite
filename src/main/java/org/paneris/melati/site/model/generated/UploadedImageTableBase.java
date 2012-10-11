@@ -23,13 +23,12 @@ import org.paneris.melati.site.model.UploadedImage;
 
 
 /**
- * Melati POEM generated base class for 
-<code>Table</code> <code>UploadedImage</code>.
+ * Melati POEM generated base class for <code>Table</code> <code>UploadedImage</code>.
  *
  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
  */
 
-public class UploadedImageTableBase extends UploadedFileTable {
+public class UploadedImageTableBase<T extends UploadedImage> extends UploadedFileTable<T> {
 
   private Column<Integer> col_id = null;
   private Column<String> col_url = null;
@@ -63,6 +62,12 @@ public class UploadedImageTableBase extends UploadedFileTable {
     return (SiteDatabaseTables)getDatabase();
   }
 
+
+ /**
+  * Initialise this table by defining its columns.
+  *
+  * see org.melati.poem.prepro.TableDef#generateTableBaseJava 
+  */
   public void init() throws PoemException {
     super.init();
     defineColumn(col_id =
@@ -83,19 +88,19 @@ public class UploadedImageTableBase extends UploadedFileTable {
             return ((UploadedImage)g).getIdField();
           }
 
-          protected boolean defaultUserEditable() {
+          public boolean defaultUserEditable() {
             return false;
           }
 
-          protected boolean defaultUserCreateable() {
+          public boolean defaultUserCreateable() {
             return false;
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 0;
           }
 
@@ -138,31 +143,31 @@ public class UploadedImageTableBase extends UploadedFileTable {
             return ((UploadedImage)g).getUrlField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.primary;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.yes;
           }
 
-          protected Integer defaultDisplayOrderPriority() {
+          public Integer defaultDisplayOrderPriority() {
             return new Integer(0);
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 1;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The name of the file, as uploaded";
           }
 
-          protected int defaultWidth() {
+          public int defaultWidth() {
             return 40;
           }
 
-          protected String defaultRenderinfo() {
+          public String defaultRenderinfo() {
             return "ImageUpload";
           }
 
@@ -205,19 +210,19 @@ public class UploadedImageTableBase extends UploadedFileTable {
             return ((UploadedImage)g).getHeightField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.no;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 2;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The height of this file if it is an image";
           }
 
@@ -260,19 +265,19 @@ public class UploadedImageTableBase extends UploadedFileTable {
             return ((UploadedImage)g).getWidthField();
           }
 
-          protected DisplayLevel defaultDisplayLevel() {
+          public DisplayLevel defaultDisplayLevel() {
             return DisplayLevel.record;
           }
 
-          protected Searchability defaultSearchability() {
+          public Searchability defaultSearchability() {
             return Searchability.no;
           }
 
-          protected int defaultDisplayOrder() {
+          public int defaultDisplayOrder() {
             return 3;
           }
 
-          protected String defaultDescription() {
+          public String defaultDescription() {
             return "The width of this file if it is an image";
           }
 
@@ -373,27 +378,27 @@ public class UploadedImageTableBase extends UploadedFileTable {
   protected JdbcPersistent _newPersistent() {
     return new UploadedImage();
   }
-  protected String defaultDisplayName() {
+  public String defaultDisplayName() {
     return "Uploaded Image";
   }
 
-  protected String defaultDescription() {
+  public String defaultDescription() {
     return "An image uploaded by a user";
   }
 
-  protected boolean defaultRememberAllTroids() {
+  public boolean defaultRememberAllTroids() {
     return true;
   }
 
-  protected Integer defaultCacheLimit() {
+  public Integer defaultCacheLimit() {
     return new Integer(999999999);
   }
 
-  protected String defaultCategory() {
+  public String defaultCategory() {
     return "Data";
   }
 
-  protected int defaultDisplayOrder() {
+  public int defaultDisplayOrder() {
     return 310;
   }
 }

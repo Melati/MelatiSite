@@ -16,6 +16,7 @@ import org.melati.poem.util.EmptyEnumeration;
 import org.paneris.melati.site.model.Div;
 import org.paneris.melati.site.model.Page;
 import org.paneris.melati.site.model.SiteDatabaseTables;
+import org.paneris.melati.site.model.Style;
 import org.paneris.melati.site.model.StyleTable;
 
 
@@ -46,12 +47,14 @@ public abstract class StyleBase extends JdbcPersistent {
   * see org.melati.poem.prepro.TableDef#generatePersistentBaseJava 
   * @return the StyleTable
   */
-  public StyleTable getStyleTable() {
-    return (StyleTable)getTable();
+  @SuppressWarnings("unchecked")
+  public StyleTable<Style> getStyleTable() {
+    return (StyleTable<Style>)getTable();
   }
 
-  private StyleTable _getStyleTable() {
-    return (StyleTable)getTable();
+  @SuppressWarnings("unchecked")
+  private StyleTable<Style> _getStyleTable() {
+    return (StyleTable<Style>)getTable();
   }
 
   // Fields in this table 
