@@ -4,7 +4,7 @@
   <groupId>org.paneris</groupId>
   <artifactId>MelatiSite</artifactId>
   <name>Melati Site</name>
-  <version>0.2.3</version>
+  <version>0.2.3-SNAPSHOT</version>
   <description>A content management system.</description>
   <url>http://site.paneris.net/</url>
   <issueManagement>
@@ -56,8 +56,8 @@
     </contributor>
   </contributors>
   <scm>
-    <connection>scm:cvs:pserver:anonymous@paneris.net:/usr/cvsroot:MelatiSite</connection>
-    <developerConnection>scm:cvs:pserver:anonymous@paneris.net:/usr/cvsroot:MelatiSite</developerConnection>
+    <connection>scm:cvs:ext:timp@paneris.net:/usr/cvsroot:MelatiSite</connection>
+    <developerConnection>scm:cvs:ext:timp@paneris.net:/usr/cvsroot:MelatiSite</developerConnection>
     <url>http://www.paneris.org/cgi-bin/cvsweb.cgi/MelatiSite/</url>
   </scm>
   <organization>
