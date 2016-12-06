@@ -117,30 +117,6 @@
       </resource>
     </resources>
     <plugins>
-     <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-      <plugin>
-        <groupId>org.eclipse.m2e</groupId>
-        <artifactId>lifecycle-mapping</artifactId>
-        <version>1.0.0</version>
-        <configuration>
-          <lifecycleMappingMetadata>
-            <pluginExecutions>
-              <pluginExecution>
-                <pluginExecutionFilter>
-                  <groupId>org.melati</groupId>
-                  <artifactId>dsd-maven-plugin</artifactId>
-                  <goals>
-                    <goal>generate</goal>
-                  </goals>
-                </pluginExecutionFilter>
-                <action>
-                  <ignore></ignore>
-                </action>
-              </pluginExecution>
-            </pluginExecutions>
-          </lifecycleMappingMetadata>
-        </configuration>
-      </plugin>
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.5</version>
@@ -363,11 +339,6 @@
       <name>Melati M2 Repository</name>
       <url>http://www.melati.org/maven2</url>
     </repository>
-    <repository>
-      <id>snapshots</id>
-      <name>Codehaus snapshots</name>
-      <url>http://snapshots.maven.codehaus.org/maven2/</url>
-    </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
@@ -379,11 +350,6 @@
       <id>melati</id>
       <name>Melati M2 Repository</name>
       <url>http://www.melati.org/maven2</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>snapshots</id>
-      <name>Codehaus snapshots</name>
-      <url>http://snapshots.maven.codehaus.org/maven2/</url>
     </pluginRepository>
   </pluginRepositories>
 </project>
