@@ -9,4 +9,7 @@
 hs_err_pid*
 
 target/
+src/main/webapp/META-INF/
+src/main/webapp/melati-static/
+src/main/webapp/org/
 
